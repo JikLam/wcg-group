@@ -22,7 +22,10 @@ test("server-renders the WCG corporate website", async () => {
   assert.match(html, /<title>鉅瀧集團 \| Win Chance Group Holdings Limited<\/title>/i);
   assert.match(html, /連結創意、科技與資本/);
   assert.match(html, /七大業務，共建企業生態/);
-  assert.match(html, /https:\/\/wcg-loan-hk\.easycircle360\.chatgpt\.site/);
+  assert.match(html, /集團服務/);
+  assert.match(html, /id="business-1"/);
+  assert.match(html, /服務範圍/);
+  assert.doesNotMatch(html, /wcg-loan-hk|獨立網站籌備中|Dedicated site in preparation/i);
   assert.match(html, /info@winchancegroup\.com/);
   assert.match(html, /\/og\.png/);
   assert.doesNotMatch(html, /Your site is taking shape|codex-preview|react-loading-skeleton/i);

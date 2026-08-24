@@ -10,10 +10,13 @@ const content = {
     company: "Win Chance Group Holdings Limited",
     nav: [
       ["about", "關於集團"],
-      ["businesses", "業務範疇"],
+      ["businesses", "集團服務"],
       ["direction", "發展方向"],
       ["contact", "聯絡我們"],
     ],
+    menuLabel: "開啟導覽選單",
+    serviceMenu: "集團服務",
+    serviceScope: "服務範圍",
     eyebrow: "多元策略・專業協作・長遠價值",
     heroTitle: "連結創意、科技與資本，\n成就長遠價值。",
     heroText:
@@ -38,9 +41,7 @@ const content = {
     businessKicker: "OUR BUSINESSES",
     businessTitle: "七大業務，共建企業生態",
     businessIntro:
-      "各業務獨立發展，同時共享集團的策略、資源與市場網絡。獨立業務網站將按發展進度陸續推出。",
-    comingSoon: "獨立網站籌備中",
-    visit: "前往 WCG Loan",
+      "集團整合七大專業範疇，所有服務內容均可於本頁直接瀏覽，讓企業及合作夥伴快速了解我們的能力與合作方向。",
     businesses: [
       ["影視娛樂製作", "整合內容、製作與現場體驗，連結文化創意與商業價值。", "商演及大型活動・專業展覽・影視內容・沉浸式體驗"],
       ["經典名車業務", "圍繞珍藏汽車文化，發展展覽、會所、品牌體驗與專業服務。", "名車博物館・會員會所・品牌門店・護理維修"],
@@ -53,7 +54,7 @@ const content = {
     directionKicker: "OUR DIRECTION",
     directionTitle: "讓專業各展所長，讓資源彼此連結",
     directionText:
-      "集團網站將成為各項業務的統一入口。每個服務品牌擁有獨立定位與網站，同時由 WCG 的共同價值、專業網絡及企業管治連結起來。",
+      "集團網站集中展示各項專業服務，並以 WCG 的共同價值、專業網絡及企業管治連結不同團隊，為客戶提供更完整的跨領域方案。",
     stages: ["建立清晰的集團品牌", "連接各項專業服務", "拓展跨地域合作機會"],
     milestone: "發展里程碑",
     milestoneYear: "2025",
@@ -82,7 +83,8 @@ const content = {
   sc: {
     brand: "钜泷集团",
     company: "Win Chance Group Holdings Limited",
-    nav: [["about", "关于集团"], ["businesses", "业务范畴"], ["direction", "发展方向"], ["contact", "联系我们"]],
+    nav: [["about", "关于集团"], ["businesses", "集团服务"], ["direction", "发展方向"], ["contact", "联系我们"]],
+    menuLabel: "打开导航菜单", serviceMenu: "集团服务", serviceScope: "服务范围",
     eyebrow: "多元策略・专业协作・长远价值",
     heroTitle: "连接创意、科技与资本，\n成就长远价值。",
     heroText: "钜泷集团立足香港，汇聚跨领域专业力量，为企业及合作伙伴提供具前瞻性、可落地的综合策略方案。",
@@ -90,7 +92,7 @@ const content = {
     aboutKicker: "ABOUT WCG", aboutTitle: "以跨界视野，推动企业持续成长",
     aboutText: "我们相信，每项长远发展都源于清晰策略、可靠执行与相互信任。集团整合品牌、娱乐、科技、汽车产业、企业融资及传承规划等专业能力，协助合作伙伴掌握新机遇。",
     pillars: [["使命", "以专业整合与创新思维，为客户建立可持续、可实践的增长方案。"], ["愿景", "成为连接香港、中国内地与国际市场的可信赖策略合作伙伴。"], ["核心价值", "追求极致・创新共赢・以人为本・诚信协作"]],
-    businessKicker: "OUR BUSINESSES", businessTitle: "七大业务，共建企业生态", businessIntro: "各业务独立发展，同时共享集团的策略、资源与市场网络。独立业务网站将按发展进度陆续推出。", comingSoon: "独立网站筹备中", visit: "前往 WCG Loan",
+    businessKicker: "OUR BUSINESSES", businessTitle: "七大业务，共建企业生态", businessIntro: "集团整合七大专业范畴，所有服务内容均可于本页直接浏览，让企业及合作伙伴快速了解我们的能力与合作方向。",
     businesses: [
       ["影视娱乐制作", "整合内容、制作与现场体验，连接文化创意与商业价值。", "商演及大型活动・专业展览・影视内容・沉浸式体验"],
       ["经典名车业务", "围绕珍藏汽车文化，发展展览、会所、品牌体验与专业服务。", "名车博物馆・会员会所・品牌门店・护理维修"],
@@ -100,7 +102,7 @@ const content = {
       ["企业融资策划", "协助中小企梳理融资需要，连接合适的企业发展方案。", "企业融资咨询・资金规划・信用状态咨询・SME 服务"],
       ["品牌建设发展", "由品牌定位延伸至空间及资产管理，建立一致的企业体验。", "品牌创建・品牌管理・知识产权・空间顾问"],
     ],
-    directionKicker: "OUR DIRECTION", directionTitle: "让专业各展所长，让资源彼此连接", directionText: "集团网站将成为各项业务的统一入口。每个服务品牌拥有独立定位与网站，同时由 WCG 的共同价值、专业网络及企业管治连接起来。", stages: ["建立清晰的集团品牌", "连接各项专业服务", "拓展跨地域合作机会"],
+    directionKicker: "OUR DIRECTION", directionTitle: "让专业各展所长，让资源彼此连接", directionText: "集团网站集中展示各项专业服务，并以 WCG 的共同价值、专业网络及企业管治连接不同团队，为客户提供更完整的跨领域方案。", stages: ["建立清晰的集团品牌", "连接各项专业服务", "拓展跨地域合作机会"],
     milestone: "发展里程碑", milestoneYear: "2025", milestoneText: "Win Chance Group Holdings Limited 正式成立，开展多元业务整合与品牌建设。更多里程碑将于资料核实后更新。",
     contactKicker: "CONTACT", contactTitle: "携手探索下一个机遇", contactText: "如欲了解集团业务或商讨合作，欢迎与我们联系。", addressLabel: "地址", address: "香港鲗鱼涌海泽街28号东港中心14楼1411室", phoneLabel: "电话", phone: "+852 2668 2600", emailLabel: "电邮", email: "info@winchancegroup.com",
     form: { name: "姓名", company: "公司名称", email: "电邮地址", message: "查询内容", send: "发送查询" },
@@ -108,7 +110,8 @@ const content = {
   },
   en: {
     brand: "WCG", company: "Win Chance Group Holdings Limited",
-    nav: [["about", "About"], ["businesses", "Businesses"], ["direction", "Direction"], ["contact", "Contact"]],
+    nav: [["about", "About"], ["businesses", "Group Services"], ["direction", "Direction"], ["contact", "Contact"]],
+    menuLabel: "Open navigation menu", serviceMenu: "Group services", serviceScope: "Service scope",
     eyebrow: "Integrated strategy · Expert collaboration · Enduring value",
     heroTitle: "Connecting creativity, technology and capital for enduring value.",
     heroText: "Rooted in Hong Kong, Win Chance Group brings together cross-sector expertise to deliver forward-looking, actionable strategies for businesses and partners.",
@@ -116,7 +119,7 @@ const content = {
     aboutKicker: "ABOUT WCG", aboutTitle: "A cross-sector perspective on sustainable growth",
     aboutText: "We believe enduring progress begins with clear strategy, dependable execution and mutual trust. WCG connects expertise across branding, entertainment, technology, automotive culture, corporate finance and succession planning to help partners act on new opportunities.",
     pillars: [["Mission", "Create practical, sustainable growth through integrated expertise and innovative thinking."], ["Vision", "Be a trusted strategic partner connecting Hong Kong, Mainland China and international markets."], ["Values", "Excellence · Innovation · People · Integrity · Partnership"]],
-    businessKicker: "OUR BUSINESSES", businessTitle: "Seven businesses. One connected ecosystem.", businessIntro: "Each business builds its own specialist identity while sharing the Group’s strategy, resources and market network. Dedicated service websites will launch progressively.", comingSoon: "Dedicated site in preparation", visit: "Visit WCG Loan",
+    businessKicker: "OUR BUSINESSES", businessTitle: "Seven businesses. One connected ecosystem.", businessIntro: "WCG brings seven specialist fields together in one place. Every service is presented directly on this page so businesses and partners can quickly understand our capabilities and potential areas of collaboration.",
     businesses: [
       ["Entertainment Production", "Connecting cultural creativity and commercial value through content, production and live experiences.", "Live events · Exhibitions · Screen content · Immersive experiences"],
       ["Classic Automotive", "Developing exhibitions, clubs, brand experiences and specialist services around collector-car culture.", "Museums · Members’ clubs · Brand stores · Vehicle care"],
@@ -126,7 +129,7 @@ const content = {
       ["Corporate Finance Advisory", "Helping SMEs clarify funding needs and connect with appropriate business-development solutions.", "Funding advisory · Capital planning · Credit consultation · SME services"],
       ["Brand Development", "Extending brand positioning into spatial and asset management for a consistent corporate experience.", "Brand creation · Brand management · IP · Spatial consultancy"],
     ],
-    directionKicker: "OUR DIRECTION", directionTitle: "Specialist strengths, connected resources", directionText: "The Group website is the unified gateway to WCG’s businesses. Each service brand will have its own positioning and website, connected through shared values, professional networks and corporate governance.", stages: ["Build a clear group identity", "Connect specialist services", "Expand cross-market partnerships"],
+    directionKicker: "OUR DIRECTION", directionTitle: "Specialist strengths, connected resources", directionText: "The Group website presents every specialist service in one place, connecting teams through WCG’s shared values, professional network and corporate governance to deliver more complete cross-sector solutions.", stages: ["Build a clear group identity", "Connect specialist services", "Expand cross-market partnerships"],
     milestone: "Milestone", milestoneYear: "2025", milestoneText: "Win Chance Group Holdings Limited was established to integrate a diversified portfolio and build a unified corporate brand. Further milestones will be added after verification.",
     contactKicker: "CONTACT", contactTitle: "Let’s explore the next opportunity", contactText: "Contact us to learn about the Group or discuss a potential partnership.", addressLabel: "Address", address: "Unit 1411, 14/F, Eastern Harbour Centre, 28 Hoi Chak Street, Quarry Bay, Hong Kong", phoneLabel: "Telephone", phone: "+852 2668 2600", emailLabel: "Email", email: "info@winchancegroup.com",
     form: { name: "Name", company: "Company", email: "Email address", message: "How can we help?", send: "Send enquiry" },
@@ -156,23 +159,41 @@ export default function Home() {
   return (
     <main className="site-shell">
       <header className="site-header">
-        <a className="brand-lockup" href="#top" aria-label={t.company}>
-          <img src="/wcg-logo.png" alt="WCG" />
-          <span><strong>{t.brand}</strong><small>{t.company}</small></span>
-        </a>
+        <div className="header-primary-row">
+          <a className="brand-lockup" href="#top" aria-label={t.company}>
+            <img src="/wcg-logo.png" alt="WCG" />
+            <span><strong>{t.brand}</strong><small>{t.company}</small></span>
+          </a>
 
-        <button className="menu-toggle" type="button" aria-label="Menu" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
-          <span /><span />
-        </button>
+          <nav className="primary-nav" aria-label="Primary navigation">
+            {t.nav.map(([id, label]) => <a key={id} href={`#${id}`}>{label}</a>)}
+          </nav>
 
-        <nav className={menuOpen ? "nav-open" : ""} aria-label="Primary navigation">
-          {t.nav.map(([id, label]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>)}
-        </nav>
+          <button className="menu-toggle" type="button" aria-label={t.menuLabel} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
+            <span /><span />
+          </button>
 
-        <div className="language-switcher" aria-label="Language">
-          {languageLabels.map((item) => (
-            <button key={item.key} type="button" className={lang === item.key ? "active" : ""} onClick={() => setLang(item.key)} aria-pressed={lang === item.key}>{item.label}</button>
-          ))}
+          <div className="language-switcher" aria-label="Language">
+            {languageLabels.map((item) => (
+              <button key={item.key} type="button" className={lang === item.key ? "active" : ""} onClick={() => setLang(item.key)} aria-pressed={lang === item.key}>{item.label}</button>
+            ))}
+          </div>
+        </div>
+
+        <div className={`header-menu ${menuOpen ? "nav-open" : ""}`}>
+          <nav className="service-nav" aria-label={t.serviceMenu}>
+            <span className="service-nav-label">{t.serviceMenu}</span>
+            <div className="service-nav-links">
+              {t.businesses.map(([title], index) => (
+                <a key={title} href={`#business-${index + 1}`} onClick={() => setMenuOpen(false)}>
+                  <span>0{index + 1}</span>{title}
+                </a>
+              ))}
+            </div>
+          </nav>
+          <nav className="mobile-utility-nav" aria-label="Mobile navigation">
+            {t.nav.map(([id, label]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>)}
+          </nav>
         </div>
       </header>
 
@@ -222,12 +243,16 @@ export default function Home() {
         </div>
         <div className="business-list">
           {t.businesses.map(([title, description, tags], index) => {
-            const isFinance = index === 5;
+            const services = tags.split(lang === "en" ? " · " : "・");
             return (
-              <article className="business-item" key={title}>
+              <article className="business-item" id={`business-${index + 1}`} key={title}>
                 <span className="business-number">0{index + 1}</span>
-                <div className="business-copy"><h3>{title}</h3><p>{description}</p><small>{tags}</small></div>
-                {isFinance ? <a href="https://wcg-loan-hk.easycircle360.chatgpt.site" target="_blank" rel="noreferrer" aria-label={t.visit}><span>{t.visit}</span>↗</a> : <div className="soon"><span>{t.comingSoon}</span>—</div>}
+                <div className="business-copy">
+                  <h3>{title}</h3>
+                  <p>{description}</p>
+                  <span className="service-scope-label">{t.serviceScope}</span>
+                  <ul>{services.map((service) => <li key={service}>{service}</li>)}</ul>
+                </div>
               </article>
             );
           })}
