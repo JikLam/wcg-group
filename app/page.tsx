@@ -4,6 +4,16 @@ import { FormEvent, useState } from "react";
 
 type Lang = "tc" | "sc" | "en";
 
+const serviceSlugs = [
+  "entertainment-production",
+  "classic-automotive",
+  "innovation-technology",
+  "digital-marketing",
+  "family-succession",
+  "corporate-finance",
+  "brand-development",
+] as const;
+
 const content = {
   tc: {
     brand: "鉅瀧集團",
@@ -17,6 +27,7 @@ const content = {
     menuLabel: "開啟導覽選單",
     serviceMenu: "集團服務",
     serviceScope: "服務範圍",
+    learnMore: "了解更多",
     eyebrow: "多元策略・專業協作・長遠價值",
     heroTitle: "連結創意、科技與資本，\n成就長遠價值。",
     heroText:
@@ -84,7 +95,7 @@ const content = {
     brand: "钜泷集团",
     company: "Win Chance Group Holdings Limited",
     nav: [["about", "关于集团"], ["businesses", "集团服务"], ["direction", "发展方向"], ["contact", "联系我们"]],
-    menuLabel: "打开导航菜单", serviceMenu: "集团服务", serviceScope: "服务范围",
+    menuLabel: "打开导航菜单", serviceMenu: "集团服务", serviceScope: "服务范围", learnMore: "了解更多",
     eyebrow: "多元策略・专业协作・长远价值",
     heroTitle: "连接创意、科技与资本，\n成就长远价值。",
     heroText: "钜泷集团立足香港，汇聚跨领域专业力量，为企业及合作伙伴提供具前瞻性、可落地的综合策略方案。",
@@ -111,7 +122,7 @@ const content = {
   en: {
     brand: "WCG", company: "Win Chance Group Holdings Limited",
     nav: [["about", "About"], ["businesses", "Group Services"], ["direction", "Direction"], ["contact", "Contact"]],
-    menuLabel: "Open navigation menu", serviceMenu: "Group services", serviceScope: "Service scope",
+    menuLabel: "Open navigation menu", serviceMenu: "Group services", serviceScope: "Service scope", learnMore: "Learn more",
     eyebrow: "Integrated strategy · Expert collaboration · Enduring value",
     heroTitle: "Connecting creativity, technology and capital for enduring value.",
     heroText: "Rooted in Hong Kong, Win Chance Group brings together cross-sector expertise to deliver forward-looking, actionable strategies for businesses and partners.",
@@ -185,7 +196,7 @@ export default function Home() {
             <span className="service-nav-label">{t.serviceMenu}</span>
             <div className="service-nav-links">
               {t.businesses.map(([title], index) => (
-                <a key={title} href={`#business-${index + 1}`} onClick={() => setMenuOpen(false)}>
+                <a key={title} href={`/services/${serviceSlugs[index]}`} onClick={() => setMenuOpen(false)}>
                   <span>0{index + 1}</span>{title}
                 </a>
               ))}
@@ -252,6 +263,7 @@ export default function Home() {
                   <p>{description}</p>
                   <span className="service-scope-label">{t.serviceScope}</span>
                   <ul>{services.map((service) => <li key={service}>{service}</li>)}</ul>
+                  <a className="business-more" href={`/services/${serviceSlugs[index]}`}>{t.learnMore}<span>→</span></a>
                 </div>
               </article>
             );
