@@ -44,7 +44,14 @@ export default function ServiceDetail({ service }: { service: ServiceRecord }) {
           <h1>{t.title}</h1>
           <p className="service-detail-lead">{t.short}</p>
         </div>
-        <div className="service-detail-number" aria-hidden="true">0{service.index}</div>
+        <div className={`service-detail-media ${service.imageFit === "contain" ? "is-contained" : ""}`}>
+          <img
+            src={service.image}
+            alt={t.title}
+            style={{ objectFit: service.imageFit, objectPosition: service.imagePosition }}
+          />
+          <span aria-hidden="true">0{service.index}</span>
+        </div>
       </section>
 
       <section className="service-overview-section">

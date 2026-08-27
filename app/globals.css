@@ -123,8 +123,12 @@ h1 { margin-bottom: 28px; white-space: pre-line; font-size: clamp(52px, 5.6vw, 8
 .businesses-intro { position: sticky; top: 130px; align-self: start; }
 .businesses-intro > p:last-child { max-width: 450px; margin-top: 32px; color: #adbbc5; line-height: 1.85; }
 .business-list { border-top: 1px solid rgba(255,255,255,.2); }
-.business-item { scroll-margin-top: 150px; display: grid; grid-template-columns: 54px minmax(0, 1fr); align-items: start; gap: 24px; min-height: 230px; border-bottom: 1px solid rgba(255,255,255,.16); }
+.business-item { scroll-margin-top: 150px; display: grid; grid-template-columns: 54px minmax(180px, .72fr) minmax(0, 1.28fr); align-items: center; gap: 26px; min-height: 310px; border-bottom: 1px solid rgba(255,255,255,.16); }
 .business-number { align-self: start; margin-top: 42px; color: var(--gold-light); font-family: Georgia, serif; font-size: 12px; }
+.business-image { position: relative; display: block; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; background: #152c3c; }
+.business-image::after { content: ""; position: absolute; inset: 0; border: 1px solid rgba(255,255,255,.14); box-shadow: inset 0 0 0 1px rgba(0,0,0,.08); pointer-events: none; }
+.business-image img { width: 100%; height: 100%; display: block; transition: transform .5s ease, filter .5s ease; }
+.business-image:hover img, .business-image:focus-visible img { transform: scale(1.035); filter: saturate(1.08); }
 .business-copy { padding: 34px 0; }
 .business-copy h3 { margin-bottom: 14px; font-family: Georgia, "Songti TC", serif; font-weight: 400; font-size: clamp(25px, 2.25vw, 34px); }
 .business-copy p { margin-bottom: 17px; color: #c1ccd3; line-height: 1.7; }
@@ -151,7 +155,11 @@ h1 { margin-bottom: 28px; white-space: pre-line; font-size: clamp(52px, 5.6vw, 8
 .service-detail-hero { min-height: 690px; display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr); align-items: center; gap: 7vw; padding: 220px clamp(22px, 7vw, 118px) 95px; background: radial-gradient(circle at 78% 45%, rgba(184,150,93,.2), transparent 26%), linear-gradient(120deg,#fbfaf6 0%,#f4eddf 100%); }
 .service-detail-hero h1 { max-width: 900px; font-size: clamp(54px, 6.5vw, 100px); }
 .service-detail-lead { max-width: 720px; color: #4f606b; font-size: clamp(18px, 1.65vw, 24px); line-height: 1.75; }
-.service-detail-number { justify-self: end; color: rgba(184,150,93,.25); font-family: Georgia, serif; font-size: clamp(150px, 22vw, 330px); line-height: .8; letter-spacing: -.08em; }
+.service-detail-media { position: relative; justify-self: end; width: min(100%, 560px); aspect-ratio: 4 / 5; overflow: hidden; background: #0f2838; box-shadow: 0 34px 80px rgba(27,36,41,.18); }
+.service-detail-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 58%, rgba(5,18,27,.64)); pointer-events: none; }
+.service-detail-media.is-contained { background: linear-gradient(145deg, #e9dfcd, #f8f4ec); }
+.service-detail-media img { width: 100%; height: 100%; display: block; }
+.service-detail-media span { position: absolute; z-index: 1; right: 26px; bottom: 18px; color: rgba(255,255,255,.9); font-family: Georgia, serif; font-size: 54px; line-height: 1; }
 .service-overview-section { display: grid; grid-template-columns: minmax(250px,.7fr) minmax(0,1.3fr); gap: 8vw; padding: 130px clamp(22px,7vw,118px); }
 .service-overview-section h2, .service-section-heading h2, .service-audience-section h2, .service-cta h2 { margin: 0; font-family: Georgia,"Songti TC",serif; font-size: clamp(38px,4vw,62px); font-weight: 400; line-height: 1.15; }
 .service-overview-section > p { max-width: 850px; color: #42535e; font-family: Georgia,"Songti TC",serif; font-size: clamp(22px,2.2vw,33px); line-height: 1.7; }
@@ -243,7 +251,7 @@ footer { padding: 54px clamp(22px, 7vw, 118px) 30px; background: #07151f; color:
   .detail-service-nav { display: flex; min-height: 48px; overflow-x: auto; padding: 0; }
   .detail-service-nav a { flex: 0 0 auto; min-width: 170px; min-height: 48px; }
   .service-detail-hero { min-height: auto; grid-template-columns: 1fr; padding-top: 180px; }
-  .service-detail-number { display: none; }
+  .service-detail-media { justify-self: start; width: min(100%, 620px); aspect-ratio: 16 / 10; }
   .service-overview-section, .service-audience-section { grid-template-columns: 1fr; }
 }
 
@@ -266,9 +274,10 @@ footer { padding: 54px clamp(22px, 7vw, 118px) 30px; background: #07151f; color:
   .section { padding: 92px 20px; }
   .principles article { grid-template-columns: 38px 1fr; }
   .principles article p { grid-column: 2; }
-  .business-item { grid-template-columns: 38px 1fr; align-items: start; padding: 28px 0; }
+  .business-item { grid-template-columns: 38px 1fr; align-items: start; gap: 18px; padding: 30px 0; }
   .business-number { margin-top: 8px; }
-  .business-copy { padding: 0; }
+  .business-image { grid-column: 2; aspect-ratio: 16 / 10; }
+  .business-copy { grid-column: 2; padding: 0; }
   .business-copy ul { grid-template-columns: 1fr; }
   .milestone { grid-template-columns: 1fr; }
   .milestone strong { font-size: 58px; }
@@ -278,6 +287,8 @@ footer { padding: 54px clamp(22px, 7vw, 118px) 30px; background: #07151f; color:
   .service-detail-primary { padding: 10px 16px; }
   .service-detail-hero { padding: 165px 20px 80px; }
   .service-detail-hero h1 { font-size: 48px; }
+  .service-detail-media { aspect-ratio: 4 / 3; }
+  .service-detail-media span { right: 18px; bottom: 14px; font-size: 40px; }
   .service-overview-section, .service-offerings-section, .service-audience-section, .service-process-section, .service-other-section, .service-cta { padding: 86px 20px; }
   .service-offering-grid, .service-process-grid, .service-other-links { grid-template-columns: 1fr; }
   .service-offering-grid article, .service-process-grid article, .service-other-links a:nth-child(odd) { border-right: 0; }

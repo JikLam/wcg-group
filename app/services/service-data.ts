@@ -11,6 +11,11 @@ export type ServiceCopy = {
 export type ServiceRecord = {
   slug: string;
   index: number;
+  image: string;
+  imageWidth: number;
+  imageHeight: number;
+  imagePosition: string;
+  imageFit: "cover" | "contain";
   content: Record<Lang, ServiceCopy>;
 };
 
@@ -18,6 +23,11 @@ export const services: ServiceRecord[] = [
   {
     slug: "entertainment-production",
     index: 1,
+    image: "/services/entertainment-production.jpg",
+    imageWidth: 956,
+    imageHeight: 1400,
+    imagePosition: "center 44%",
+    imageFit: "cover",
     content: {
       tc: {
         title: "影視娛樂製作",
@@ -45,6 +55,11 @@ export const services: ServiceRecord[] = [
   {
     slug: "classic-automotive",
     index: 2,
+    image: "/services/classic-automotive.jpg",
+    imageWidth: 980,
+    imageHeight: 549,
+    imagePosition: "center center",
+    imageFit: "cover",
     content: {
       tc: {
         title: "經典名車業務",
@@ -72,6 +87,11 @@ export const services: ServiceRecord[] = [
   {
     slug: "innovation-technology",
     index: 3,
+    image: "/services/innovation-technology.jpg",
+    imageWidth: 1000,
+    imageHeight: 436,
+    imagePosition: "center center",
+    imageFit: "cover",
     content: {
       tc: {
         title: "創新科技研發",
@@ -99,6 +119,11 @@ export const services: ServiceRecord[] = [
   {
     slug: "digital-marketing",
     index: 4,
+    image: "/services/digital-marketing.jpg",
+    imageWidth: 640,
+    imageHeight: 400,
+    imagePosition: "center center",
+    imageFit: "cover",
     content: {
       tc: {
         title: "數碼市場推廣",
@@ -126,6 +151,11 @@ export const services: ServiceRecord[] = [
   {
     slug: "family-succession",
     index: 5,
+    image: "/services/family-succession.jpg",
+    imageWidth: 974,
+    imageHeight: 1400,
+    imagePosition: "center 35%",
+    imageFit: "cover",
     content: {
       tc: {
         title: "家族傳承規劃",
@@ -153,6 +183,11 @@ export const services: ServiceRecord[] = [
   {
     slug: "corporate-finance",
     index: 6,
+    image: "/services/corporate-finance.png",
+    imageWidth: 2000,
+    imageHeight: 1334,
+    imagePosition: "center bottom",
+    imageFit: "contain",
     content: {
       tc: {
         title: "企業融資策劃",
@@ -180,6 +215,11 @@ export const services: ServiceRecord[] = [
   {
     slug: "brand-development",
     index: 7,
+    image: "/services/brand-development.jpg",
+    imageWidth: 1600,
+    imageHeight: 999,
+    imagePosition: "center center",
+    imageFit: "cover",
     content: {
       tc: {
         title: "品牌建設發展",

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import ServiceDetail from "./service-detail";
 import { findService, services } from "../service-data";
@@ -17,12 +18,21 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   const copy = service.content.tc;
   const title = `${copy.title} | 鉅瀧集團`;
   const description = copy.short;
+  const requestHeaders = await headers();
+  const host = requestHeaders.get("host") ?? "www.winchancegroup.com";
+  const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
+  const image = new URL(service.image, `${protocol}://${host}`).toString();
 
   return {
     title,
     description,
-    openGraph: { title, description, type: "website", images: [] },
-    twitter: { card: "summary", title, description, images: [] },
+    openGraph: {
+      title,
+      description,
+      type: "website",
+      images: [{ url: image, width: service.imageWidth, height: service.imageHeight, alt: copy.title }],
+    },
+    twitter: { card: "summary_large_image", title, description, images: [image] },
   };
 }
 

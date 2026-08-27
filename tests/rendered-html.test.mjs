@@ -7,7 +7,9 @@ async function render(path = "/") {
   const { default: worker } = await import(workerUrl.href);
 
   return worker.fetch(
-    new Request(`https://wcg-group.test${path}`, { headers: { accept: "text/html" } }),
+    new Request(`https://wcg-group.test${path}`, {
+      headers: { accept: "text/html", host: "wcg-group.test", "x-forwarded-proto": "https" },
+    }),
     { ASSETS: { fetch: async () => new Response("Not found", { status: 404 }) } },
     { waitUntil() {}, passThroughOnException() {} },
   );
@@ -26,6 +28,8 @@ test("server-renders the WCG corporate website", async () => {
   assert.match(html, /id="business-1"/);
   assert.match(html, /服務範圍/);
   assert.match(html, /\/services\/entertainment-production/);
+  assert.match(html, /\/services\/entertainment-production\.jpg/);
+  assert.match(html, /\/services\/classic-automotive\.jpg/);
   assert.match(html, /了解更多/);
   assert.doesNotMatch(html, /wcg-loan-hk|獨立網站籌備中|Dedicated site in preparation/i);
   assert.match(html, /info@winchancegroup\.com/);
@@ -34,8 +38,8 @@ test("server-renders the WCG corporate website", async () => {
 });
 
 for (const detail of [
-  { path: "/services/entertainment-production", title: "影視娛樂製作", text: "商演及大型活動策劃製作" },
-  { path: "/services/brand-development", title: "品牌建設發展", text: "品牌創建與定位策略" },
+  { path: "/services/entertainment-production", title: "影視娛樂製作", text: "商演及大型活動策劃製作", image: "entertainment-production.jpg" },
+  { path: "/services/brand-development", title: "品牌建設發展", text: "品牌創建與定位策略", image: "brand-development.jpg" },
 ]) {
   test(`server-renders detail metadata for ${detail.path}`, async () => {
     const response = await render(detail.path);
@@ -45,6 +49,7 @@ for (const detail of [
     assert.match(html, new RegExp(detail.text));
     assert.match(html, new RegExp(`property="og:title" content="${detail.title} \\| 鉅瀧集團"`));
     assert.match(html, new RegExp(`name="twitter:title" content="${detail.title} \\| 鉅瀧集團"`));
+    assert.match(html, new RegExp(`https://wcg-group\\.test/services/${detail.image}`));
     assert.doesNotMatch(html, /\/og\.png/);
   });
 }

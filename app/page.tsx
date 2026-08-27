@@ -1,18 +1,9 @@
 "use client";
 
 import { FormEvent, useState } from "react";
+import { services as serviceRecords } from "./services/service-data";
 
 type Lang = "tc" | "sc" | "en";
-
-const serviceSlugs = [
-  "entertainment-production",
-  "classic-automotive",
-  "innovation-technology",
-  "digital-marketing",
-  "family-succession",
-  "corporate-finance",
-  "brand-development",
-] as const;
 
 const content = {
   tc: {
@@ -196,7 +187,7 @@ export default function Home() {
             <span className="service-nav-label">{t.serviceMenu}</span>
             <div className="service-nav-links">
               {t.businesses.map(([title], index) => (
-                <a key={title} href={`/services/${serviceSlugs[index]}`} onClick={() => setMenuOpen(false)}>
+                <a key={title} href={`/services/${serviceRecords[index].slug}`} onClick={() => setMenuOpen(false)}>
                   <span>0{index + 1}</span>{title}
                 </a>
               ))}
@@ -255,15 +246,23 @@ export default function Home() {
         <div className="business-list">
           {t.businesses.map(([title, description, tags], index) => {
             const services = tags.split(lang === "en" ? " · " : "・");
+            const record = serviceRecords[index];
             return (
               <article className="business-item" id={`business-${index + 1}`} key={title}>
                 <span className="business-number">0{index + 1}</span>
+                <a className="business-image" href={`/services/${record.slug}`} aria-label={`${t.learnMore}: ${title}`}>
+                  <img
+                    src={record.image}
+                    alt={title}
+                    style={{ objectFit: record.imageFit, objectPosition: record.imagePosition }}
+                  />
+                </a>
                 <div className="business-copy">
                   <h3>{title}</h3>
                   <p>{description}</p>
                   <span className="service-scope-label">{t.serviceScope}</span>
                   <ul>{services.map((service) => <li key={service}>{service}</li>)}</ul>
-                  <a className="business-more" href={`/services/${serviceSlugs[index]}`}>{t.learnMore}<span>→</span></a>
+                  <a className="business-more" href={`/services/${record.slug}`}>{t.learnMore}<span>→</span></a>
                 </div>
               </article>
             );
