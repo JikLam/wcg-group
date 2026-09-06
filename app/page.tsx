@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import { services as serviceRecords } from "./services/service-data";
 
 type Lang = "tc" | "sc" | "en";
@@ -31,7 +31,8 @@ const content = {
     year: "2025",
     seven: "七大範疇",
     hk: "香港",
-    aboutKicker: "ABOUT WCG",
+    heroCaption: "鉅瀧集團・香港・2025",
+    aboutKicker: "關於鉅瀧",
     aboutTitle: "以跨界視野，推動企業持續成長",
     aboutText:
       "我們相信，每項長遠發展都源於清晰策略、可靠執行與相互信任。集團整合品牌、娛樂、科技、汽車產業、企業融資及傳承規劃等專業能力，協助合作夥伴掌握新機遇。",
@@ -40,7 +41,7 @@ const content = {
       ["願景", "成為連接香港、中國內地與國際市場的可信賴策略合作夥伴。"],
       ["核心價值", "追求極致・創新共贏・以人為本・誠信協作"],
     ],
-    businessKicker: "OUR BUSINESSES",
+    businessKicker: "集團業務",
     businessTitle: "七大業務，共建企業生態",
     businessIntro:
       "集團整合七大專業範疇，所有服務內容均可於本頁直接瀏覽，讓企業及合作夥伴快速了解我們的能力與合作方向。",
@@ -53,7 +54,11 @@ const content = {
       ["企業融資策劃", "協助中小企梳理融資需要，連接合適的企業發展方案。", "企業融資諮詢・資金規劃・信用狀態諮詢・SME 服務"],
       ["品牌建設發展", "由品牌定位延伸至空間及資產管理，建立一致的企業體驗。", "品牌創建・品牌管理・知識產權・空間顧問"],
     ],
-    directionKicker: "OUR DIRECTION",
+    overviewLabel: "集團概覽",
+    swipeHint: "左右滑動，探索七大業務範疇",
+    previous: "上一項",
+    next: "下一項",
+    directionKicker: "發展方向",
     directionTitle: "讓專業各展所長，讓資源彼此連結",
     directionText:
       "集團網站集中展示各項專業服務，並以 WCG 的共同價值、專業網絡及企業管治連結不同團隊，為客戶提供更完整的跨領域方案。",
@@ -61,7 +66,7 @@ const content = {
     milestone: "發展里程碑",
     milestoneYear: "2025",
     milestoneText: "Win Chance Group Holdings Limited 正式成立，開展多元業務整合與品牌建設。更多里程碑將於資料核實後更新。",
-    contactKicker: "CONTACT",
+    contactKicker: "聯絡我們",
     contactTitle: "攜手探索下一個機遇",
     contactText: "如欲了解集團業務或商討合作，歡迎與我們聯絡。",
     addressLabel: "地址",
@@ -91,10 +96,11 @@ const content = {
     heroTitle: "连接创意、科技与资本，\n成就长远价值。",
     heroText: "钜泷集团立足香港，汇聚跨领域专业力量，为企业及合作伙伴提供具前瞻性、可落地的综合策略方案。",
     explore: "探索集团业务", contactUs: "联系我们", established: "成立年份", sectors: "核心业务", base: "集团基地", year: "2025", seven: "七大范畴", hk: "香港",
-    aboutKicker: "ABOUT WCG", aboutTitle: "以跨界视野，推动企业持续成长",
+    heroCaption: "钜泷集团・香港・2025",
+    aboutKicker: "关于钜泷", aboutTitle: "以跨界视野，推动企业持续成长",
     aboutText: "我们相信，每项长远发展都源于清晰策略、可靠执行与相互信任。集团整合品牌、娱乐、科技、汽车产业、企业融资及传承规划等专业能力，协助合作伙伴掌握新机遇。",
     pillars: [["使命", "以专业整合与创新思维，为客户建立可持续、可实践的增长方案。"], ["愿景", "成为连接香港、中国内地与国际市场的可信赖策略合作伙伴。"], ["核心价值", "追求极致・创新共赢・以人为本・诚信协作"]],
-    businessKicker: "OUR BUSINESSES", businessTitle: "七大业务，共建企业生态", businessIntro: "集团整合七大专业范畴，所有服务内容均可于本页直接浏览，让企业及合作伙伴快速了解我们的能力与合作方向。",
+    businessKicker: "集团业务", businessTitle: "七大业务，共建企业生态", businessIntro: "集团整合七大专业范畴，所有服务内容均可于本页直接浏览，让企业及合作伙伴快速了解我们的能力与合作方向。",
     businesses: [
       ["影视娱乐制作", "整合内容、制作与现场体验，连接文化创意与商业价值。", "商演及大型活动・专业展览・影视内容・沉浸式体验"],
       ["经典名车业务", "围绕珍藏汽车文化，发展展览、会所、品牌体验与专业服务。", "名车博物馆・会员会所・品牌门店・护理维修"],
@@ -104,9 +110,10 @@ const content = {
       ["企业融资策划", "协助中小企梳理融资需要，连接合适的企业发展方案。", "企业融资咨询・资金规划・信用状态咨询・SME 服务"],
       ["品牌建设发展", "由品牌定位延伸至空间及资产管理，建立一致的企业体验。", "品牌创建・品牌管理・知识产权・空间顾问"],
     ],
-    directionKicker: "OUR DIRECTION", directionTitle: "让专业各展所长，让资源彼此连接", directionText: "集团网站集中展示各项专业服务，并以 WCG 的共同价值、专业网络及企业管治连接不同团队，为客户提供更完整的跨领域方案。", stages: ["建立清晰的集团品牌", "连接各项专业服务", "拓展跨地域合作机会"],
+    overviewLabel: "集团概览", swipeHint: "左右滑动，探索七大业务范畴", previous: "上一项", next: "下一项",
+    directionKicker: "发展方向", directionTitle: "让专业各展所长，让资源彼此连接", directionText: "集团网站集中展示各项专业服务，并以 WCG 的共同价值、专业网络及企业管治连接不同团队，为客户提供更完整的跨领域方案。", stages: ["建立清晰的集团品牌", "连接各项专业服务", "拓展跨地域合作机会"],
     milestone: "发展里程碑", milestoneYear: "2025", milestoneText: "Win Chance Group Holdings Limited 正式成立，开展多元业务整合与品牌建设。更多里程碑将于资料核实后更新。",
-    contactKicker: "CONTACT", contactTitle: "携手探索下一个机遇", contactText: "如欲了解集团业务或商讨合作，欢迎与我们联系。", addressLabel: "地址", address: "香港鲗鱼涌海泽街28号东港中心14楼1411室", phoneLabel: "电话", phone: "+852 2668 2600", emailLabel: "电邮", email: "info@winchancegroup.com",
+    contactKicker: "联系我们", contactTitle: "携手探索下一个机遇", contactText: "如欲了解集团业务或商讨合作，欢迎与我们联系。", addressLabel: "地址", address: "香港鲗鱼涌海泽街28号东港中心14楼1411室", phoneLabel: "电话", phone: "+852 2668 2600", emailLabel: "电邮", email: "info@winchancegroup.com",
     form: { name: "姓名", company: "公司名称", email: "电邮地址", message: "查询内容", send: "发送查询" },
     legal: "公司注册、牌照及法律资料将于核实后更新。网站内容只作一般企业介绍用途。", privacy: "隐私政策", terms: "使用条款", rights: "版权所有",
   },
@@ -118,6 +125,7 @@ const content = {
     heroTitle: "Connecting creativity, technology and capital for enduring value.",
     heroText: "Rooted in Hong Kong, Win Chance Group brings together cross-sector expertise to deliver forward-looking, actionable strategies for businesses and partners.",
     explore: "Explore our businesses", contactUs: "Contact us", established: "Established", sectors: "Core businesses", base: "Group base", year: "2025", seven: "Seven sectors", hk: "Hong Kong",
+    heroCaption: "WIN CHANCE GROUP · HONG KONG · 2025",
     aboutKicker: "ABOUT WCG", aboutTitle: "A cross-sector perspective on sustainable growth",
     aboutText: "We believe enduring progress begins with clear strategy, dependable execution and mutual trust. WCG connects expertise across branding, entertainment, technology, automotive culture, corporate finance and succession planning to help partners act on new opportunities.",
     pillars: [["Mission", "Create practical, sustainable growth through integrated expertise and innovative thinking."], ["Vision", "Be a trusted strategic partner connecting Hong Kong, Mainland China and international markets."], ["Values", "Excellence · Innovation · People · Integrity · Partnership"]],
@@ -131,6 +139,7 @@ const content = {
       ["Corporate Finance Advisory", "Helping SMEs clarify funding needs and connect with appropriate business-development solutions.", "Funding advisory · Capital planning · Credit consultation · SME services"],
       ["Brand Development", "Extending brand positioning into spatial and asset management for a consistent corporate experience.", "Brand creation · Brand management · IP · Spatial consultancy"],
     ],
+    overviewLabel: "Group overview", swipeHint: "Swipe to explore our seven business sectors", previous: "Previous", next: "Next",
     directionKicker: "OUR DIRECTION", directionTitle: "Specialist strengths, connected resources", directionText: "The Group website presents every specialist service in one place, connecting teams through WCG’s shared values, professional network and corporate governance to deliver more complete cross-sector solutions.", stages: ["Build a clear group identity", "Connect specialist services", "Expand cross-market partnerships"],
     milestone: "Milestone", milestoneYear: "2025", milestoneText: "Win Chance Group Holdings Limited was established to integrate a diversified portfolio and build a unified corporate brand. Further milestones will be added after verification.",
     contactKicker: "CONTACT", contactTitle: "Let’s explore the next opportunity", contactText: "Contact us to learn about the Group or discuss a potential partnership.", addressLabel: "Address", address: "Unit 1411, 14/F, Eastern Harbour Centre, 28 Hoi Chak Street, Quarry Bay, Hong Kong", phoneLabel: "Telephone", phone: "+852 2668 2600", emailLabel: "Email", email: "info@winchancegroup.com",
@@ -148,7 +157,14 @@ const languageLabels: { key: Lang; label: string }[] = [
 export default function Home() {
   const [lang, setLang] = useState<Lang>("tc");
   const [menuOpen, setMenuOpen] = useState(false);
+  const scopeTrack = useRef<HTMLDivElement>(null);
   const t = content[lang];
+
+  function moveScope(direction: -1 | 1) {
+    const track = scopeTrack.current;
+    if (!track) return;
+    track.scrollBy({ left: direction * Math.min(track.clientWidth * 0.82, 820), behavior: "smooth" });
+  }
 
   function submitEnquiry(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -163,12 +179,15 @@ export default function Home() {
       <header className="site-header">
         <div className="header-primary-row">
           <a className="brand-lockup" href="#top" aria-label={t.company}>
-            <img src="/wcg-logo.png" alt="WCG" />
+            <img src="/wcg-logo-transparent.png" alt="WCG" />
             <span><strong>{t.brand}</strong><small>{t.company}</small></span>
           </a>
 
           <nav className="primary-nav" aria-label="Primary navigation">
-            {t.nav.map(([id, label]) => <a key={id} href={`#${id}`}>{label}</a>)}
+            <a href="#about">{t.nav[0][1]}</a>
+            <button type="button" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{t.nav[1][1]}</button>
+            <a href="/direction">{t.nav[2][1]}</a>
+            <a href="#contact">{t.nav[3][1]}</a>
           </nav>
 
           <button className="menu-toggle" type="button" aria-label={t.menuLabel} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
@@ -194,7 +213,10 @@ export default function Home() {
             </div>
           </nav>
           <nav className="mobile-utility-nav" aria-label="Mobile navigation">
-            {t.nav.map(([id, label]) => <a key={id} href={`#${id}`} onClick={() => setMenuOpen(false)}>{label}</a>)}
+            <a href="#about" onClick={() => setMenuOpen(false)}>{t.nav[0][1]}</a>
+            <a href="#businesses" onClick={() => setMenuOpen(false)}>{t.nav[1][1]}</a>
+            <a href="/direction" onClick={() => setMenuOpen(false)}>{t.nav[2][1]}</a>
+            <a href="#contact" onClick={() => setMenuOpen(false)}>{t.nav[3][1]}</a>
           </nav>
         </div>
       </header>
@@ -202,7 +224,7 @@ export default function Home() {
       <section className="hero" id="top">
         <div className="hero-copy">
           <p className="eyebrow">{t.eyebrow}</p>
-          <h1>{t.heroTitle}</h1>
+          <h1>{t.heroTitle.split("\n").map((line) => <span key={line}>{line}</span>)}</h1>
           <p className="hero-intro">{t.heroText}</p>
           <div className="hero-actions">
             <a className="button button-gold" href="#businesses">{t.explore}<span>↘</span></a>
@@ -212,8 +234,8 @@ export default function Home() {
         <div className="hero-visual" aria-hidden="true">
           <div className="orbit orbit-one" />
           <div className="orbit orbit-two" />
-          <div className="hero-emblem"><img src="/wcg-logo.png" alt="" /></div>
-          <span className="visual-caption">WIN CHANCE GROUP · HONG KONG · 2025</span>
+          <div className="hero-emblem"><img src="/wcg-logo-transparent.png" alt="" /></div>
+          <span className="visual-caption">{t.heroCaption}</span>
         </div>
         <div className="hero-stats">
           <div><small>{t.established}</small><strong>{t.year}</strong></div>
@@ -235,6 +257,41 @@ export default function Home() {
             ))}
           </div>
         </div>
+
+        <div className="scope-showcase">
+          <div className="scope-showcase-heading">
+            <div>
+              <p className="section-kicker">{t.businessKicker}</p>
+              <h3>{t.swipeHint}</h3>
+            </div>
+            <div className="scope-controls" aria-label={t.swipeHint}>
+              <button type="button" onClick={() => moveScope(-1)} aria-label={t.previous}>←</button>
+              <button type="button" onClick={() => moveScope(1)} aria-label={t.next}>→</button>
+            </div>
+          </div>
+          <div className="scope-track" ref={scopeTrack}>
+            {t.businesses.map(([title, description], index) => {
+              const record = serviceRecords[index];
+              return (
+                <a className="scope-card" key={title} href={`/services/${record.slug}`}>
+                  <div className="scope-card-media">
+                    <img
+                      src={record.image}
+                      alt=""
+                      style={{ objectFit: record.imageFit, objectPosition: record.imagePosition }}
+                    />
+                    <span>0{index + 1}</span>
+                  </div>
+                  <div className="scope-card-copy">
+                    <h4>{title}</h4>
+                    <p>{description}</p>
+                    <strong>{t.learnMore}<span>→</span></strong>
+                  </div>
+                </a>
+              );
+            })}
+          </div>
+        </div>
       </section>
 
       <section className="section businesses" id="businesses">
@@ -244,12 +301,10 @@ export default function Home() {
           <p>{t.businessIntro}</p>
         </div>
         <div className="business-list">
-          {t.businesses.map(([title, description, tags], index) => {
-            const services = tags.split(lang === "en" ? " · " : "・");
+          {t.businesses.map(([title, description], index) => {
             const record = serviceRecords[index];
             return (
               <article className="business-item" id={`business-${index + 1}`} key={title}>
-                <span className="business-number">0{index + 1}</span>
                 <a className="business-image" href={`/services/${record.slug}`} aria-label={`${t.learnMore}: ${title}`}>
                   <img
                     src={record.image}
@@ -258,30 +313,15 @@ export default function Home() {
                   />
                 </a>
                 <div className="business-copy">
+                  <span className="business-number">0{index + 1}</span>
                   <h3>{title}</h3>
                   <p>{description}</p>
-                  <span className="service-scope-label">{t.serviceScope}</span>
-                  <ul>{services.map((service) => <li key={service}>{service}</li>)}</ul>
                   <a className="business-more" href={`/services/${record.slug}`}>{t.learnMore}<span>→</span></a>
                 </div>
               </article>
             );
           })}
         </div>
-      </section>
-
-      <section className="section direction" id="direction">
-        <div className="direction-copy">
-          <p className="section-kicker">{t.directionKicker}</p>
-          <h2>{t.directionTitle}</h2>
-          <p>{t.directionText}</p>
-        </div>
-        <div className="direction-steps">
-          {t.stages.map((stage, index) => <div key={stage}><span>0{index + 1}</span><p>{stage}</p></div>)}
-        </div>
-        <aside className="milestone">
-          <small>{t.milestone}</small><strong>{t.milestoneYear}</strong><p>{t.milestoneText}</p>
-        </aside>
       </section>
 
       <section className="section contact" id="contact">
@@ -305,7 +345,7 @@ export default function Home() {
       </section>
 
       <footer>
-        <div className="footer-brand"><img src="/wcg-logo.png" alt="WCG" /><span>{t.company}</span></div>
+        <div className="footer-brand"><img src="/wcg-logo-transparent.png" alt="WCG" /><span>{t.company}</span></div>
         <p className="legal-note" id="legal">{t.legal}</p>
         <div className="footer-bottom"><span>© 2026 {t.company}. {t.rights}.</span><span>{t.privacy} · {t.terms}</span></div>
       </footer>

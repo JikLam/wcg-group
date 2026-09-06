@@ -14,7 +14,7 @@ export async function generateMetadata(): Promise<Metadata> {
     metadataBase: base,
     title,
     description,
-    icons: { icon: "/wcg-logo.png", shortcut: "/wcg-logo.png", apple: "/wcg-logo.png" },
+    icons: { icon: "/wcg-logo-transparent.png", shortcut: "/wcg-logo-transparent.png", apple: "/wcg-logo-transparent.png" },
     openGraph: {
       title,
       description,
