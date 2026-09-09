@@ -261,6 +261,26 @@ export default function Home() {
         </div>
       </section>
 
+      <section className="section collaboration" id="collaboration">
+        <div className="collaboration-heading">
+          <p className="section-kicker">{t.collaborationKicker}</p>
+          <h2>{t.collaborationTitle}</h2>
+          <p>{t.collaborationIntro}</p>
+          <a className="text-link" href="/partners">{t.learnMore}<span>→</span></a>
+        </div>
+        <div className="collaboration-content">
+          <div className="collaboration-types">
+            {t.collaborationTypes.map(([title, text], index) => (
+              <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>
+            ))}
+          </div>
+          <a className="partner-preview" href="/partners" aria-label={t.collaborationKicker}>
+            {strategicPartners.map(([name, image]) => <span key={name}><img src={image} alt={name} /></span>)}
+          </a>
+          <a className="button button-gold" href="#contact">{t.collaborationCta}<span>↗</span></a>
+        </div>
+      </section>
+
       <section className="section about" id="about">
         <div className="section-heading">
           <p className="section-kicker">{t.aboutKicker}</p>
@@ -318,46 +338,29 @@ export default function Home() {
           <p>{t.businessIntro}</p>
         </div>
         <div className="business-list">
-          {t.businesses.map(([title, description], index) => {
+          {t.businesses.map(([title, description, scope], index) => {
             const record = serviceRecords[index];
             return (
-              <article className="business-item" id={`business-${index + 1}`} key={title}>
+              <article className={`business-item business-item-${index + 1} ${record.imageFit === "contain" ? "is-contained" : ""}`} id={`business-${index + 1}`} key={title}>
                 <a className="business-image" href={`/services/${record.slug}`} aria-label={`${t.learnMore}: ${title}`}>
                   <img
                     src={record.image}
                     alt={title}
                     style={{ objectFit: record.imageFit, objectPosition: record.imagePosition }}
                   />
+                  <span className="business-image-overlay" />
+                  <span className="business-number">0{index + 1}</span>
+                  <span className="business-image-link">{t.learnMore} ↗</span>
                 </a>
                 <div className="business-copy">
-                  <span className="business-number">0{index + 1}</span>
                   <h3>{title}</h3>
                   <p>{description}</p>
+                  <p className="business-scope">{scope}</p>
                   <a className="business-more" href={`/services/${record.slug}`}>{t.learnMore}<span>→</span></a>
                 </div>
               </article>
             );
           })}
-        </div>
-      </section>
-
-      <section className="section collaboration" id="collaboration">
-        <div className="collaboration-heading">
-          <p className="section-kicker">{t.collaborationKicker}</p>
-          <h2>{t.collaborationTitle}</h2>
-          <p>{t.collaborationIntro}</p>
-          <a className="text-link" href="/partners">{t.learnMore}<span>→</span></a>
-        </div>
-        <div className="collaboration-content">
-          <div className="collaboration-types">
-            {t.collaborationTypes.map(([title, text], index) => (
-              <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>
-            ))}
-          </div>
-          <a className="partner-preview" href="/partners" aria-label={t.collaborationKicker}>
-            {strategicPartners.map(([name, image]) => <span key={name}><img src={image} alt={name} /></span>)}
-          </a>
-          <a className="button button-gold" href="#contact">{t.collaborationCta}<span>↗</span></a>
         </div>
       </section>
 
