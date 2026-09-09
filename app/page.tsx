@@ -2,6 +2,7 @@
 
 import { FormEvent, useRef, useState } from "react";
 import { services as serviceRecords } from "./services/service-data";
+import { strategicPartners } from "./partners/partner-data";
 
 type Lang = "tc" | "sc" | "en";
 
@@ -354,7 +355,7 @@ export default function Home() {
             ))}
           </div>
           <a className="partner-preview" href="/partners" aria-label={t.collaborationKicker}>
-            <img src="/partners/wcg-partners.png" alt={t.collaborationKicker} />
+            {strategicPartners.map(([name, image]) => <span key={name}><img src={image} alt={name} /></span>)}
           </a>
           <a className="button button-gold" href="#contact">{t.collaborationCta}<span>↗</span></a>
         </div>

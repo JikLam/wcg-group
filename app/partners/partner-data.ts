@@ -1,0 +1,31 @@
+export const strategicPartners = [
+  ["Huawei", "/partners/huawei.png"],
+  ["Tencent Cloud", "/partners/tencent-cloud.png"],
+  ["Alibaba Cloud", "/partners/alibaba-cloud.png"],
+  ["Microsoft Azure", "/partners/microsoft-azure.png"],
+  ["AWS", "/partners/aws.png"],
+  ["Baidu", "/partners/baidu.png"],
+] as const;
+
+export const featuredPartners = [
+  ["Sunlon", "/partners/sunlon.png"],
+  ["Global Vision", "/partners/global-vision.png"],
+  ["GAC Group", "/partners/gac-group.png"],
+  ["GAC Toyota", "/partners/gac-toyota.jpg"],
+  ["Goldwind", "/partners/goldwind.jpg"],
+  ["SK Telecom", "/partners/sk-telecom.png"],
+  ["Yoshinoya", "/partners/yoshinoya.jpg"],
+  ["Supor", "/partners/supor.jpg"],
+  ["Universal Beijing", "/partners/universal-beijing.jpg"],
+  ["Sany", "/partners/sany.jpg"],
+  ["Fengjr", "/partners/fengjr.jpg"],
+  ["Caogen", "/partners/caogen.jpg"],
+  ["Fuyao Group", "/partners/fuyao.jpg"],
+  ["Jusbe", "/partners/jusbe.jpg"],
+  ["Rong Cloud", "/partners/rong-cloud.jpg"],
+  ["UIC", "/partners/uic.jpg"],
+  ["Fonterra", "/partners/fonterra.jpg"],
+  ["Bright Scholar", "/partners/bright-scholar.jpg"],
+  ["Hisense", "/partners/hisense.png"],
+  ["NRI", "/partners/nri.jpg"],
+] as const;
