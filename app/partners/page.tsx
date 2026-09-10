@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import SubpageHeader from "../components/subpage-header";
 import type { Lang } from "../services/service-data";
 import { featuredPartners, strategicPartners } from "./partner-data";
@@ -46,7 +45,7 @@ export default function PartnersPage() {
       </section>
       <section className="partners-modes"><div><p className="section-kicker">{t.modes}</p><h2>{t.modesTitle}</h2></div><div className="partner-mode-grid">{t.cards.map(([title, text], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div></section>
       <section className="direction-cta"><div><h2>{t.ctaTitle}</h2><p>{t.ctaText}</p></div><a className="button button-gold" href="mailto:info@winchancegroup.com">{t.cta}<span>↗</span></a></section>
-      <footer className="service-detail-footer"><span>© 2026 Win Chance Group Holdings Limited. {t.rights}.</span><Link href="/">{t.home}</Link></footer>
+      <footer className="service-detail-footer"><span>© 2026 Win Chance Group Holdings Limited. {t.rights}.</span><a href="/">{t.home}</a></footer>
     </main>
   );
 }

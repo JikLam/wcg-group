@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import SubpageHeader from "../components/subpage-header";
 import { services, type Lang } from "./service-data";
 
@@ -45,20 +44,20 @@ export default function ServicesPage() {
           {services.map((service) => {
             const item = service.content[lang];
             return (
-              <Link className="services-editorial-card" key={service.slug} href={`/services/${service.slug}`}>
+              <a className="services-editorial-card" key={service.slug} href={`/services/${service.slug}`}>
                 <div className={`services-editorial-media ${service.imageFit === "contain" ? "is-contained" : ""}`}>
                   <img src={service.image} alt={item.title} style={{ objectFit: service.imageFit, objectPosition: service.imagePosition }} />
                   <span>0{service.index}</span>
                 </div>
                 <div className="services-editorial-copy"><h3>{item.title}</h3><p>{item.short}</p><strong>{t.learn}<b>→</b></strong></div>
-              </Link>
+              </a>
             );
           })}
         </div>
       </section>
 
       <section className="direction-cta"><div><h2>{t.ctaTitle}</h2><p>{t.ctaText}</p></div><a className="button button-gold" href="mailto:info@winchancegroup.com">{t.cta}<span>↗</span></a></section>
-      <footer className="service-detail-footer"><span>© 2026 Win Chance Group Holdings Limited. {t.rights}.</span><Link href="/">{t.home}</Link></footer>
+      <footer className="service-detail-footer"><span>© 2026 Win Chance Group Holdings Limited. {t.rights}.</span><a href="/">{t.home}</a></footer>
     </main>
   );
 }

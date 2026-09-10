@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import SubpageHeader from "../components/subpage-header";
 import { services, type Lang } from "../services/service-data";
 
@@ -50,10 +49,10 @@ export default function AboutPage() {
       </section>
       <section className="about-services">
         <p className="section-kicker">{t.scope}</p><h2>{t.scopeTitle}</h2>
-        <div className="about-service-list">{services.map((service) => <Link key={service.slug} href={`/services/${service.slug}`}><span>0{service.index}</span><strong>{service.content[lang].title}</strong><em>{t.learn} →</em></Link>)}</div>
+        <div className="about-service-list">{services.map((service) => <a key={service.slug} href={`/services/${service.slug}`}><span>0{service.index}</span><strong>{service.content[lang].title}</strong><em>{t.learn} →</em></a>)}</div>
       </section>
       <section className="direction-cta"><div><h2>{t.cta}</h2><p>info@winchancegroup.com · +852 2668 2600</p></div><a className="button button-gold" href="mailto:info@winchancegroup.com">{t.contact}<span>↗</span></a></section>
-      <footer className="service-detail-footer"><span>© 2026 Win Chance Group Holdings Limited. {t.rights}.</span><Link href="/">{t.home}</Link></footer>
+      <footer className="service-detail-footer"><span>© 2026 Win Chance Group Holdings Limited. {t.rights}.</span><a href="/">{t.home}</a></footer>
     </main>
   );
 }

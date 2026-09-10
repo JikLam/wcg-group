@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import type { Lang } from "../services/service-data";
 
@@ -43,13 +42,13 @@ export default function SubpageHeader({
 
   return (
     <header className="direction-header subpage-header">
-      <Link className="brand-lockup" href="/" aria-label="Win Chance Group Holdings Limited">
+      <a className="brand-lockup" href="/" aria-label="Win Chance Group Holdings Limited">
         <img src="/wcg-logo-transparent.png" alt="WCG" />
         <span><strong>{labels.brand}</strong><small>Win Chance Group Holdings Limited</small></span>
-      </Link>
+      </a>
       <nav className={open ? "open" : ""} aria-label={labels.home}>
         {links.map(([key, label, href]) => (
-          <Link key={key} className={key === active ? "active" : ""} href={href} onClick={() => setOpen(false)}>{label}</Link>
+          <a key={key} className={key === active ? "active" : ""} href={href} onClick={() => setOpen(false)}>{label}</a>
         ))}
       </nav>
       <button className="subpage-menu-toggle" type="button" aria-label="Menu" aria-expanded={open} onClick={() => setOpen(!open)}>

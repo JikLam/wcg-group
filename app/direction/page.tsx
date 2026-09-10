@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import SubpageHeader from "../components/subpage-header";
 
 type Lang = "tc" | "sc" | "en";
@@ -110,7 +109,7 @@ export default function DirectionPage() {
 
       <footer className="service-detail-footer">
         <span>© 2026 Win Chance Group Holdings Limited. {t.rights}.</span>
-        <Link href="/">{t.home}</Link>
+        <a href="/">{t.home}</a>
       </footer>
     </main>
   );
