@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { Lang, ServiceRecord, servicePageLabels, services } from "../service-data";
 
 const languageLabels: { key: Lang; label: string }[] = [
@@ -20,11 +19,11 @@ export default function ServiceDetail({ service }: { service: ServiceRecord }) {
     <main className="service-page">
       <header className="service-detail-header">
         <div className="service-detail-primary">
-          <Link className="brand-lockup" href="/" aria-label="Win Chance Group Holdings Limited">
+          <a className="brand-lockup" href="/" aria-label="Win Chance Group Holdings Limited">
             <img src="/wcg-logo-transparent.png" alt="WCG" />
             <span><strong>{labels.brand}</strong><small>Win Chance Group Holdings Limited</small></span>
-          </Link>
-          <Link className="service-back" href="/services"><span>←</span>{labels.allServices}</Link>
+          </a>
+          <a className="service-back" href="/services"><span>←</span>{labels.allServices}</a>
           <div className="language-switcher" aria-label={labels.language}>
             {languageLabels.map((item) => (
               <button key={item.key} type="button" className={lang === item.key ? "active" : ""} onClick={() => setLang(item.key)} aria-pressed={lang === item.key}>{item.label}</button>
@@ -33,9 +32,9 @@ export default function ServiceDetail({ service }: { service: ServiceRecord }) {
         </div>
         <nav className="detail-service-nav" aria-label={labels.allServices}>
           {services.map((item) => (
-            <Link key={item.slug} className={item.slug === service.slug ? "active" : ""} href={`/services/${item.slug}`}>
+            <a key={item.slug} className={item.slug === service.slug ? "active" : ""} href={`/services/${item.slug}`}>
               <span>0{item.index}</span>{item.content[lang].title}
-            </Link>
+            </a>
           ))}
         </nav>
       </header>
@@ -103,7 +102,7 @@ export default function ServiceDetail({ service }: { service: ServiceRecord }) {
         <p className="section-kicker">{labels.other}</p>
         <div className="service-other-links">
           {services.filter((item) => item.slug !== service.slug).map((item) => (
-            <Link key={item.slug} href={`/services/${item.slug}`}><span>0{item.index}</span>{item.content[lang].title}<b>→</b></Link>
+            <a key={item.slug} href={`/services/${item.slug}`}><span>0{item.index}</span>{item.content[lang].title}<b>→</b></a>
           ))}
         </div>
       </section>
@@ -115,7 +114,7 @@ export default function ServiceDetail({ service }: { service: ServiceRecord }) {
 
       <footer className="service-detail-footer">
         <span>© 2026 Win Chance Group Holdings Limited.</span>
-        <Link href="/">{labels.back}</Link>
+        <a href="/">{labels.back}</a>
       </footer>
     </main>
   );
