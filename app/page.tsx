@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useRef, useState } from "react";
 import { services as serviceRecords } from "./services/service-data";
 import { featuredPartners, strategicPartners } from "./partners/partner-data";
 
@@ -172,7 +172,14 @@ const languageLabels: { key: Lang; label: string }[] = [
 export default function Home() {
   const [lang, setLang] = useState<Lang>("tc");
   const [menuOpen, setMenuOpen] = useState(false);
+  const scopeTrack = useRef<HTMLDivElement>(null);
   const t = content[lang];
+
+  function moveScope(direction: -1 | 1) {
+    const track = scopeTrack.current;
+    if (!track) return;
+    track.scrollBy({ left: direction * Math.min(track.clientWidth * 0.82, 820), behavior: "smooth" });
+  }
 
   function submitEnquiry(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -284,6 +291,37 @@ export default function Home() {
             {t.pillars.map(([title, text], index) => (
               <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>
             ))}
+          </div>
+        </div>
+
+        <div className="scope-showcase">
+          <div className="scope-showcase-heading">
+            <div>
+              <p className="section-kicker">{t.businessKicker}</p>
+              <h3>{t.swipeHint}</h3>
+            </div>
+            <div className="scope-controls" aria-label={t.swipeHint}>
+              <button type="button" onClick={() => moveScope(-1)} aria-label={t.previous}>←</button>
+              <button type="button" onClick={() => moveScope(1)} aria-label={t.next}>→</button>
+            </div>
+          </div>
+          <div className="scope-track" ref={scopeTrack}>
+            {t.businesses.map(([title, description], index) => {
+              const record = serviceRecords[index];
+              return (
+                <a className="scope-card" key={title} href={`/services/${record.slug}`}>
+                  <div className="scope-card-media">
+                    <img src={record.image} alt="" style={{ objectFit: record.imageFit, objectPosition: record.imagePosition }} />
+                    <span>0{index + 1}</span>
+                  </div>
+                  <div className="scope-card-copy">
+                    <h4>{title}</h4>
+                    <p>{description}</p>
+                    <strong>{t.learnMore}<span>→</span></strong>
+                  </div>
+                </a>
+              );
+            })}
           </div>
         </div>
       </section>
