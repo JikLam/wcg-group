@@ -14,6 +14,7 @@ export default function ServiceDetail({ service }: { service: ServiceRecord }) {
   const [lang, setLang] = useState<Lang>("tc");
   const t = service.content[lang];
   const labels = servicePageLabels[lang];
+  const overviewParts = splitOverview(t.overview);
 
   return (
     <main className="service-page">
@@ -23,7 +24,7 @@ export default function ServiceDetail({ service }: { service: ServiceRecord }) {
             <img src="/wcg-logo-transparent.png" alt="WCG" />
             <span><strong>{labels.brand}</strong><small>Win Chance Group Holdings Limited</small></span>
           </Link>
-          <Link className="service-back" href="/#businesses"><span>←</span>{labels.back}</Link>
+          <Link className="service-back" href="/services"><span>←</span>{labels.allServices}</Link>
           <div className="language-switcher" aria-label={labels.language}>
             {languageLabels.map((item) => (
               <button key={item.key} type="button" className={lang === item.key ? "active" : ""} onClick={() => setLang(item.key)} aria-pressed={lang === item.key}>{item.label}</button>
@@ -55,43 +56,46 @@ export default function ServiceDetail({ service }: { service: ServiceRecord }) {
         </div>
       </section>
 
-      <section className="service-overview-section">
-        <div>
+      <section className="service-intro-section">
+        <div className="service-intro-heading">
           <p className="section-kicker">{labels.overview}</p>
-          <h2>{t.title}</h2>
+          <h2>{t.short}</h2>
         </div>
-        <p>{t.overview}</p>
+        <div className="service-intro-copy">
+          {overviewParts.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        </div>
       </section>
 
-      <section className="service-offerings-section">
-        <div className="service-section-heading">
+      <section className="service-gallery-section" aria-label={t.title}>
+        <figure className="service-gallery-main"><img src={service.gallery[0]} alt={`${t.title} — 01`} /></figure>
+        <figure className="service-gallery-side"><img src={service.gallery[1]} alt={`${t.title} — 02`} /></figure>
+        <div className="service-gallery-note"><span>0{service.index}</span><p>{t.short}</p></div>
+      </section>
+
+      <section className="service-capabilities-section">
+        <div className="service-capabilities-heading">
           <p className="section-kicker">{labels.offerings}</p>
           <h2>{labels.offerings}</h2>
         </div>
-        <div className="service-offering-grid">
+        <div className="service-capability-list">
           {t.offerings.map((offering, index) => (
-            <article key={offering}><span>0{index + 1}</span><h3>{offering}</h3></article>
+            <article key={offering}><span>0{index + 1}</span><h3>{offering}</h3><b>↗</b></article>
           ))}
         </div>
       </section>
 
-      <section className="service-audience-section">
-        <div>
-          <p className="section-kicker">{labels.audiences}</p>
-          <h2>{labels.audiences}</h2>
+      <section className="service-fit-section">
+        <div className="service-audience-block">
+          <div><p className="section-kicker">{labels.audiences}</p><h2>{labels.audiences}</h2></div>
+          <ul>{t.audiences.map((audience, index) => <li key={audience}><span>0{index + 1}</span>{audience}</li>)}</ul>
         </div>
-        <ul>{t.audiences.map((audience) => <li key={audience}>{audience}</li>)}</ul>
-      </section>
-
-      <section className="service-process-section">
-        <div className="service-section-heading">
-          <p className="section-kicker">{labels.process}</p>
-          <h2>{labels.process}</h2>
-        </div>
-        <div className="service-process-grid">
-          {labels.steps.map(([title, text], index) => (
-            <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>
-          ))}
+        <div className="service-process-block">
+          <div><p className="section-kicker">{labels.process}</p><h2>{labels.process}</h2></div>
+          <div className="service-process-list">
+            {labels.steps.map(([title, text], index) => (
+              <article key={title}><span>0{index + 1}</span><div><h3>{title}</h3><p>{text}</p></div></article>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -115,4 +119,16 @@ export default function ServiceDetail({ service }: { service: ServiceRecord }) {
       </footer>
     </main>
   );
+}
+
+function splitOverview(text: string) {
+  const sentences = text.match(/[^。！？.!?]+[。！？.!?]?/g)?.map((part) => part.trim()).filter(Boolean) ?? [text];
+  if (sentences.length > 1) return sentences;
+
+  const separator = text.includes("，") ? "，" : ",";
+  const clauses = text.split(separator).map((part) => part.trim()).filter(Boolean);
+  if (clauses.length < 3) return [text];
+
+  const midpoint = Math.ceil(clauses.length / 2);
+  return [clauses.slice(0, midpoint).join(separator) + separator, clauses.slice(midpoint).join(separator)];
 }

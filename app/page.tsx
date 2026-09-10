@@ -1,8 +1,8 @@
 "use client";
 
-import { FormEvent, useRef, useState } from "react";
+import { FormEvent, useState } from "react";
 import { services as serviceRecords } from "./services/service-data";
-import { strategicPartners } from "./partners/partner-data";
+import { featuredPartners, strategicPartners } from "./partners/partner-data";
 
 type Lang = "tc" | "sc" | "en";
 
@@ -172,14 +172,7 @@ const languageLabels: { key: Lang; label: string }[] = [
 export default function Home() {
   const [lang, setLang] = useState<Lang>("tc");
   const [menuOpen, setMenuOpen] = useState(false);
-  const scopeTrack = useRef<HTMLDivElement>(null);
   const t = content[lang];
-
-  function moveScope(direction: -1 | 1) {
-    const track = scopeTrack.current;
-    if (!track) return;
-    track.scrollBy({ left: direction * Math.min(track.clientWidth * 0.82, 820), behavior: "smooth" });
-  }
 
   function submitEnquiry(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -230,7 +223,7 @@ export default function Home() {
           </nav>
           <nav className="mobile-utility-nav" aria-label="Mobile navigation">
             <a href="/about" onClick={() => setMenuOpen(false)}>{t.nav[0][1]}</a>
-            <a href="#businesses" onClick={() => setMenuOpen(false)}>{t.nav[1][1]}</a>
+            <a href="/services" onClick={() => setMenuOpen(false)}>{t.nav[1][1]}</a>
             <a href="/direction" onClick={() => setMenuOpen(false)}>{t.nav[2][1]}</a>
             <a href="/partners" onClick={() => setMenuOpen(false)}>{t.nav[3][1]}</a>
             <a href="#contact" onClick={() => setMenuOpen(false)}>{t.nav[4][1]}</a>
@@ -244,7 +237,7 @@ export default function Home() {
           <h1>{t.heroTitle.split("\n").map((line) => <span key={line}>{line}</span>)}</h1>
           <p className="hero-intro">{t.heroText}</p>
           <div className="hero-actions">
-            <a className="button button-gold" href="#businesses">{t.explore}<span>↘</span></a>
+            <a className="button button-gold" href="/services">{t.explore}<span>↗</span></a>
             <a className="text-link" href="#contact">{t.contactUs}<span>→</span></a>
           </div>
         </div>
@@ -266,18 +259,17 @@ export default function Home() {
           <p className="section-kicker">{t.collaborationKicker}</p>
           <h2>{t.collaborationTitle}</h2>
           <p>{t.collaborationIntro}</p>
-          <a className="text-link" href="/partners">{t.learnMore}<span>→</span></a>
         </div>
         <div className="collaboration-content">
-          <div className="collaboration-types">
-            {t.collaborationTypes.map(([title, text], index) => (
-              <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>
+          <a className="partner-wall" href="/partners" aria-label={t.collaborationKicker}>
+            {[...strategicPartners, ...featuredPartners].map(([name, image]) => (
+              <span key={name}><img src={image} alt={name} /></span>
             ))}
-          </div>
-          <a className="partner-preview" href="/partners" aria-label={t.collaborationKicker}>
-            {strategicPartners.map(([name, image]) => <span key={name}><img src={image} alt={name} /></span>)}
           </a>
-          <a className="button button-gold" href="#contact">{t.collaborationCta}<span>↗</span></a>
+          <div className="collaboration-actions">
+            <a className="text-link" href="/partners">{t.learnMore}<span>→</span></a>
+            <a className="button button-gold" href="#contact">{t.collaborationCta}<span>↗</span></a>
+          </div>
         </div>
       </section>
 
@@ -293,74 +285,6 @@ export default function Home() {
               <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>
             ))}
           </div>
-        </div>
-
-        <div className="scope-showcase">
-          <div className="scope-showcase-heading">
-            <div>
-              <p className="section-kicker">{t.businessKicker}</p>
-              <h3>{t.swipeHint}</h3>
-            </div>
-            <div className="scope-controls" aria-label={t.swipeHint}>
-              <button type="button" onClick={() => moveScope(-1)} aria-label={t.previous}>←</button>
-              <button type="button" onClick={() => moveScope(1)} aria-label={t.next}>→</button>
-            </div>
-          </div>
-          <div className="scope-track" ref={scopeTrack}>
-            {t.businesses.map(([title, description], index) => {
-              const record = serviceRecords[index];
-              return (
-                <a className="scope-card" key={title} href={`/services/${record.slug}`}>
-                  <div className="scope-card-media">
-                    <img
-                      src={record.image}
-                      alt=""
-                      style={{ objectFit: record.imageFit, objectPosition: record.imagePosition }}
-                    />
-                    <span>0{index + 1}</span>
-                  </div>
-                  <div className="scope-card-copy">
-                    <h4>{title}</h4>
-                    <p>{description}</p>
-                    <strong>{t.learnMore}<span>→</span></strong>
-                  </div>
-                </a>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      <section className="section businesses" id="businesses">
-        <div className="businesses-intro">
-          <p className="section-kicker">{t.businessKicker}</p>
-          <h2>{t.businessTitle}</h2>
-          <p>{t.businessIntro}</p>
-        </div>
-        <div className="business-list">
-          {t.businesses.map(([title, description, scope], index) => {
-            const record = serviceRecords[index];
-            return (
-              <article className={`business-item business-item-${index + 1} ${record.imageFit === "contain" ? "is-contained" : ""}`} id={`business-${index + 1}`} key={title}>
-                <a className="business-image" href={`/services/${record.slug}`} aria-label={`${t.learnMore}: ${title}`}>
-                  <img
-                    src={record.image}
-                    alt={title}
-                    style={{ objectFit: record.imageFit, objectPosition: record.imagePosition }}
-                  />
-                  <span className="business-image-overlay" />
-                  <span className="business-number">0{index + 1}</span>
-                  <span className="business-image-link">{t.learnMore} ↗</span>
-                </a>
-                <div className="business-copy">
-                  <h3>{title}</h3>
-                  <p>{description}</p>
-                  <p className="business-scope">{scope}</p>
-                  <a className="business-more" href={`/services/${record.slug}`}>{t.learnMore}<span>→</span></a>
-                </div>
-              </article>
-            );
-          })}
         </div>
       </section>
 

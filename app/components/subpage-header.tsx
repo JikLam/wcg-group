@@ -29,13 +29,13 @@ export default function SubpageHeader({
   lang: Lang;
   setLang: (lang: Lang) => void;
   labels: HeaderLabels;
-  active: "about" | "direction" | "partners";
+  active: "about" | "services" | "direction" | "partners";
 }) {
   const [open, setOpen] = useState(false);
   const links = [
     ["home", labels.home, "/"],
     ["about", labels.about, "/about"],
-    ["services", labels.services, "/#businesses"],
+    ["services", labels.services, "/services"],
     ["direction", labels.direction, "/direction"],
     ["partners", labels.partners, "/partners"],
     ["contact", labels.contact, "/#contact"],
