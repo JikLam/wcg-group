@@ -46,7 +46,7 @@ export default function ServicesPage() {
             return (
               <a className="services-editorial-card" key={service.slug} href={`/services/${service.slug}`}>
                 <div className={`services-editorial-media ${service.imageFit === "contain" ? "is-contained" : ""}`}>
-                  <img src={service.image} alt={item.title} style={{ objectFit: service.imageFit, objectPosition: service.imagePosition }} />
+                  <img src={service.image} alt={item.title} loading="lazy" decoding="async" style={{ objectFit: service.imageFit, objectPosition: service.imagePosition }} />
                   <span>0{service.index}</span>
                 </div>
                 <div className="services-editorial-copy"><h3>{item.title}</h3><p>{item.short}</p><strong>{t.learn}<b>→</b></strong></div>

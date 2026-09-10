@@ -49,6 +49,8 @@ export default function ServiceDetail({ service }: { service: ServiceRecord }) {
           <img
             src={service.image}
             alt={t.title}
+            fetchPriority="high"
+            decoding="async"
             style={{ objectFit: service.imageFit, objectPosition: service.imagePosition }}
           />
           <span aria-hidden="true">0{service.index}</span>
@@ -66,8 +68,8 @@ export default function ServiceDetail({ service }: { service: ServiceRecord }) {
       </section>
 
       <section className="service-gallery-section" aria-label={t.title}>
-        <figure className="service-gallery-main"><img src={service.gallery[0]} alt={`${t.title} — 01`} /></figure>
-        <figure className="service-gallery-side"><img src={service.gallery[1]} alt={`${t.title} — 02`} /></figure>
+        <figure className="service-gallery-main"><img src={service.gallery[0]} alt={`${t.title} — 01`} loading="lazy" decoding="async" /></figure>
+        <figure className="service-gallery-side"><img src={service.gallery[1]} alt={`${t.title} — 02`} loading="lazy" decoding="async" /></figure>
         <div className="service-gallery-note"><span>0{service.index}</span><p>{t.short}</p></div>
       </section>
 

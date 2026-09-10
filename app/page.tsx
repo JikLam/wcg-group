@@ -191,7 +191,7 @@ export default function Home() {
 
   return (
     <main className="site-shell">
-      <header className="site-header">
+      <header className="site-header" onMouseLeave={() => setMenuOpen(false)}>
         <div className="header-primary-row">
           <a className="brand-lockup" href="#top" aria-label={t.company}>
             <img src="/wcg-logo-transparent.png" alt="WCG" />
@@ -200,7 +200,7 @@ export default function Home() {
 
           <nav className="primary-nav" aria-label="Primary navigation">
             <a href="/about">{t.nav[0][1]}</a>
-            <button type="button" aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>{t.nav[1][1]}</button>
+            <button type="button" aria-expanded={menuOpen} onMouseEnter={() => setMenuOpen(true)} onClick={() => setMenuOpen(!menuOpen)}>{t.nav[1][1]}</button>
             <a href="/direction">{t.nav[2][1]}</a>
             <a href="/partners">{t.nav[3][1]}</a>
             <a href="#contact">{t.nav[4][1]}</a>
@@ -270,7 +270,7 @@ export default function Home() {
         <div className="collaboration-content">
           <a className="partner-wall" href="/partners" aria-label={t.collaborationKicker}>
             {[...strategicPartners, ...featuredPartners].map(([name, image]) => (
-              <span key={name}><img src={image} alt={name} /></span>
+              <span key={name}><img src={image} alt={name} loading="lazy" decoding="async" /></span>
             ))}
           </a>
           <div className="collaboration-actions">
@@ -311,7 +311,7 @@ export default function Home() {
               return (
                 <a className="scope-card" key={title} href={`/services/${record.slug}`}>
                   <div className="scope-card-media">
-                    <img src={record.image} alt="" style={{ objectFit: record.imageFit, objectPosition: record.imagePosition }} />
+                    <img src={record.image} alt="" loading="lazy" decoding="async" style={{ objectFit: record.imageFit, objectPosition: record.imagePosition }} />
                     <span>0{index + 1}</span>
                   </div>
                   <div className="scope-card-copy">

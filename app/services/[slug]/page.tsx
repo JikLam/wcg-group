@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { notFound } from "next/navigation";
 import ServiceDetail from "./service-detail";
 import { findService, services } from "../service-data";
@@ -18,10 +17,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   const copy = service.content.tc;
   const title = `${copy.title} | 鉅瀧集團`;
   const description = copy.short;
-  const requestHeaders = await headers();
-  const host = requestHeaders.get("host") ?? "www.winchancegroup.com";
-  const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
-  const image = new URL(service.image, `${protocol}://${host}`).toString();
+  const image = new URL(service.image, "https://wcg-group-hk.easycircle360.chatgpt.site").toString();
 
   return {
     title,

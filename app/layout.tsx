@@ -1,38 +1,48 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import "./globals.css";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const requestHeaders = await headers();
-  const host = requestHeaders.get("host") ?? "www.winchancegroup.com";
-  const protocol = requestHeaders.get("x-forwarded-proto") ?? (host.includes("localhost") ? "http" : "https");
-  const base = new URL(`${protocol}://${host}`);
-  const title = "鉅瀧集團 | Win Chance Group Holdings Limited";
-  const description = "鉅瀧集團立足香港，為企業提供創新多元策略方案。";
+const siteOrigin = new URL("https://wcg-group-hk.easycircle360.chatgpt.site");
+const title = "鉅瀧集團 | Win Chance Group Holdings Limited";
+const description = "鉅瀧集團立足香港，為企業提供創新多元策略方案。";
 
-  return {
-    metadataBase: base,
+export const metadata: Metadata = {
+  metadataBase: siteOrigin,
+  title,
+  description,
+  icons: { icon: "/wcg-logo-transparent.png", shortcut: "/wcg-logo-transparent.png", apple: "/wcg-logo-transparent.png" },
+  openGraph: {
     title,
     description,
-    icons: { icon: "/wcg-logo-transparent.png", shortcut: "/wcg-logo-transparent.png", apple: "/wcg-logo-transparent.png" },
-    openGraph: {
-      title,
-      description,
-      type: "website",
-      images: [{ url: new URL("/og.png", base).toString(), width: 1536, height: 896, alt: "Win Chance Group" }],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title,
-      description,
-      images: [new URL("/og.png", base).toString()],
-    },
-  };
-}
+    type: "website",
+    images: [{ url: new URL("/og.png", siteOrigin).toString(), width: 1536, height: 896, alt: "Win Chance Group" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: [new URL("/og.png", siteOrigin).toString()],
+  },
+};
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="zh-Hant">
+      <head>
+        <script
+          type="speculationrules"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              prefetch: [
+                {
+                  source: "document",
+                  where: { href_matches: "/*" },
+                  eagerness: "moderate",
+                },
+              ],
+            }),
+          }}
+        />
+      </head>
       <body>{children}</body>
     </html>
   );
