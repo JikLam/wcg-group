@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: ServicePageProps): Promise<Me
   const copy = service.content.tc;
   const title = `${copy.title} | 鉅瀧集團`;
   const description = copy.short;
-  const image = new URL(service.image, "https://wcg-group-hk.easycircle360.chatgpt.site").toString();
+  const image = new URL(service.image, "https://winchancegroup.com").toString();
 
   return {
     title,

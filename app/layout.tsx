@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-const siteOrigin = new URL("https://wcg-group-hk.easycircle360.chatgpt.site");
+const siteOrigin = new URL("https://winchancegroup.com");
 const title = "鉅瀧集團 | Win Chance Group Holdings Limited";
 const description = "鉅瀧集團立足香港，為企業提供創新多元策略方案。";
 
