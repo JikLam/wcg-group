@@ -72,7 +72,7 @@ export default function DirectionPage() {
           <p>{t.intro}</p>
         </div>
         <div className="direction-mark" aria-hidden="true">
-          <span>WCG</span><strong>2025</strong>
+          <span>WCG</span><strong>2022</strong>
         </div>
       </section>
 
@@ -98,7 +98,7 @@ export default function DirectionPage() {
 
       <section className="direction-milestone">
         <p className="section-kicker">{t.milestone}</p>
-        <strong>2025</strong>
+        <strong>2022</strong>
         <p>{t.milestoneText}</p>
       </section>
 
