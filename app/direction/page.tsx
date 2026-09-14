@@ -1,9 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import SubpageHeader from "../components/subpage-header";
-
-type Lang = "tc" | "sc" | "en";
+import { usePersistedLanguage } from "../components/use-persisted-language";
 
 const copy = {
   tc: {
@@ -58,7 +56,7 @@ const copy = {
 } as const;
 
 export default function DirectionPage() {
-  const [lang, setLang] = useState<Lang>("tc");
+  const [lang, setLang] = usePersistedLanguage();
   const t = copy[lang];
 
   return (

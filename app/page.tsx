@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useRef, useState } from "react";
+import { usePersistedLanguage } from "./components/use-persisted-language";
 import { services as serviceRecords } from "./services/service-data";
 import { featuredPartners, strategicPartners } from "./partners/partner-data";
 
@@ -170,7 +171,7 @@ const languageLabels: { key: Lang; label: string }[] = [
 ];
 
 export default function Home() {
-  const [lang, setLang] = useState<Lang>("tc");
+  const [lang, setLang] = usePersistedLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
   const scopeTrack = useRef<HTMLDivElement>(null);
   const t = content[lang];

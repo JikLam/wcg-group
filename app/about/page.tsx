@@ -1,8 +1,8 @@
 "use client";
 
-import { useState } from "react";
 import SubpageHeader from "../components/subpage-header";
-import { services, type Lang } from "../services/service-data";
+import { usePersistedLanguage } from "../components/use-persisted-language";
+import { services } from "../services/service-data";
 
 const copy = {
   tc: {
@@ -29,7 +29,7 @@ const copy = {
 } as const;
 
 export default function AboutPage() {
-  const [lang, setLang] = useState<Lang>("tc");
+  const [lang, setLang] = usePersistedLanguage();
   const t = copy[lang];
 
   return (

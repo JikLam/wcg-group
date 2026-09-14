@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { usePersistedLanguage } from "../../components/use-persisted-language";
 import { Lang, ServiceRecord, servicePageLabels, services } from "../service-data";
 
 const languageLabels: { key: Lang; label: string }[] = [
@@ -10,7 +10,7 @@ const languageLabels: { key: Lang; label: string }[] = [
 ];
 
 export default function ServiceDetail({ service }: { service: ServiceRecord }) {
-  const [lang, setLang] = useState<Lang>("tc");
+  const [lang, setLang] = usePersistedLanguage();
   const t = service.content[lang];
   const labels = servicePageLabels[lang];
   const overviewParts = splitOverview(t.overview);

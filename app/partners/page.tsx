@@ -1,8 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import SubpageHeader from "../components/subpage-header";
-import type { Lang } from "../services/service-data";
+import { usePersistedLanguage } from "../components/use-persisted-language";
 import { featuredPartners, strategicPartners } from "./partner-data";
 
 const copy = {
@@ -30,7 +29,7 @@ const copy = {
 } as const;
 
 export default function PartnersPage() {
-  const [lang, setLang] = useState<Lang>("tc");
+  const [lang, setLang] = usePersistedLanguage();
   const t = copy[lang];
   return (
     <main className="partners-page">

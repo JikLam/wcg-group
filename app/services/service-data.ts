@@ -22,7 +22,7 @@ export type ServiceRecord = {
 
 export const services: ServiceRecord[] = [
   {
-    slug: "entertainment-production", index: 1, image: "/services/entertainment-production.jpg", imageWidth: 956, imageHeight: 1400, imagePosition: "center 44%", imageFit: "cover", gallery: ["/services/entertainment-production-02.jpg", "/services/entertainment-production-03.jpg"],
+    slug: "entertainment-production", index: 1, image: "/services/entertainment-production.jpg", imageWidth: 2400, imageHeight: 1600, imagePosition: "center center", imageFit: "cover", gallery: ["/services/entertainment-production-02.jpg", "/services/entertainment-production-03.jpg"],
     content: {
       tc: { title: "影視娛樂製作", short: "由創意策劃到現場執行，提供一站式影視、活動及數碼直播服務。", overview: "我們整合創意、製作與技術團隊，服務涵蓋線上直播、線下活動及全流程影像製作，協助企業與品牌以一致而具感染力的內容連結觀眾。", offerings: ["網上研討會、高清直播及數碼人播報", "多機位現場拍攝、典禮及活動執行", "音響、燈光、舞台及背景製作", "廣告、品牌短片、航拍及後期製作"], audiences: ["品牌及企業市場團隊", "活動主辦方與文化娛樂機構", "需要直播或影像製作的企業"] },
       sc: { title: "影视娱乐制作", short: "由创意策划到现场执行，提供一站式影视、活动及数字直播服务。", overview: "我们整合创意、制作与技术团队，服务涵盖线上直播、线下活动及全流程影像制作，协助企业与品牌以一致而具感染力的内容连接观众。", offerings: ["网上研讨会、高清直播及数字人播报", "多机位现场拍摄、典礼及活动执行", "音响、灯光、舞台及背景制作", "广告、品牌短片、航拍及后期制作"], audiences: ["品牌及企业市场团队", "活动主办方与文化娱乐机构", "需要直播或影像制作的企业"] },
