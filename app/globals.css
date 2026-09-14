@@ -203,7 +203,7 @@ h1 > span { display: block; }
 .collaboration-content > .button { justify-self: start; }
 .partner-wall { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 42px clamp(28px,4vw,68px); width: min(100%,1180px); margin: 0 auto; }
 .partner-wall > span { flex: 0 1 135px; min-width: 100px; height: 58px; display: grid; place-items: center; }
-.partner-wall img { display: block; max-width: 100%; max-height: 54px; width: auto; height: auto; object-fit: contain; filter: saturate(.9); transition: transform .25s ease, filter .25s ease; }
+.partner-wall img { display: block; max-width: 100%; max-height: 54px; width: auto; height: auto; object-fit: contain; mix-blend-mode: multiply; filter: saturate(.9); transition: transform .25s ease, filter .25s ease; }
 .partner-wall:hover img { filter: saturate(1); }
 .partner-wall span:hover img { transform: translateY(-3px); }
 .collaboration-actions { display: flex; align-items: center; justify-content: center; gap: 34px; }
