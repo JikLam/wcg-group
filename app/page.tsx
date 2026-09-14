@@ -170,6 +170,8 @@ const languageLabels: { key: Lang; label: string }[] = [
   { key: "en", label: "EN" },
 ];
 
+const enquiryEmail = "arnelimdg@gmail.com";
+
 export default function Home() {
   const [lang, setLang] = usePersistedLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
@@ -187,7 +189,7 @@ export default function Home() {
     const data = new FormData(event.currentTarget);
     const subject = `${lang === "en" ? "Website enquiry" : "網站查詢"} — ${data.get("company") || data.get("name")}`;
     const body = `${t.form.name}: ${data.get("name")}\n${t.form.company}: ${data.get("company")}\n${t.form.email}: ${data.get("email")}\n\n${data.get("message")}`;
-    window.location.href = `mailto:${t.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    window.location.href = `mailto:${enquiryEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
   }
 
   return (
