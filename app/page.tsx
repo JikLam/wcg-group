@@ -93,6 +93,9 @@ const content = {
       email: "電郵地址",
       message: "查詢內容",
       send: "發送查詢",
+      sending: "正在發送…",
+      success: "查詢已成功發送，我們會盡快回覆。",
+      error: "暫時未能發送，請稍後再試。",
     },
     legal: "公司註冊、牌照及法律資料將於核實後更新。網站內容只作一般企業介紹用途。",
     privacy: "私隱政策",
@@ -128,7 +131,7 @@ const content = {
     directionKicker: "发展方向", directionTitle: "让专业各展所长\n让资源彼此连接", directionText: "集团网站集中展示各项专业服务，并以 WCG 的共同价值、专业网络及企业管治连接不同团队，为客户提供更完整的跨领域方案。", stages: ["建立清晰的集团品牌", "连接各项专业服务", "拓展跨地域合作机会"],
     milestone: "发展里程碑", milestoneYear: "2022", milestoneText: "Win Chance Group Holdings Limited 正式成立，开展多元业务整合与品牌建设。更多里程碑将于资料核实后更新。",
     contactKicker: "联系我们", contactTitle: "携手探索下一个机遇", contactText: "如欲了解集团业务或商讨合作，欢迎与我们联系。", addressLabel: "地址", address: "香港鲗鱼涌海泽街28号东港中心14楼1411室", phoneLabel: "电话", phone: "+852 2668 2600", whatsappLabel: "WhatsApp", whatsapp: "+852 4413 1113", wechatLabel: "微信", wechat: "WCG91949413", emailLabel: "电邮", email: "info@winchancegroup.com",
-    form: { name: "姓名", company: "公司名称", email: "电邮地址", message: "查询内容", send: "发送查询" },
+    form: { name: "姓名", company: "公司名称", email: "电邮地址", message: "查询内容", send: "发送查询", sending: "正在发送…", success: "查询已成功发送，我们会尽快回复。", error: "暂时未能发送，请稍后再试。" },
     legal: "公司注册、牌照及法律资料将于核实后更新。网站内容只作一般企业介绍用途。", privacy: "隐私政策", terms: "使用条款", rights: "版权所有",
   },
   en: {
@@ -159,7 +162,7 @@ const content = {
     directionKicker: "OUR DIRECTION", directionTitle: "Specialist strengths\nConnected resources", directionText: "The Group website presents every specialist service in one place, connecting teams through WCG’s shared values, professional network and corporate governance to deliver more complete cross-sector solutions.", stages: ["Build a clear group identity", "Connect specialist services", "Expand cross-market partnerships"],
     milestone: "Milestone", milestoneYear: "2022", milestoneText: "Win Chance Group Holdings Limited was established to integrate a diversified portfolio and build a unified corporate brand. Further milestones will be added after verification.",
     contactKicker: "CONTACT", contactTitle: "Let’s explore the next opportunity", contactText: "Contact us to learn about the Group or discuss a potential partnership.", addressLabel: "Address", address: "Unit 1411, 14/F, Eastern Harbour Centre, 28 Hoi Chak Street, Quarry Bay, Hong Kong", phoneLabel: "Telephone", phone: "+852 2668 2600", whatsappLabel: "WhatsApp", whatsapp: "+852 4413 1113", wechatLabel: "WeChat", wechat: "WCG91949413", emailLabel: "Email", email: "info@winchancegroup.com",
-    form: { name: "Name", company: "Company", email: "Email address", message: "How can we help?", send: "Send enquiry" },
+    form: { name: "Name", company: "Company", email: "Email address", message: "How can we help?", send: "Send enquiry", sending: "Sending…", success: "Your enquiry has been sent. We will reply shortly.", error: "We could not send your enquiry. Please try again later." },
     legal: "Company registration, licensing and legal information will be updated after verification. This website provides general corporate information only.", privacy: "Privacy", terms: "Terms", rights: "All rights reserved",
   },
 } as const;
@@ -170,12 +173,12 @@ const languageLabels: { key: Lang; label: string }[] = [
   { key: "en", label: "EN" },
 ];
 
-const enquiryEmail = "arnelimdg@gmail.com";
-
 export default function Home() {
   const [lang, setLang] = usePersistedLanguage();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [formStatus, setFormStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
   const scopeTrack = useRef<HTMLDivElement>(null);
+  const formStartedAt = useRef(Date.now());
   const t = content[lang];
 
   function moveScope(direction: -1 | 1) {
@@ -184,12 +187,34 @@ export default function Home() {
     track.scrollBy({ left: direction * Math.min(track.clientWidth * 0.82, 820), behavior: "smooth" });
   }
 
-  function submitEnquiry(event: FormEvent<HTMLFormElement>) {
+  async function submitEnquiry(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const subject = `${lang === "en" ? "Website enquiry" : "網站查詢"} — ${data.get("company") || data.get("name")}`;
-    const body = `${t.form.name}: ${data.get("name")}\n${t.form.company}: ${data.get("company")}\n${t.form.email}: ${data.get("email")}\n\n${data.get("message")}`;
-    window.location.href = `mailto:${enquiryEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const form = event.currentTarget;
+    const data = new FormData(form);
+    setFormStatus("sending");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: data.get("name"),
+          company: data.get("company"),
+          email: data.get("email"),
+          message: data.get("message"),
+          website: data.get("website"),
+          startedAt: formStartedAt.current,
+          lang,
+        }),
+      });
+
+      if (!response.ok) throw new Error("Unable to send enquiry");
+      form.reset();
+      formStartedAt.current = Date.now();
+      setFormStatus("success");
+    } catch {
+      setFormStatus("error");
+    }
   }
 
   return (
@@ -343,11 +368,13 @@ export default function Home() {
           </dl>
         </div>
         <form className="contact-form" onSubmit={submitEnquiry}>
+          <label className="contact-honeypot" aria-hidden="true"><span>Website</span><input name="website" tabIndex={-1} autoComplete="off" /></label>
           <label><span>{t.form.name}</span><input name="name" required autoComplete="name" /></label>
           <label><span>{t.form.company}</span><input name="company" autoComplete="organization" /></label>
           <label><span>{t.form.email}</span><input name="email" type="email" required autoComplete="email" /></label>
           <label className="full"><span>{t.form.message}</span><textarea name="message" rows={4} required /></label>
-          <button className="button button-gold" type="submit">{t.form.send}<span>↗</span></button>
+          <button className="button button-gold" type="submit" disabled={formStatus === "sending"}>{formStatus === "sending" ? t.form.sending : t.form.send}<span>↗</span></button>
+          {formStatus !== "idle" && formStatus !== "sending" ? <p className={`contact-form-status ${formStatus}`} role="status">{formStatus === "success" ? t.form.success : t.form.error}</p> : null}
         </form>
       </section>
 
