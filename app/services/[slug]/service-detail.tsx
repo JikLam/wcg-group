@@ -9,6 +9,10 @@ const languageLabels: { key: Lang; label: string }[] = [
   { key: "en", label: "EN" },
 ];
 
+function formatHeading(text: string) {
+  return text.replace(/[。.]$/, "").replace(/[，,]\s*/g, "\n");
+}
+
 export default function ServiceDetail({ service }: { service: ServiceRecord }) {
   const [lang, setLang] = usePersistedLanguage();
   const t = service.content[lang];
@@ -60,7 +64,7 @@ export default function ServiceDetail({ service }: { service: ServiceRecord }) {
       <section className="service-intro-section">
         <div className="service-intro-heading">
           <p className="section-kicker">{labels.overview}</p>
-          <h2>{t.short}</h2>
+          <h2>{formatHeading(t.short)}</h2>
         </div>
         <div className="service-intro-copy">
           {overviewParts.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}

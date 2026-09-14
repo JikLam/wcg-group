@@ -23,6 +23,8 @@
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 html.wcg-language-loading body { visibility: hidden; }
+h2 { white-space: pre-line; }
+h1 > span { display: block; }
 body {
   margin: 0;
   background: var(--paper);
