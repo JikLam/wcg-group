@@ -22,6 +22,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
+html.wcg-language-loading body { visibility: hidden; }
 body {
   margin: 0;
   background: var(--paper);

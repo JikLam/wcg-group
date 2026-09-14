@@ -29,6 +29,11 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="zh-Hant">
       <head>
         <script
+          dangerouslySetInnerHTML={{
+            __html: `try{var l=localStorage.getItem("wcg-language");if(l==="sc"||l==="en"){document.documentElement.classList.add("wcg-language-loading")}}catch(e){}`,
+          }}
+        />
+        <script
           type="speculationrules"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({

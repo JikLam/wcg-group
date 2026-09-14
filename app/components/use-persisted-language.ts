@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useLayoutEffect, useState } from "react";
 import type { Lang } from "../services/service-data";
 
 const STORAGE_KEY = "wcg-language";
@@ -17,13 +17,16 @@ function isLanguage(value: string | null): value is Lang {
 export function usePersistedLanguage() {
   const [lang, setLangState] = useState<Lang>("tc");
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const savedLanguage = window.localStorage.getItem(STORAGE_KEY);
-    if (isLanguage(savedLanguage)) {
+    if (isLanguage(savedLanguage) && savedLanguage !== lang) {
       setLangState(savedLanguage);
-      document.documentElement.lang = documentLanguages[savedLanguage];
+      return;
     }
-  }, []);
+
+    document.documentElement.lang = documentLanguages[lang];
+    document.documentElement.classList.remove("wcg-language-loading");
+  }, [lang]);
 
   const setLang = useCallback((nextLanguage: Lang) => {
     setLangState(nextLanguage);
