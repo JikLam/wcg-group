@@ -243,7 +243,7 @@ h1 > span { display: block; }
 .service-detail-media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 58%, rgba(5,18,27,.64)); pointer-events: none; }
 .service-detail-media.is-contained { background: linear-gradient(145deg, #e9dfcd, #f8f4ec); }
 .service-detail-media img { width: 100%; height: 100%; display: block; }
-.service-detail-media span { position: absolute; z-index: 1; right: 26px; bottom: 18px; color: rgba(255,255,255,.9); font-family: Georgia, serif; font-size: 54px; line-height: 1; }
+.service-detail-media span { position: absolute; z-index: 1; right: 22px; bottom: 20px; display: grid; place-items: center; width: 44px; height: 44px; border: 1px solid rgba(255,255,255,.6); border-radius: 50%; color: rgba(255,255,255,.95); background: rgba(7,21,31,.6); font-family: Georgia, serif; font-size: 11px; line-height: 1; }
 .service-overview-section { display: grid; grid-template-columns: minmax(250px,.7fr) minmax(0,1.3fr); gap: 8vw; padding: 130px clamp(22px,7vw,118px); }
 .service-overview-section h2, .service-section-heading h2, .service-audience-section h2, .service-cta h2 { margin: 0; font-family: Georgia,"Songti TC",serif; font-size: var(--type-section); font-weight: 400; line-height: 1.15; }
 .service-overview-section > p { max-width: 850px; color: #42535e; font-family: Georgia,"Songti TC",serif; font-size: var(--type-lead); line-height: 1.7; }
@@ -526,7 +526,7 @@ footer { padding: 54px clamp(22px, 7vw, 118px) 30px; background: #07151f; color:
 
 @media (max-width: 640px) {
   .header-primary-row { padding: 10px 16px; }
-  .brand-lockup img { width: 40px; height: 40px; }
+  .brand-lockup img { width: 48px; height: 48px; }
   .brand-lockup strong { font-size: 14px; letter-spacing: .14em; }
   .brand-lockup small { display: none; }
   .language-switcher button { min-width: 28px; }
@@ -543,10 +543,10 @@ footer { padding: 54px clamp(22px, 7vw, 118px) 30px; background: #07151f; color:
   }
   .hero-actions { align-items: flex-start; flex-direction: column; gap: 24px; }
   .hero-stats { margin-top: 30px; }
-  .hero-stats div { min-height: 94px; padding: 0 14px; }
+  .hero-stats div { min-height: 100px; padding: 0 10px; }
   .hero-stats div:first-child { padding-left: 0; }
-  .hero-stats small { font-size: 9px; }
-  .hero-stats strong { font-size: 19px; }
+  .hero-stats small { font-size: 11px; letter-spacing: .08em; white-space: nowrap; }
+  .hero-stats strong { font-size: clamp(17px,5vw,20px); white-space: nowrap; }
   .section { padding: 92px 20px; }
   .principles article { grid-template-columns: 38px 1fr; }
   .principles article p { grid-column: 2; }
@@ -570,7 +570,7 @@ footer { padding: 54px clamp(22px, 7vw, 118px) 30px; background: #07151f; color:
   .service-detail-primary { padding: 10px 16px; }
   .service-detail-hero { padding: 165px 20px 80px; }
   .service-detail-media { aspect-ratio: 4 / 3; }
-  .service-detail-media span { right: 18px; bottom: 14px; font-size: 40px; }
+  .service-detail-media span { right: 16px; bottom: 16px; width: 40px; height: 40px; font-size: 10px; }
   .service-overview-section, .service-offerings-section, .service-audience-section, .service-process-section, .service-other-section, .service-cta { padding: 86px 20px; }
   .service-offering-grid, .service-process-grid, .service-other-links { grid-template-columns: 1fr; }
   .service-offering-grid article, .service-process-grid article, .service-other-links a:nth-child(odd) { border-right: 0; }

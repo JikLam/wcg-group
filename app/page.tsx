@@ -51,7 +51,7 @@ const content = {
     businesses: [
       ["影視娛樂製作", "由創意策劃到現場執行，提供一站式影視、活動及數碼直播服務。", "直播製作・現場活動・影視內容・後期製作"],
       ["企業融資及上市", "從資金需要、融資結構到上市準備，建立清晰的資本發展路徑。", "融資評估・結構規劃・上市準備・專業協調"],
-      ["LPA 品牌及加盟", "以經典汽車文化與多元零售體驗，拓展品牌營運及加盟合作。", "名車體驗・品牌零售・加盟授權・創業支援"],
+      ["品牌名店加盟", "以經典汽車文化與多元零售體驗，拓展品牌營運及加盟合作。", "名車體驗・品牌零售・加盟授權・創業支援"],
       ["創新科技研發", "整合企業網絡、數據安全、數碼防偽及智能自動化。", "SD-WAN・數碼防偽・數據平台・智能自動化"],
       ["建築建設工程", "由前期規劃到施工管理，協調建築及基礎設施項目。", "規劃設計・建築工程・基礎設施・施工管理"],
       ["數碼市場推廣", "以搜尋、社交媒體、內容及自動化工具，建立可衡量的品牌增長。", "搜尋推廣・社交內容・全渠道推廣・AI 自動化"],
@@ -94,7 +94,7 @@ const content = {
       message: "查詢內容",
       send: "發送查詢",
     },
-    legal: "公司註冊、牌照及法律資料將於核實後更新。網站內容只作一般企業介紹用途。",
+    legal: "公司註冊、牌照及法律資料將於核實後更新，一切網站資料內容均為鉅瀧集團版權所有。",
     privacy: "私隱政策",
     terms: "使用條款",
     rights: "版權所有",
@@ -116,7 +116,7 @@ const content = {
     businesses: [
       ["影视娱乐制作", "由创意策划到现场执行，提供一站式影视、活动及数字直播服务。", "直播制作・现场活动・影视内容・后期制作"],
       ["企业融资及上市", "从资金需要、融资结构到上市准备，建立清晰的资本发展路径。", "融资评估・结构规划・上市准备・专业协调"],
-      ["LPA 品牌及加盟", "以经典汽车文化与多元零售体验，拓展品牌营运及加盟合作。", "名车体验・品牌零售・加盟授权・创业支持"],
+      ["品牌名店加盟", "以经典汽车文化与多元零售体验，拓展品牌营运及加盟合作。", "名车体验・品牌零售・加盟授权・创业支持"],
       ["创新科技研发", "整合企业网络、数据安全、数字防伪及智能自动化。", "SD-WAN・数字防伪・数据平台・智能自动化"],
       ["建筑建设工程", "由前期规划到施工管理，协调建筑及基础设施项目。", "规划设计・建筑工程・基础设施・施工管理"],
       ["数字市场推广", "以搜索、社交媒体、内容及自动化工具，建立可衡量的品牌增长。", "搜索推广・社交内容・全渠道推广・AI 自动化"],
@@ -129,7 +129,7 @@ const content = {
     milestone: "发展里程碑", milestoneYear: "2022", milestoneText: "Win Chance Group Holdings Limited 正式成立，开展多元业务整合与品牌建设。更多里程碑将于资料核实后更新。",
     contactKicker: "联系我们", contactTitle: "携手探索下一个机遇", contactText: "如欲了解集团业务或商讨合作，欢迎与我们联系。", addressLabel: "地址", address: "香港鲗鱼涌海泽街28号东港中心14楼1411室", phoneLabel: "电话", phone: "+852 2668 2600", whatsappLabel: "WhatsApp", whatsapp: "+852 4413 1113", wechatLabel: "微信", wechat: "WCG91949413", emailLabel: "电邮", email: "info@winchancegroup.com",
     form: { name: "姓名", company: "公司名称", email: "电邮地址", message: "查询内容", send: "发送查询" },
-    legal: "公司注册、牌照及法律资料将于核实后更新。网站内容只作一般企业介绍用途。", privacy: "隐私政策", terms: "使用条款", rights: "版权所有",
+    legal: "公司注册、牌照及法律资料将在核实后更新，一切网站资料内容均为钜泷集团版权所有。", privacy: "隐私政策", terms: "使用条款", rights: "版权所有",
   },
   en: {
     brand: "WCG", company: "Win Chance Group Holdings Limited",
@@ -147,7 +147,7 @@ const content = {
     businesses: [
       ["Entertainment Production", "One-stop screen, event and digital-live production from creative planning to on-site delivery.", "Streaming · Live events · Screen content · Post-production"],
       ["Corporate Finance & Listing", "Clarifying the path from funding needs and capital structure to listing readiness.", "Funding assessment · Capital structure · Listing readiness · Coordination"],
-      ["LPA Brand & Franchise", "Growing brand operations and franchise partnerships through classic-car culture and retail experiences.", "Automotive experiences · Retail · Licensing · Entrepreneur support"],
+      ["Brand Franchise", "Growing brand operations and franchise partnerships through classic-car culture and retail experiences.", "Automotive experiences · Retail · Licensing · Entrepreneur support"],
       ["Innovation & Technology", "Connecting enterprise networks, data security, digital authentication and automation.", "SD-WAN · Authentication · Data platforms · Automation"],
       ["Construction & Engineering", "Coordinating building and infrastructure projects from planning through construction management.", "Planning · Buildings · Infrastructure · Construction management"],
       ["Digital Marketing", "Building measurable growth through search, social media, content and automation.", "Search · Social content · Omnichannel marketing · AI automation"],
@@ -160,7 +160,7 @@ const content = {
     milestone: "Milestone", milestoneYear: "2022", milestoneText: "Win Chance Group Holdings Limited was established to integrate a diversified portfolio and build a unified corporate brand. Further milestones will be added after verification.",
     contactKicker: "CONTACT", contactTitle: "Let’s explore the next opportunity", contactText: "Contact us to learn about the Group or discuss a potential partnership.", addressLabel: "Address", address: "Unit 1411, 14/F, Eastern Harbour Centre, 28 Hoi Chak Street, Quarry Bay, Hong Kong", phoneLabel: "Telephone", phone: "+852 2668 2600", whatsappLabel: "WhatsApp", whatsapp: "+852 4413 1113", wechatLabel: "WeChat", wechat: "WCG91949413", emailLabel: "Email", email: "info@winchancegroup.com",
     form: { name: "Name", company: "Company", email: "Email address", message: "How can we help?", send: "Send enquiry" },
-    legal: "Company registration, licensing and legal information will be updated after verification. This website provides general corporate information only.", privacy: "Privacy", terms: "Terms", rights: "All rights reserved",
+    legal: "Company registration, licensing and legal information will be updated after verification. All website information and content are copyright of Win Chance Group.", privacy: "Privacy", terms: "Terms", rights: "All rights reserved",
   },
 } as const;
 
