@@ -30,7 +30,7 @@ export const services: ServiceRecord[] = [
     },
   },
   {
-    slug: "corporate-finance", index: 2, image: "/services/corporate-finance.png", imageWidth: 2000, imageHeight: 1334, imagePosition: "center bottom", imageFit: "contain", gallery: ["/services/corporate-finance-analysis.jpg", "/services/corporate-finance-03.jpg"],
+    slug: "corporate-finance", index: 2, image: "/services/corporate-finance-feature-20260916.jpg", imageWidth: 1807, imageHeight: 2400, imagePosition: "center 38%", imageFit: "cover", gallery: ["/services/corporate-finance-analysis.jpg", "/services/corporate-finance-03.jpg"],
     content: {
       tc: { title: "企業融資及上市", short: "從資金需要、融資結構到上市準備，協助企業建立清晰的資本發展路徑。", overview: "我們由企業現金流、盈利能力及資金用途出發，協助梳理融資需要、債務與股權結構、還款或回報安排，並按需要協調合資格的法律、會計、稅務及資本市場專業人士。", offerings: ["資金需要及現金流評估", "債務、股權及政策融資方向規劃", "上市前財務、法律及管治準備協調", "融資進度監察與方案檢視"], audiences: ["需要營運或擴展資金的企業", "正考慮引入投資者的成長型企業", "準備上市或改善企業管治的公司"] },
       sc: { title: "企业融资及上市", short: "从资金需要、融资结构到上市准备，协助企业建立清晰的资本发展路径。", overview: "我们由企业现金流、盈利能力及资金用途出发，协助梳理融资需要、债务与股权结构、还款或回报安排，并按需要协调合资格的法律、会计、税务及资本市场专业人士。", offerings: ["资金需要及现金流评估", "债务、股权及政策融资方向规划", "上市前财务、法律及管治准备协调", "融资进度监察与方案检视"], audiences: ["需要营运或扩展资金的企业", "正考虑引入投资者的成长型企业", "准备上市或改善企业管治的公司"] },
@@ -54,7 +54,7 @@ export const services: ServiceRecord[] = [
     },
   },
   {
-    slug: "construction-engineering", index: 5, image: "/services/brand-development.jpg", imageWidth: 1600, imageHeight: 999, imagePosition: "center center", imageFit: "cover", gallery: ["/services/construction-engineering-02.jpg", "/services/construction-engineering-03.jpg"],
+    slug: "construction-engineering", index: 5, image: "/services/construction-engineering-feature-20260916.jpg", imageWidth: 1600, imageHeight: 2400, imagePosition: "center 45%", imageFit: "cover", gallery: ["/services/construction-engineering-02.jpg", "/services/construction-engineering-03.jpg"],
     content: {
       tc: { title: "建築建設工程", short: "由前期規劃到施工管理，協調建築及基礎設施項目的質量、安全、成本與進度。", overview: "服務範圍涵蓋住宅、商業、工業及公共建築，以及道路、橋樑、隧道與公共設施等基礎建設。我們按項目需要協調可行性研究、設計、審批、成本管理、施工及監督工作。", offerings: ["可行性研究、設計及技術評估", "住宅、商業、工業及公共建築工程", "道路、橋樑、隧道及公共設施項目", "審批協調、施工管理與質量安全監控"], audiences: ["物業發展商及企業業主", "公共設施與基礎建設項目團隊", "需要工程規劃及項目管理的機構"] },
       sc: { title: "建筑建设工程", short: "由前期规划到施工管理，协调建筑及基础设施项目的质量、安全、成本与进度。", overview: "服务范围涵盖住宅、商业、工业及公共建筑，以及道路、桥梁、隧道与公共设施等基础建设。我们按项目需要协调可行性研究、设计、审批、成本管理、施工及监督工作。", offerings: ["可行性研究、设计及技术评估", "住宅、商业、工业及公共建筑工程", "道路、桥梁、隧道及公共设施项目", "审批协调、施工管理与质量安全监控"], audiences: ["物业发展商及企业业主", "公共设施与基础建设项目团队", "需要工程规划及项目管理的机构"] },
@@ -62,7 +62,7 @@ export const services: ServiceRecord[] = [
     },
   },
   {
-    slug: "digital-marketing", index: 6, image: "/services/digital-marketing.jpg", imageWidth: 640, imageHeight: 400, imagePosition: "center center", imageFit: "cover", gallery: ["/services/digital-marketing-02.jpg", "/services/digital-marketing-03.jpg"],
+    slug: "digital-marketing", index: 6, image: "/services/digital-marketing-feature-20260916.jpg", imageWidth: 2400, imageHeight: 1753, imagePosition: "center center", imageFit: "cover", gallery: ["/services/digital-marketing-social-20260916.jpg", "/services/digital-marketing-03.jpg"],
     content: {
       tc: { title: "數碼市場推廣", short: "以搜尋、社交媒體、內容及自動化工具，建立可衡量的品牌增長。", overview: "我們整合搜尋引擎優化與廣告、社交媒體、內容、電郵、即時通訊及 AI 自動化，協助企業建立清晰的數碼接觸點，精準連結目標客群，並以數據持續檢視成效。", offerings: ["搜尋引擎優化及搜尋廣告", "社交媒體內容與社群營運", "電郵、即時通訊及全渠道推廣", "AI 客服、聊天機械人與流程自動化"], audiences: ["需要建立網上曝光的企業", "重視客戶轉化與成效衡量的品牌", "希望整合客戶溝通渠道的團隊"] },
       sc: { title: "数字市场推广", short: "以搜索、社交媒体、内容及自动化工具，建立可衡量的品牌增长。", overview: "我们整合搜索引擎优化与广告、社交媒体、内容、电邮、即时通讯及 AI 自动化，协助企业建立清晰的数字接触点，精准连接目标客群，并以数据持续检视成效。", offerings: ["搜索引擎优化及搜索广告", "社交媒体内容与社群营运", "电邮、即时通讯及全渠道推广", "AI 客服、聊天机器人与流程自动化"], audiences: ["需要建立网上曝光的企业", "重视客户转化与成效衡量的品牌", "希望整合客户沟通渠道的团队"] },

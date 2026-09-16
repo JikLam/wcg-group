@@ -622,6 +622,7 @@ footer { padding: 54px clamp(22px, 7vw, 118px) 30px; background: #07151f; color:
   .subpage-header nav.open .subpage-service-overview { min-height: 44px; justify-content: center; padding: 10px; border: 0; border-top: 1px solid var(--line); }
   .subpage-header nav.open .subpage-service-links { grid-template-columns: repeat(2,minmax(0,1fr)); }
   .subpage-header nav.open .subpage-service-links a { min-height: 48px; padding: 8px; border: 0; border-top: 1px solid var(--line); }
+  .subpage-header nav.open .subpage-service-links a:nth-child(6) { border-bottom: 1px solid var(--line); }
   .collaboration-content { margin-top: 52px; }
   .partner-wall { gap: 36px 42px; }
   .partner-wall > span { flex-basis: 120px; }
