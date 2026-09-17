@@ -313,8 +313,8 @@ export default function Home() {
               const record = serviceRecords[index];
               return (
                 <a className="scope-card" key={title} href={`/services/${record.slug}`}>
-                  <div className="scope-card-media">
-                    <img src={record.image} alt="" loading="lazy" decoding="async" style={{ objectFit: record.imageFit, objectPosition: record.imagePosition }} />
+                  <div className={`scope-card-media ${record.cardImageFit === "contain" ? "is-contained" : ""}`}>
+                    <img src={record.image} alt="" loading="lazy" decoding="async" style={{ objectFit: record.cardImageFit ?? record.imageFit, objectPosition: record.cardImagePosition ?? record.imagePosition }} />
                     <span>0{index + 1}</span>
                   </div>
                   <div className="scope-card-copy">
