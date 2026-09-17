@@ -132,7 +132,7 @@ const content = {
     legal: "公司注册、牌照及法律资料将在核实后更新，一切网站资料内容均为钜泷集团版权所有。", privacy: "隐私政策", terms: "使用条款", rights: "版权所有",
   },
   en: {
-    brand: "WCG", company: "Win Chance Group Holdings Limited",
+    brand: "Win Chance Group Holdings Limited", company: "Win Chance Group Holdings Limited",
     nav: [["about", "About"], ["businesses", "Group Services"], ["direction", "Direction"], ["collaboration", "Partners"], ["contact", "Contact"]],
     menuLabel: "Open navigation menu", serviceMenu: "Group services", serviceScope: "Service scope", learnMore: "Learn more",
     eyebrow: "Integrated strategy · Expert collaboration · Enduring value",
@@ -196,9 +196,9 @@ export default function Home() {
     <main className="site-shell">
       <header className="site-header" onMouseLeave={() => setMenuOpen(false)}>
         <div className="header-primary-row">
-          <a className="brand-lockup" href="#top" aria-label={t.company}>
+          <a className={`brand-lockup ${lang === "en" ? "is-english" : "is-bilingual"}`} href="#top" aria-label={t.company}>
             <img src="/wcg-logo-transparent.png" alt="WCG" />
-            <span><strong>{t.brand}</strong><small>{t.company}</small></span>
+            <span><strong>{t.brand}</strong>{lang !== "en" && <small>{t.company}</small>}</span>
           </a>
 
           <nav className="primary-nav" aria-label="Primary navigation">

@@ -20,7 +20,7 @@ const copy = {
     ctaTitle: "与我们洽谈合作", ctaText: "请告诉我们你的业务目标及所需资源。", cta: "联系我们", rights: "版权所有",
   },
   en: {
-    brand: "WCG", home: "Group Home", about: "About", services: "Group Services", direction: "Our Direction", partners: "Partners", contact: "Contact",
+    brand: "Win Chance Group Holdings Limited", home: "Group Home", about: "About", services: "Group Services", direction: "Our Direction", partners: "Partners", contact: "Contact",
     kicker: "PARTNERSHIPS", title: "A cross-industry network", intro: "We connect strategy, technology, platforms and market resources around each project, exploring opportunities with businesses and professional institutions across different fields.",
     network: "OUR NETWORK", networkTitle: "Clients and partners", networkText: "The network presented here spans technology, finance, industry, consumer brands, automotive and property. All logos and trademarks belong to their respective owners.", strategic: "Strategic partners", featured: "Clients and partners",
     modes: "COLLABORATION", modesTitle: "Resources organised around each need", cards: [["Strategy and project collaboration", "Define objectives and project scope, then connect relevant specialists inside and outside the Group."], ["Technology and platform collaboration", "Explore enterprise network, data, security, authentication and automation solutions."], ["Brand and franchise collaboration", "Provide LPA licensing, operating models and support subject to formal franchise documents and agreements."], ["Professional service coordination", "Coordinate qualified specialists for finance, listing, succession and construction projects."]],

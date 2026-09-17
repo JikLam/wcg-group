@@ -16,7 +16,7 @@ const copy = {
     index: "服务一览", indexTitle: "由需要出发\n探索合适服务", learn: "了解更多", ctaTitle: "未确定需要哪项服务", ctaText: "告诉我们你的目标，我们会协助梳理方向及连接合适团队。", cta: "联系我们", rights: "版权所有",
   },
   en: {
-    brand: "WCG", home: "Group Home", about: "About", services: "Group Services", direction: "Our Direction", partners: "Partners", contact: "Contact",
+    brand: "Win Chance Group Holdings Limited", home: "Group Home", about: "About", services: "Group Services", direction: "Our Direction", partners: "Partners", contact: "Contact",
     kicker: "GROUP SERVICES", title: "Seven specialist fields\nConnected opportunities", intro: "Each business is led by a specialist team and can connect across disciplines where a project calls for a more complete growth strategy.",
     index: "SERVICE INDEX", indexTitle: "Start with your needs", learn: "Discover more", ctaTitle: "Not sure where to begin", ctaText: "Tell us your objective and we will help identify the right direction and team.", cta: "Contact us", rights: "All rights reserved",
   },
