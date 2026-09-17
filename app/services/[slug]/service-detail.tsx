@@ -23,9 +23,9 @@ export default function ServiceDetail({ service }: { service: ServiceRecord }) {
     <main className="service-page">
       <header className="service-detail-header">
         <div className="service-detail-primary">
-          <a className="brand-lockup" href="/" aria-label="Win Chance Group Holdings Limited">
+          <a className={`brand-lockup ${lang === "en" ? "is-english" : "is-bilingual"}`} href="/" aria-label="Win Chance Group Holdings Limited">
             <img src="/wcg-logo-transparent.png" alt="WCG" />
-            <span><strong>{labels.brand}</strong><small>Win Chance Group Holdings Limited</small></span>
+            <span><strong>{labels.brand}</strong>{lang !== "en" && <small>Win Chance Group Holdings Limited</small>}</span>
           </a>
           <a className="service-back" href="/services"><span>←</span>{labels.allServices}</a>
           <div className="language-switcher" aria-label={labels.language}>

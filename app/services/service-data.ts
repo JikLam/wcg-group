@@ -46,7 +46,7 @@ export const services: ServiceRecord[] = [
     },
   },
   {
-    slug: "innovation-technology", index: 4, image: "/services/innovation-technology.jpg", imageWidth: 1000, imageHeight: 436, imagePosition: "center center", imageFit: "cover", gallery: ["/services/innovation-technology-02.jpg", "/services/innovation-technology-03.jpg"],
+    slug: "innovation-technology", index: 4, image: "/services/innovation-technology-feature-20260917.jpg", imageWidth: 1822, imageHeight: 2400, imagePosition: "center 54%", imageFit: "cover", gallery: ["/services/innovation-technology-02-20260917.jpg", "/services/innovation-technology-03-20260917.jpg"],
     content: {
       tc: { title: "創新科技研發", short: "整合企業網絡、數據安全、數碼防偽及智能自動化，推進實際業務應用。", overview: "我們由企業實際場景出發，探索 SD-WAN、商用密碼技術、區塊鏈防偽、數據平台、數碼人與機械人自動化等方案，協助企業提升網絡效率、資訊可信度及營運智能化。", offerings: ["SD-WAN 企業網絡與跨區域管理", "數碼防偽、區塊鏈標籤及品牌保護", "數據庫與全渠道管理平台", "數碼人、數碼影視及機械人自動化方案"], audiences: ["正推動數碼轉型的企業", "重視網絡安全及產品真偽的品牌", "需要跨區域網絡或自動化方案的機構"] },
       sc: { title: "创新科技研发", short: "整合企业网络、数据安全、数字防伪及智能自动化，推进实际业务应用。", overview: "我们由企业实际场景出发，探索 SD-WAN、商用密码技术、区块链防伪、数据平台、数字人与机器人自动化等方案，协助企业提升网络效率、信息可信度及营运智能化。", offerings: ["SD-WAN 企业网络与跨区域管理", "数字防伪、区块链标签及品牌保护", "数据库与全渠道管理平台", "数字人、数字影视及机器人自动化方案"], audiences: ["正推动数字转型的企业", "重视网络安全及产品真伪的品牌", "需要跨区域网络或自动化方案的机构"] },
@@ -62,7 +62,7 @@ export const services: ServiceRecord[] = [
     },
   },
   {
-    slug: "digital-marketing", index: 6, image: "/services/digital-marketing-feature-20260916.jpg", imageWidth: 2400, imageHeight: 1753, imagePosition: "center center", imageFit: "cover", gallery: ["/services/digital-marketing-social-20260916.jpg", "/services/digital-marketing-03.jpg"],
+    slug: "digital-marketing", index: 6, image: "/services/digital-marketing-feature-20260917.jpg", imageWidth: 2400, imageHeight: 2297, imagePosition: "center center", imageFit: "cover", gallery: ["/services/digital-marketing-social-20260916.jpg", "/services/digital-marketing-03.jpg"],
     content: {
       tc: { title: "數碼市場推廣", short: "以搜尋、社交媒體、內容及自動化工具，建立可衡量的品牌增長。", overview: "我們整合搜尋引擎優化與廣告、社交媒體、內容、電郵、即時通訊及 AI 自動化，協助企業建立清晰的數碼接觸點，精準連結目標客群，並以數據持續檢視成效。", offerings: ["搜尋引擎優化及搜尋廣告", "社交媒體內容與社群營運", "電郵、即時通訊及全渠道推廣", "AI 客服、聊天機械人與流程自動化"], audiences: ["需要建立網上曝光的企業", "重視客戶轉化與成效衡量的品牌", "希望整合客戶溝通渠道的團隊"] },
       sc: { title: "数字市场推广", short: "以搜索、社交媒体、内容及自动化工具，建立可衡量的品牌增长。", overview: "我们整合搜索引擎优化与广告、社交媒体、内容、电邮、即时通讯及 AI 自动化，协助企业建立清晰的数字接触点，精准连接目标客群，并以数据持续检视成效。", offerings: ["搜索引擎优化及搜索广告", "社交媒体内容与社群营运", "电邮、即时通讯及全渠道推广", "AI 客服、聊天机器人与流程自动化"], audiences: ["需要建立网上曝光的企业", "重视客户转化与成效衡量的品牌", "希望整合客户沟通渠道的团队"] },
@@ -82,7 +82,7 @@ export const services: ServiceRecord[] = [
 export const servicePageLabels = {
   tc: { brand: "鉅瀧集團", back: "返回集團首頁", allServices: "七大集團服務", overview: "服務概覽", offerings: "專業服務", audiences: "適合對象", process: "合作流程", other: "其他集團服務", steps: [["了解需要", "釐清目標、現況與項目範圍。"], ["整合方案", "組合合適的專業團隊與執行方向。"], ["推進落地", "按階段協調、執行及檢視成果。"]], contactTitle: "與我們討論你的需要", contactText: "告訴我們你的目標，我們會協助梳理合適的服務方向。具體服務須受相關專業資格、審批及正式協議約束。", contact: "聯絡我們", language: "語言" },
   sc: { brand: "钜泷集团", back: "返回集团首页", allServices: "七大集团服务", overview: "服务概览", offerings: "专业服务", audiences: "适合对象", process: "合作流程", other: "其他集团服务", steps: [["了解需要", "厘清目标、现况与项目范围。"], ["整合方案", "组合合适的专业团队与执行方向。"], ["推进落地", "按阶段协调、执行及检视成果。"]], contactTitle: "与我们讨论你的需要", contactText: "告诉我们你的目标，我们会协助梳理合适的服务方向。具体服务须受相关专业资格、审批及正式协议约束。", contact: "联系我们", language: "语言" },
-  en: { brand: "WCG", back: "Back to Group", allServices: "Seven Group Services", overview: "Service overview", offerings: "Professional services", audiences: "Who we support", process: "How we work", other: "Other Group services", steps: [["Understand", "Clarify objectives, current conditions and project scope."], ["Integrate", "Bring together the right expertise and delivery direction."], ["Deliver", "Coordinate implementation and review outcomes by stage."]], contactTitle: "Let’s discuss what you need", contactText: "Tell us your objectives and we will help identify the right service direction. Specific services are subject to relevant professional qualifications, approvals and formal agreements.", contact: "Contact us", language: "Language" },
+  en: { brand: "Win Chance Group Holdings Limited", back: "Back to Group", allServices: "Seven Group Services", overview: "Service overview", offerings: "Professional services", audiences: "Who we support", process: "How we work", other: "Other Group services", steps: [["Understand", "Clarify objectives, current conditions and project scope."], ["Integrate", "Bring together the right expertise and delivery direction."], ["Deliver", "Coordinate implementation and review outcomes by stage."]], contactTitle: "Let’s discuss what you need", contactText: "Tell us your objectives and we will help identify the right service direction. Specific services are subject to relevant professional qualifications, approvals and formal agreements.", contact: "Contact us", language: "Language" },
 } as const;
 
 const aliases: Record<string, string> = { "classic-automotive": "lpa-franchise", "brand-development": "construction-engineering" };

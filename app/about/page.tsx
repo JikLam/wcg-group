@@ -20,7 +20,7 @@ const copy = {
     scope: "七大业务", scopeTitle: "专业服务范畴", learn: "了解服务", cta: "商讨合作", rights: "版权所有",
   },
   en: {
-    brand: "WCG", home: "Group Home", about: "About", services: "Group Services", direction: "Our Direction", partners: "Partners", contact: "Contact",
+    brand: "Win Chance Group Holdings Limited", home: "Group Home", about: "About", services: "Group Services", direction: "Our Direction", partners: "Partners", contact: "Contact",
     kicker: "ABOUT WCG", title: "Integrated expertise\nConnected opportunities", intro: "Win Chance Group Holdings Limited was established in 2022. Based in Hong Kong, the Group operates across seven specialist fields.",
     profile: "GROUP PROFILE", profileTitle: "A cross-sector business services platform", profileIntro: "Seven specialist capabilities, connected around each organisation’s objectives.", highlights: [["Seven businesses", "Entertainment, finance, LPA, technology, construction, digital marketing and succession."], ["Cross-sector resources", "Connect the right technology, talent and specialist teams for each project."], ["Practical delivery", "Maintain clear coordination from strategy through implementation."], ["Long-term relationships", "Explore new market opportunities with clients and partners."]],
     philosophy: "GROUP PHILOSOPHY", philosophyTitle: "Excellence through shared innovation", values: [["People", "Respect expertise and partners through clear communication and shared objectives."], ["Professional collaboration", "Connect the right teams so strategy, technology and delivery work together."], ["Long-term relationships", "Build trust through integrity and results, growing together with clients and partners."]],

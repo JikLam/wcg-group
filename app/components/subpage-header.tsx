@@ -42,9 +42,9 @@ export default function SubpageHeader({
 
   return (
     <header className="direction-header subpage-header" onMouseLeave={() => setServicesOpen(false)}>
-      <a className="brand-lockup" href="/" aria-label="Win Chance Group Holdings Limited">
+      <a className={`brand-lockup ${lang === "en" ? "is-english" : "is-bilingual"}`} href="/" aria-label="Win Chance Group Holdings Limited">
         <img src="/wcg-logo-transparent.png" alt="WCG" />
-        <span><strong>{labels.brand}</strong><small>Win Chance Group Holdings Limited</small></span>
+        <span><strong>{labels.brand}</strong>{lang !== "en" && <small>Win Chance Group Holdings Limited</small>}</span>
       </a>
       <nav className={open ? "open" : ""} aria-label={labels.home}>
         {links.slice(0, 2).map(([key, label, href]) => <a key={key} className={key === active ? "active" : ""} href={href} onClick={() => setOpen(false)}>{label}</a>)}
