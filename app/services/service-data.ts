@@ -56,7 +56,7 @@ export const services: ServiceRecord[] = [
     },
   },
   {
-    slug: "construction-engineering", index: 5, image: "/services/construction-engineering-feature-20260916.jpg", imageWidth: 1600, imageHeight: 2400, imagePosition: "center 45%", imageFit: "cover", cardImagePosition: "center center", cardImageFit: "contain", gallery: ["/services/construction-engineering-02.jpg", "/services/construction-engineering-03.jpg"],
+    slug: "construction-engineering", index: 5, image: "/services/construction-engineering-feature-20260922.jpg", imageWidth: 2400, imageHeight: 1200, imagePosition: "center center", imageFit: "cover", gallery: ["/services/construction-engineering-02.jpg", "/services/construction-engineering-03.jpg"],
     content: {
       tc: { title: "建築建設工程", short: "由前期規劃到施工管理，協調建築及基礎設施項目的質量、安全、成本與進度。", overview: "服務範圍涵蓋住宅、商業、工業及公共建築，以及道路、橋樑、隧道與公共設施等基礎建設。我們按項目需要協調可行性研究、設計、審批、成本管理、施工及監督工作。", offerings: ["可行性研究、設計及技術評估", "住宅、商業、工業及公共建築工程", "道路、橋樑、隧道及公共設施項目", "審批協調、施工管理與質量安全監控"], audiences: ["物業發展商及企業業主", "公共設施與基礎建設項目團隊", "需要工程規劃及項目管理的機構"] },
       sc: { title: "建筑建设工程", short: "由前期规划到施工管理，协调建筑及基础设施项目的质量、安全、成本与进度。", overview: "服务范围涵盖住宅、商业、工业及公共建筑，以及道路、桥梁、隧道与公共设施等基础建设。我们按项目需要协调可行性研究、设计、审批、成本管理、施工及监督工作。", offerings: ["可行性研究、设计及技术评估", "住宅、商业、工业及公共建筑工程", "道路、桥梁、隧道及公共设施项目", "审批协调、施工管理与质量安全监控"], audiences: ["物业发展商及企业业主", "公共设施与基础建设项目团队", "需要工程规划及项目管理的机构"] },
@@ -72,7 +72,7 @@ export const services: ServiceRecord[] = [
     },
   },
   {
-    slug: "family-succession", index: 7, image: "/services/family-succession.jpg", imageWidth: 974, imageHeight: 1400, imagePosition: "center 35%", imageFit: "cover", cardImagePosition: "center center", cardImageFit: "contain", gallery: ["/services/family-succession-02.jpg", "/services/family-succession-03.jpg"],
+    slug: "family-succession", index: 7, image: "/services/family-succession-feature-20260922.jpg", imageWidth: 2400, imageHeight: 1200, imagePosition: "center center", imageFit: "cover", gallery: ["/services/family-succession-02.jpg", "/services/family-succession-03.jpg"],
     content: {
       tc: { title: "家族傳承規劃", short: "以長遠的法律、財務及家族治理框架，守護財富、企業與核心價值。", overview: "家族傳承涉及資產分配、企業控制、家庭關係與價值延續。我們協助家族溝通目標、盤點資產及建立規劃方向，並按需要協調合資格的法律、會計、稅務與財務專業人士。", offerings: ["家族目標溝通與資產盤點", "遺囑、家族信託及保險方向梳理", "家族控股公司與企業傳承框架", "家族憲章、治理及下一代安排"], audiences: ["企業創辦人及家族企業", "正準備世代交接的家庭", "擁有跨境資產或複雜家庭需要的家族"] },
       sc: { title: "家族传承规划", short: "以长远的法律、财务及家族治理框架，守护财富、企业与核心价值。", overview: "家族传承涉及资产分配、企业控制、家庭关系与价值延续。我们协助家族沟通目标、盘点资产及建立规划方向，并按需要协调合资格的法律、会计、税务与财务专业人士。", offerings: ["家族目标沟通与资产盘点", "遗嘱、家族信托及保险方向梳理", "家族控股公司与企业传承框架", "家族宪章、治理及下一代安排"], audiences: ["企业创办人及家族企业", "正准备世代交接的家庭", "拥有跨境资产或复杂家庭需要的家族"] },
