@@ -35,7 +35,7 @@ export default async function InsightArticlePage({ params }: InsightPageProps) {
     "@type": "Article",
     headline: article.title,
     description: article.seoDescription,
-    image: `https://winchancegroup.com${article.image}`,
+    image: [article.image, ...article.gallery.map((item) => item.image)].map((image) => `https://winchancegroup.com${image}`),
     datePublished: article.published,
     dateModified: article.published,
     inLanguage: "zh-Hant-HK",
@@ -71,10 +71,14 @@ export default async function InsightArticlePage({ params }: InsightPageProps) {
                 <h2>{section.heading}</h2>
                 {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                 {section.bullets && <ul>{section.bullets.map((item) => <li key={item}>{item}</li>)}</ul>}
+                {article.gallery[index] && (
+                  <figure className="insight-section-image">
+                    <img src={article.gallery[index].image} alt={article.gallery[index].alt} loading="lazy" decoding="async" />
+                  </figure>
+                )}
               </section>
             ))}
             <section className="insight-brand-note"><p className="section-kicker">WCG PERSPECTIVE</p><h2>由知識走向實際執行</h2><p>{article.conclusion}</p><a className="button button-gold" href={`/services/${article.serviceSlug}`}>了解相關服務<span>↗</span></a></section>
-            <section className="insight-references"><h2>參考資料</h2><p>本文只供一般資訊及教育用途，不構成法律、財務、稅務、投資或其他專業意見。</p><ol>{article.sources.map((source) => <li key={source.url}><a href={source.url} target="_blank" rel="noreferrer">{source.label} ↗</a></li>)}</ol></section>
             <div className="insight-taxonomy"><div><small>關鍵字</small>{article.keywords.map((item) => <span key={item}>{item}</span>)}</div><div><small>標籤</small>{article.tags.map((item) => <span key={item}>{item}</span>)}</div></div>
           </div>
         </div>

@@ -19,10 +19,10 @@ export type InsightArticle = {
   image: string;
   imageAlt: string;
   imagePrompt: string;
+  gallery: { image: string; alt: string }[];
   intro: string;
   sections: InsightSection[];
   conclusion: string;
-  sources: { label: string; url: string }[];
 };
 
 export const insights: InsightArticle[] = [
@@ -41,6 +41,12 @@ export const insights: InsightArticle[] = [
     image: "/insights/hong-kong-ipo-readiness.jpg",
     imageAlt: "Asian finance team reviewing IPO readiness in a Hong Kong boardroom",
     imagePrompt: "Asian finance team reviewing cash-flow dashboards, governance documents and IPO readiness in a premium Hong Kong boardroom, wide editorial photography, navy and gold palette.",
+    gallery: [
+      { image: "/insights/gallery/ipo-capital-plan.jpg", alt: "Asian founder and advisers mapping a capital plan in a Hong Kong office" },
+      { image: "/insights/gallery/ipo-financial-records.jpg", alt: "Asian finance team reviewing audited records and cash-flow dashboards" },
+      { image: "/insights/gallery/ipo-corporate-governance.jpg", alt: "Asian board conducting a corporate governance and risk review" },
+      { image: "/insights/gallery/ipo-due-diligence-team.jpg", alt: "Asian professional advisers coordinating IPO due diligence" },
+    ],
     intro: "對成長中的企業而言，上市可以是融資、提升品牌公信力及建立長期資本平台的一種選擇，但它並不是單一交易，而是一場對業務質素、財務透明度、管理制度及執行能力的全面檢驗。越早建立可持續的基礎，企業越能在正式啟動項目時減少反覆補資料、重整架構及延誤時間表的風險。",
     sections: [
       {
@@ -80,10 +86,6 @@ export const insights: InsightArticle[] = [
       },
     ],
     conclusion: "鉅瀧集團可按企業目標協助梳理資金需求、融資結構及上市前準備方向，並按需要協調合資格的法律、會計、稅務及資本市場專業人士，讓企業在作出重大資本決策前建立更清晰的路線圖。",
-    sources: [
-      { label: "香港交易所：主板上市概覽", url: "https://www.hkex.com.hk/join-our-market/ipo/getting-started/listing-on-the-main-board?sc_lang=zh-HK" },
-      { label: "香港交易所：新上市申請人指南", url: "https://en-rules.hkex.com.hk/rulebook/guide-new-listing-applicants" },
-    ],
   },
   {
     slug: "privacy-first-digital-marketing-hong-kong",
@@ -100,6 +102,12 @@ export const insights: InsightArticle[] = [
     image: "/insights/privacy-first-digital-marketing.jpg",
     imageAlt: "Asian marketing professional planning a privacy-first digital campaign in Hong Kong",
     imagePrompt: "Asian digital marketing professional planning a privacy-conscious campaign in a contemporary Hong Kong office, subtle consent and secure-data overlays, wide premium editorial photography.",
+    gallery: [
+      { image: "/insights/gallery/privacy-consent-journey.jpg", alt: "Asian marketer designing a privacy-conscious consent journey" },
+      { image: "/insights/gallery/privacy-message-segmentation.jpg", alt: "Asian marketing team separating service and promotional communications" },
+      { image: "/insights/gallery/privacy-preference-centre.jpg", alt: "Asian customer managing communication preferences on a phone and laptop" },
+      { image: "/insights/gallery/privacy-vendor-audit.jpg", alt: "Asian specialists auditing marketing vendor data security controls" },
+    ],
     intro: "數碼推廣的價值來自更準確地理解客戶，但資料愈多，責任亦愈大。網站表格、會員系統、網店、活動登記、WhatsApp 及電郵名單都可能涉及個人資料。企業若只追求名單數量，而沒有設計清晰的收集目的、同意紀錄及退出流程，不但影響信任，也可能增加合規風險。",
     sections: [
       {
@@ -140,10 +148,6 @@ export const insights: InsightArticle[] = [
       },
     ],
     conclusion: "鉅瀧集團的數碼市場推廣服務整合搜尋、社交媒體、內容、電郵、即時通訊及自動化工具，協助企業在建立網上增長的同時，梳理更清晰、可持續的客戶接觸流程。具體法律及私隱合規事項應由合資格專業人士提供意見。",
-    sources: [
-      { label: "個人資料私隱專員公署：直接促銷指引", url: "https://www.pcpd.org.hk/english/resources_centre/publications/files/GN_DM_e.pdf" },
-      { label: "個人資料私隱專員公署：指引及報告", url: "https://www.pcpd.org.hk/english/resources_centre/publications/guidance/guidance.html" },
-    ],
   },
   {
     slug: "modular-integrated-construction-hong-kong",
@@ -160,6 +164,12 @@ export const insights: InsightArticle[] = [
     image: "/insights/modular-construction-hong-kong.jpg",
     imageAlt: "Asian engineers coordinating modular construction at a Hong Kong building site",
     imagePrompt: "Modern modular integrated construction site in Hong Kong with prefabricated modules installed by crane and Asian engineers in PPE, wide architectural editorial photography.",
+    gallery: [
+      { image: "/insights/gallery/mic-factory-assembly.jpg", alt: "Asian technicians assembling a modular room in a factory" },
+      { image: "/insights/gallery/mic-bim-coordination.jpg", alt: "Asian architects reviewing a coordinated modular building model" },
+      { image: "/insights/gallery/mic-module-transport.jpg", alt: "Modular building units transported to a Hong Kong construction site at dawn" },
+      { image: "/insights/gallery/mic-quality-inspection.jpg", alt: "Asian inspectors checking finishes and service interfaces in a modular room" },
+    ],
     intro: "MiC（Modular Integrated Construction，組裝合成建築法）把結構、裝修及部分機電工序轉移至受控工廠環境完成，再把模組運到工地安裝。這種方法可減少現場工序及工種交疊，但它要求設計、審批、製造、運輸與吊裝更早整合，因此項目成功的關鍵往往在施工前。",
     sections: [
       {
@@ -198,10 +208,6 @@ export const insights: InsightArticle[] = [
       },
     ],
     conclusion: "鉅瀧集團的建築建設工程服務由前期規劃至施工管理，按項目需要協調可行性、設計、審批、成本、品質、安全與進度。對考慮 MiC 的業主而言，越早整合專業團隊，越能把技術潛力轉化為可執行方案。",
-    sources: [
-      { label: "香港發展局：MiC 政策及技術通告", url: "https://www.devb.gov.hk/filemanager/technicalcirculars/en/upload/1406/1/C-2026-2-1.pdf" },
-      { label: "香港發展局：MiC 的應用與效益", url: "https://www.devb.gov.hk/en/publications_and_press_releases/press/index_id_14075.html" },
-    ],
   },
   {
     slug: "secure-ai-adoption-for-hong-kong-smes",
@@ -218,6 +224,12 @@ export const insights: InsightArticle[] = [
     image: "/insights/secure-ai-for-hong-kong-smes.jpg",
     imageAlt: "Asian SME team mapping secure AI workflows in a Hong Kong office",
     imagePrompt: "Asian SME leadership team mapping practical AI workflows and cybersecurity safeguards on large screens in a Hong Kong office, wide premium technology editorial photography.",
+    gallery: [
+      { image: "/insights/gallery/ai-low-risk-pilot.jpg", alt: "Asian customer service team testing a low-risk AI enquiry assistant" },
+      { image: "/insights/gallery/ai-workflow-mapping.jpg", alt: "Asian SME team mapping a workflow before automation" },
+      { image: "/insights/gallery/ai-access-controls.jpg", alt: "Asian IT manager configuring AI access controls and data permissions" },
+      { image: "/insights/gallery/ai-pilot-scorecard.jpg", alt: "Asian business team reviewing AI pilot performance metrics" },
+    ],
     intro: "AI 工具愈來愈容易使用，但企業真正需要的不是追逐每個新功能，而是把合適技術放進可控制、可衡量的流程。若員工自行把客戶資料、合約或內部文件輸入未經批准的平台，效率提升可能伴隨資料外洩、錯誤決策及供應商鎖定風險。",
     sections: [
       {
@@ -256,10 +268,6 @@ export const insights: InsightArticle[] = [
       },
     ],
     conclusion: "鉅瀧集團的創新科技研發服務由企業實際場景出發，探索企業網絡、數據安全、數碼防偽、資料平台及智能自動化方案，協助團隊把科技投資轉化為更穩健的營運能力。",
-    sources: [
-      { label: "香港數字政策辦公室：AI 與網絡安全措施", url: "https://www.digitalpolicy.gov.hk/en/news/speeches/2026/07/sp_20260728.html" },
-      { label: "數碼轉型支援先導計劃", url: "https://dtspp.cyberport.hk/zh-hk/%E9%A6%96%E9%A0%81/" },
-    ],
   },
   {
     slug: "family-succession-planning-hong-kong",
@@ -276,6 +284,12 @@ export const insights: InsightArticle[] = [
     image: "/insights/family-succession-planning-hong-kong.jpg",
     imageAlt: "Multigenerational Asian family discussing succession planning with an adviser in Hong Kong",
     imagePrompt: "Multigenerational Asian family discussing succession planning with an Asian adviser in an elegant Hong Kong home, warm harbour view, wide premium editorial lifestyle photography.",
+    gallery: [
+      { image: "/insights/gallery/family-asset-mapping.jpg", alt: "Multigenerational Asian family mapping business and investment assets" },
+      { image: "/insights/gallery/family-council.jpg", alt: "Multigenerational Asian family holding a structured family council" },
+      { image: "/insights/gallery/family-governance-framework.jpg", alt: "Asian family adviser explaining a family governance framework" },
+      { image: "/insights/gallery/family-next-generation-leadership.jpg", alt: "Asian founder mentoring the next generation business leader" },
+    ],
     intro: "家族傳承的難題通常不在於缺少工具，而在於資產、企業、家庭關係及個人期望互相牽連。遺囑、信託、保險或控股公司各有功能，但若沒有共同目標與治理安排，再完善的文件也未必能解決控制權、現金流及下一代角色的問題。",
     sections: [
       {
@@ -316,10 +330,6 @@ export const insights: InsightArticle[] = [
       },
     ],
     conclusion: "鉅瀧集團協助家族梳理目標、資產及企業傳承方向，並按需要協調合資格的法律、會計、稅務與財務專業人士。規劃愈早開始，家族便愈有空間建立共識，讓財富、企業與核心價值得以延續。",
-    sources: [
-      { label: "投資推廣署：香港家族辦公室", url: "https://www.investhk.gov.hk/zh-hk/key-industries/family-office/" },
-      { label: "投資推廣署：香港單一家族辦公室市場發展", url: "https://www.investhk.gov.hk/en/news/hong-kongs-single-family-offices-total-surpasses-3-380-injecting-over-10-billion-annually-into-local-economy/" },
-    ],
   },
 ];
 
