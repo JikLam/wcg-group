@@ -206,6 +206,7 @@ export default function Home() {
             <button type="button" aria-expanded={menuOpen} onMouseEnter={() => setMenuOpen(true)} onClick={() => setMenuOpen(!menuOpen)}>{t.nav[1][1]}</button>
             <a href="/direction">{t.nav[2][1]}</a>
             <a href="/partners">{t.nav[3][1]}</a>
+            <a href="/insights">{lang === "tc" ? "商業洞察" : lang === "sc" ? "商业洞察" : "Insights"}</a>
             <a href="#contact">{t.nav[4][1]}</a>
           </nav>
 
@@ -236,6 +237,7 @@ export default function Home() {
             <a href="/services" onClick={() => setMenuOpen(false)}>{t.nav[1][1]}</a>
             <a href="/direction" onClick={() => setMenuOpen(false)}>{t.nav[2][1]}</a>
             <a href="/partners" onClick={() => setMenuOpen(false)}>{t.nav[3][1]}</a>
+            <a href="/insights" onClick={() => setMenuOpen(false)}>{lang === "tc" ? "商業洞察" : lang === "sc" ? "商业洞察" : "Insights"}</a>
             <a href="#contact" onClick={() => setMenuOpen(false)}>{t.nav[4][1]}</a>
           </nav>
         </div>
