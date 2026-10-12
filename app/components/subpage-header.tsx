@@ -10,6 +10,7 @@ type HeaderLabels = {
   services: string;
   direction: string;
   partners: string;
+  insights?: string;
   contact: string;
 };
 
@@ -28,7 +29,7 @@ export default function SubpageHeader({
   lang: Lang;
   setLang: (lang: Lang) => void;
   labels: HeaderLabels;
-  active: "about" | "services" | "direction" | "partners";
+  active: "about" | "services" | "direction" | "partners" | "insights";
 }) {
   const [open, setOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
@@ -37,6 +38,7 @@ export default function SubpageHeader({
     ["about", labels.about, "/about"],
     ["direction", labels.direction, "/direction"],
     ["partners", labels.partners, "/partners"],
+    ["insights", labels.insights ?? (lang === "tc" ? "商業洞察" : lang === "sc" ? "商业洞察" : "Insights"), "/insights"],
     ["contact", labels.contact, "/#contact"],
   ] as const;
 
