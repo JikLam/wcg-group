@@ -18,7 +18,7 @@ export default function InsightsPage() {
           <h1>鉅瀧商業洞察</h1>
           <p>從香港市場出發，整理企業決策者需要的資本、科技、建築與傳承知識。</p>
         </div>
-        <div className="insights-hero-index"><span>05</span><small>專題文章</small></div>
+        <div className="insights-hero-index"><span>{String(insights.length).padStart(2, "0")}</span><small>專題文章</small></div>
       </section>
 
       <section className="insights-featured">

@@ -331,9 +331,320 @@ export const insights: InsightArticle[] = [
     ],
     conclusion: "鉅瀧集團協助家族梳理目標、資產及企業傳承方向，並按需要協調合資格的法律、會計、稅務與財務專業人士。規劃愈早開始，家族便愈有空間建立共識，讓財富、企業與核心價值得以延續。",
   },
+  {
+    slug: "hong-kong-corporate-live-stream-production-guide",
+    title: "香港企業直播活動製作指南：由流程設計到現場備援",
+    category: "品牌與內容",
+    service: "影視娛樂製作",
+    serviceSlug: "entertainment-production",
+    published: "2026-10-14",
+    readingTime: "約 8 分鐘",
+    summary: "企業直播不是架起攝影機便完成。本文由目標、節目流程、多機拍攝、綵排到網絡與錄影備援，整理香港企業活動的製作框架。",
+    seoDescription: "香港企業直播活動如何規劃？了解節目流程、多機拍攝、燈光收音、直播平台、網絡備援及現場應變的實務重點。",
+    keywords: ["香港企業直播", "活動直播製作", "多機拍攝", "網上研討會", "企業活動製作", "直播備援"],
+    tags: ["企業直播", "活動製作", "影視製作", "內容策劃"],
+    image: "/insights/live-stream-production-hong-kong.jpg",
+    imageAlt: "Asian production team managing a corporate live stream event in Hong Kong",
+    imagePrompt: "A professional Asian production team managing a corporate live-stream event in a sophisticated Hong Kong venue, cameras, switcher monitors and stage lighting, wide premium editorial photography.",
+    gallery: [
+      { image: "/insights/gallery/live-production-preplanning.jpg", alt: "Asian event producer leading a corporate live stream pre-production meeting" },
+      { image: "/insights/gallery/live-multicamera-control-room.jpg", alt: "Asian technical director operating a multi-camera live production control room" },
+      { image: "/insights/gallery/live-technical-rehearsal.jpg", alt: "Asian production crew rehearsing sound lighting and cameras on a corporate stage" },
+      { image: "/insights/gallery/live-production-backup-monitoring.jpg", alt: "Asian broadcast engineer monitoring backup connectivity power and recording systems" },
+    ],
+    intro: "企業直播同時是一場活動、一段節目及一個即時數碼產品。觀眾只看到台上的四十分鐘，製作團隊卻要預先處理內容節奏、畫面語言、收音、燈光、網絡、平台設定、嘉賓協調及突發事故。真正專業的直播，重點不是設備數量，而是所有環節能否圍繞同一個傳訊目標穩定運作。",
+    sections: [
+      {
+        heading: "先界定直播的商業目標",
+        paragraphs: [
+          "產品發布、投資者簡報、員工大會、論壇及培訓的觀眾需要不同。項目開始前應界定主要受眾、希望觀眾完成的行動、可量度指標及內容有效期，避免把現場活動直接搬到網上而忽略觀看體驗。",
+          "如果目標是收集潛在客戶，便要設計登記、提醒、問答及會後跟進；如果目標是品牌建立，則需要更重視視覺一致、嘉賓故事與可供重用的精華片段。",
+        ],
+        bullets: ["主要觀眾及觀看場景", "直播後希望產生的行動", "觀看人數、停留時間及互動等指標", "完整節目與短片素材的後續用途"],
+      },
+      {
+        heading: "把流程表變成畫面與聲音計劃",
+        paragraphs: [
+          "流程表除了列出環節時間，還要標明每一段由誰發言、使用哪個機位、何時播放簡報或影片、字幕如何顯示，以及導播、燈光、音響和舞台人員的提示。只有把內容翻譯成技術指令，現場團隊才可同步。",
+          "多機拍攝並非鏡頭愈多愈好。全景、主講者近鏡、雙人對談及現場反應各有功能，機位設計要配合場地動線及畫面敘事，亦要避免攝影機互相入鏡或阻礙觀眾。",
+        ],
+      },
+      {
+        heading: "燈光、收音與綵排決定專業感",
+        paragraphs: [
+          "觀眾對聲音中斷的容忍度通常低於畫面瑕疵。無線咪頻率、嘉賓佩戴方式、現場擴音與直播混音應分開測試，並為影片、視像連線及問答準備一致音量。燈光則要同時照顧現場觀感、膚色及螢幕曝光。",
+          "完整綵排應按正式時間表走一次，而不是只測試設備。團隊要驗證嘉賓上落台、簡報切換、遙距講者、字幕、問題審核及超時處理，並記錄每個環節的決策人。",
+        ],
+      },
+      {
+        heading: "為網絡、供電及錄影建立備援",
+        paragraphs: [
+          "直播風險不能只靠一句「網絡應該穩定」。主線與備用線應使用不同接入路徑，現場要測試實際上載速度、延遲及長時間穩定度；關鍵設備亦要有不間斷電源及清晰切換程序。",
+          "平台直播之外，應在本地或獨立設備錄製乾淨訊號。即使平台中斷，團隊仍可保存完整節目並快速補發。畫面、簡報及音訊最好分軌保留，方便日後剪輯精華及修正字幕。",
+        ],
+        bullets: ["獨立主線與備用上網連線", "關鍵設備電源與替換機", "平台及本地同步錄影", "中斷時的主持口徑與觀眾通知方式"],
+      },
+      {
+        heading: "直播後才是內容生命周期的開始",
+        paragraphs: [
+          "直播結束後應整理觀看數據、問題、登記來源及內容表現，找出觀眾流失或互動最高的段落。完整重播、三分鐘摘要、嘉賓金句與垂直短片可分別服務網站、社交媒體及銷售跟進。",
+          "所有重用素材都要確認音樂、圖片、講者及參加者的使用權。建立有結構的素材庫，可令一次製作持續支援數星期甚至數月的品牌溝通。",
+        ],
+      },
+    ],
+    conclusion: "鉅瀧集團的影視娛樂製作服務整合創意策劃、流程管理、拍攝、導播、直播與後期內容，協助企業把一次活動轉化為穩定、專業及可持續運用的品牌資產。",
+  },
+  {
+    slug: "hong-kong-franchise-due-diligence-guide",
+    title: "香港品牌加盟前必讀：如何評估單店模型、支援系統與合作條款",
+    category: "品牌與內容",
+    service: "品牌名店加盟",
+    serviceSlug: "lpa-franchise",
+    published: "2026-10-14",
+    readingTime: "約 9 分鐘",
+    summary: "加盟的核心不是買入一個商標，而是驗證一套可重複的生意系統。本文整理香港加盟者評估財務、選址、營運支援與合作條款的方法。",
+    seoDescription: "香港品牌加盟前如何做盡職審查？由單店盈利、選址、培訓、供應鏈到加盟合約，掌握評估品牌加盟機會的實務框架。",
+    keywords: ["香港品牌加盟", "加盟店", "特許經營", "加盟合約", "店舖選址", "加盟創業"],
+    tags: ["品牌加盟", "零售營運", "創業", "盡職審查"],
+    image: "/insights/hong-kong-franchise-due-diligence.jpg",
+    imageAlt: "Asian franchise partners reviewing a premium retail concept in Hong Kong",
+    imagePrompt: "Asian franchise partners reviewing a premium retail concept and operating model in a stylish Hong Kong showroom, wide contemporary editorial photography.",
+    gallery: [
+      { image: "/insights/gallery/franchise-unit-economics.jpg", alt: "Asian franchise owner and adviser reviewing store unit economics" },
+      { image: "/insights/gallery/franchise-location-assessment.jpg", alt: "Asian franchise team assessing a Hong Kong retail location and footfall" },
+      { image: "/insights/gallery/franchise-operations-training.jpg", alt: "Asian trainer leading a franchise operations and service training session" },
+      { image: "/insights/gallery/franchise-partnership-terms.jpg", alt: "Asian franchise partners discussing support responsibilities and agreement terms" },
+    ],
+    intro: "知名度可以吸引顧客第一次入店，但不能保證單店長期盈利。加盟者真正購買的是品牌定位、產品、供應鏈、營運手冊、培訓及持續支援的組合。評估任何加盟機會時，不應只看成功店舖或預測回報，而要理解在香港租金、人手、競爭及消費習慣下，整套模型能否成立。",
+    sections: [
+      {
+        heading: "先拆解單店經濟模型",
+        paragraphs: [
+          "營業額預測應由客流、轉化率、客單價及營業日數推算，而不是引用品牌最好的門店。成本則要包括租金、裝修折舊、員工、原材料、物流、系統、牌照、推廣、加盟費及持續權利金。",
+          "加盟者應進行情境分析：如果開業延遲、銷售低於預期或食材和人工上升，現金能支持多久？損益平衡月份、營運資金及回本期都應在較保守假設下測試。",
+        ],
+        bullets: ["初始投資與開業前現金需要", "毛利率、固定成本與損益平衡點", "權利金、推廣基金及系統費", "淡旺季、租金調整及退出情境"],
+      },
+      {
+        heading: "用實地資料評估選址",
+        paragraphs: [
+          "人流多不等於適合品牌。團隊要觀察目標顧客、到訪時段、步行方向、可見度、附近競爭、外賣需求及交通節點，並比較平日、周末與不同天氣。",
+          "租約年期應與裝修投入及預期回本期配合。業主限制、招牌、排氣、電力、上落貨、消防及用途等條件，可能直接影響能否按品牌標準開店。簽約前應由相關專業人士核實。",
+        ],
+      },
+      {
+        heading: "檢查營運系統是否真正可複製",
+        paragraphs: [
+          "成熟品牌應能說明開店流程、招聘培訓、品質標準、庫存、客訴、食物或產品安全、數據系統及日常報表。若關鍵知識只存在於創辦人個人經驗，加盟店便難以穩定複製。",
+          "培訓不應只在開業前出現。要確認新品、員工流動、營銷活動及營運問題出現時，總部提供甚麼更新、巡店、數據分析與改善支援。",
+        ],
+      },
+      {
+        heading: "把雙方責任寫進合作條款",
+        paragraphs: [
+          "加盟協議應清楚界定區域、期限、續約、供應商、定價、推廣、知識產權、數據、審核、轉讓及終止安排。總部承諾的培訓、開店支援及營銷資源，也應盡量具體。",
+          "雙方亦要預先討論不達標、供應中斷、品牌危機及店舖退出時的處理方式。條款需要結合香港法律及實際營運，由合資格法律及財務專業人士獨立審閱。",
+        ],
+      },
+      {
+        heading: "與現有加盟者驗證資料",
+        paragraphs: [
+          "品牌簡報只代表一方觀點。候選加盟者可在獲准情況下訪問不同年資及地區的現有加盟者，了解開店支援、供應穩定、總部回應、實際工時與盈利差異。",
+          "最重要的問題不是「品牌是否成功」，而是「這套模式是否適合自己的資金、能力、風險承受度及希望投入的角色」。只有數字、條款與雙方期望一致，合作才有長期基礎。",
+        ],
+      },
+    ],
+    conclusion: "鉅瀧集團的品牌名店加盟服務協助企業及合作夥伴梳理品牌定位、單店模型、營運支援與市場拓展方向，並按需要連結合資格專業人士，讓加盟決策建立在更完整的商業評估之上。",
+  },
+  {
+    slug: "sd-wan-guide-for-hong-kong-businesses",
+    title: "香港多分店企業 SD-WAN 指南：提升連線韌性與集中管理",
+    category: "數碼與科技",
+    service: "創新科技研發",
+    serviceSlug: "innovation-technology",
+    published: "2026-10-14",
+    readingTime: "約 8 分鐘",
+    summary: "當分店、雲端系統與視像會議同時增長，傳統網絡管理容易變得複雜。本文說明 SD-WAN 的運作、效益、風險與導入步驟。",
+    seoDescription: "SD-WAN 如何幫助香港多分店企業提升網絡韌性、應用體驗及集中管理？了解架構、保安、供應商評估與導入方法。",
+    keywords: ["SD-WAN 香港", "企業網絡", "分店網絡", "網絡安全", "雲端連線", "網絡管理"],
+    tags: ["SD-WAN", "企業網絡", "網絡安全", "數碼基建"],
+    image: "/insights/sd-wan-hong-kong-business.jpg",
+    imageAlt: "Asian IT team monitoring a multi-branch SD-WAN network in Hong Kong",
+    imagePrompt: "Asian IT team in a Hong Kong operations centre monitoring a resilient multi-branch SD-WAN network, wide premium technology editorial photography.",
+    gallery: [
+      { image: "/insights/gallery/sdwan-resilient-connectivity.jpg", alt: "Asian network engineer checking redundant connectivity in a Hong Kong network room" },
+      { image: "/insights/gallery/sdwan-central-policy.jpg", alt: "Asian network architect managing branch connectivity from a central console" },
+      { image: "/insights/gallery/sdwan-branch-connectivity.jpg", alt: "Hong Kong retail branch connected to centrally monitored cloud network services" },
+      { image: "/insights/gallery/sdwan-security-monitoring.jpg", alt: "Asian security analyst monitoring SD-WAN alerts and branch network health" },
+    ],
+    intro: "企業使用雲端應用、視像會議、網店、收銀及遠端協作後，網絡已由後勤設施變成日常營運的一部分。多分店企業若逐點設定路由器、線路與保安規則，擴張時會面對管理不一致、故障難定位及頻寬利用不足。SD-WAN 以軟件方式集中控制廣域網絡，但它並不是單一盒子，而是一套連線、政策、監察與保安設計。",
+    sections: [
+      {
+        heading: "SD-WAN 解決甚麼問題",
+        paragraphs: [
+          "傳統廣域網絡往往把分店流量先送回數據中心，再連接雲端服務。當大量工作移到雲端，這種路徑可能增加延遲。SD-WAN 可按應用、線路狀態及政策選擇較合適路徑，並透過同一平台管理多個站點。",
+          "它亦可同時使用寬頻、專線或流動網絡，當主線品質下降時自動切換。不過，實際體驗仍取決於線路多樣性、設備能力、供應商網絡及配置質素。",
+        ],
+      },
+      {
+        heading: "先按應用設定優先次序",
+        paragraphs: [
+          "企業要先知道哪些流量影響營運。付款、語音、視像、企業資源規劃及一般瀏覽對延遲、抖動與可用性的要求不同。沒有應用分類，系統只能把所有流量一視同仁。",
+          "中央政策可讓新分店快速套用基本設定，減少人手逐點配置。但模板仍要容許不同場地、頻寬與業務的例外，並建立變更審批及回復機制。",
+        ],
+        bullets: ["列出各站點的關鍵應用與繁忙時段", "設定延遲、丟包及可用性門檻", "區分業務、訪客、物聯網及管理流量", "建立故障切換和回復測試"],
+      },
+      {
+        heading: "連線與保安要一併設計",
+        paragraphs: [
+          "SD-WAN 改善路徑控制，不代表自動完成整體保安。企業仍需處理身份驗證、設備修補、網絡分段、加密、惡意流量偵測、日誌及遠端存取。分店直接上網後，安全邊界更需要一致。",
+          "評估方案時，應了解控制平台位於何處、誰可改動政策、日誌保存多久、事件如何通知，以及能否整合現有防火牆、身份系統及監察平台。",
+        ],
+      },
+      {
+        heading: "選擇供應商不只比較月費",
+        paragraphs: [
+          "企業應比較覆蓋範圍、設備生命周期、技術支援、服務級別、報告透明度、擴展方式及退出安排。若多個站點依賴同一上游或同一路徑，表面上的雙線可能沒有真正冗餘。",
+          "管理式服務可減少內部負擔，但責任界面要清楚：誰監察、誰處理線路、誰批准政策、誰在事故時與電訊商協調，以及配置和日誌能否匯出。",
+        ],
+      },
+      {
+        heading: "用試點驗證再分批遷移",
+        paragraphs: [
+          "可先選擇一個典型分店、一個高流量分店及一個網絡條件較複雜的站點試行。測試正常營運、主線中斷、應用高峰、設備重啟及中央平台不可用等情境。",
+          "導入後要持續檢視應用體驗、線路利用、故障時間、事故數量與支援成本。只有這些指標改善，SD-WAN 才真正成為營運能力，而不只是一次設備更新。",
+        ],
+      },
+    ],
+    conclusion: "鉅瀧集團的創新科技研發服務按企業實際站點、應用及風險需要，協助梳理網絡架構、連線韌性、集中管理與數據安全方向，讓多分店擴展建立在更穩定的數碼基建之上。",
+  },
+  {
+    slug: "hong-kong-commercial-construction-planning",
+    title: "香港商業建築項目前期策劃：預算、進度與風險管理清單",
+    category: "建築創新",
+    service: "建築建設工程",
+    serviceSlug: "construction-engineering",
+    published: "2026-10-14",
+    readingTime: "約 9 分鐘",
+    summary: "商業工程的重大超支往往在動工前已埋下。本文由項目目標、現場調查、預算、審批、採購到風險分配，整理前期策劃清單。",
+    seoDescription: "香港商業建築項目前期如何控制預算、工期及風險？掌握可行性、現場調查、成本計劃、審批、採購及施工協調重點。",
+    keywords: ["香港建築工程", "商業裝修", "工程預算", "項目管理", "施工進度", "建築策劃"],
+    tags: ["建築工程", "前期策劃", "成本管理", "施工管理"],
+    image: "/insights/hong-kong-commercial-construction-planning.jpg",
+    imageAlt: "Asian project team planning a commercial construction project in Hong Kong",
+    imagePrompt: "Asian project director, architect and quantity surveyor planning a commercial construction project in Hong Kong, wide premium architectural editorial photography.",
+    gallery: [
+      { image: "/insights/gallery/construction-site-feasibility.jpg", alt: "Asian architects conducting an early feasibility survey at a Hong Kong commercial property" },
+      { image: "/insights/gallery/construction-cost-planning.jpg", alt: "Asian quantity surveyor and architect reviewing cost plans and material options" },
+      { image: "/insights/gallery/construction-programme-coordination.jpg", alt: "Asian project team coordinating a phased commercial construction programme" },
+      { image: "/insights/gallery/construction-safety-quality-review.jpg", alt: "Asian site team conducting a construction safety and quality review" },
+    ],
+    intro: "一個項目的預算與工期，不是在承建商進場後才開始管理。用途、設計範圍、現場條件、審批、採購方式及業主決策速度，都會在前期塑造成本。香港商業項目常涉及營業不中斷、舊樓限制、管理處規則及緊迫開業日期，越早把假設轉化為可核實資料，越能減少後期變更。",
+    sections: [
+      {
+        heading: "把商業目標寫成項目簡報",
+        paragraphs: [
+          "項目簡報要說明空間用途、人數、營運流程、品牌體驗、設備、可持續要求、預算上限及必須投入服務的日期。模糊的「高級」或「靈活」需要轉化成材料、性能及使用情境。",
+          "亦要區分不可妥協項目與可調整項目。當預算或時間受壓時，團隊才可按事先同意的優先次序作出選擇，而不是在施工中反覆改動。",
+        ],
+      },
+      {
+        heading: "現場調查要早於設計承諾",
+        paragraphs: [
+          "現有結構、樓底、機電容量、防水、消防、排水、外牆、垂直運輸及物料進出都可能限制方案。舊圖則只可作起點，關鍵尺寸及系統應由專業團隊現場核實。",
+          "如果項目位於運作中的商場、辦公室或酒店，還要了解施工時段、噪音、保護、臨時改道及管理處審批。這些條件會直接影響工序及成本。",
+        ],
+        bullets: ["權屬、用途及管理規則", "結構與機電現況", "消防、無障礙及法定要求", "物料運輸、臨時存放及施工時段"],
+      },
+      {
+        heading: "建立會隨設計更新的成本計劃",
+        paragraphs: [
+          "前期預算不應只是一個每平方呎單價。成本計劃要分拆建築、機電、專業設備、顧問、法定費用、臨時工程、資訊科技、搬遷及風險準備金，並註明計算基礎與未包括項目。",
+          "價值工程不等於選擇最便宜材料，而是比較功能、生命周期、維修、施工難度及供應期。每次重要設計決定後更新預算，才可在偏差仍可控制時作出調整。",
+        ],
+      },
+      {
+        heading: "把審批、採購與施工放進同一時間表",
+        paragraphs: [
+          "設計、業主決策、法定審批、管理處審批、長交期設備、樣板、招標及施工彼此依賴。只列施工期而忽略前置工作，開業日期便容易失真。",
+          "採購方式亦影響責任與速度。傳統招標、設計建造或分包採購各有取捨，應按設計成熟度、工期、風險及業主管理能力選擇，並明確資訊提交和批核期限。",
+        ],
+      },
+      {
+        heading: "用風險清單管理不確定性",
+        paragraphs: [
+          "風險清單應記錄事件、可能性、影響、責任人、預防措施及觸發點，例如隱蔽工程、牌照延誤、鄰近投訴、物料供應、惡劣天氣或營運交接。清單要在設計及施工會議持續更新。",
+          "工程涉及法定、結構、消防及安全要求，具體方案必須由合資格專業人士按實際現場提供意見。透明的責任分工、紀錄與變更程序，是保護預算、品質及時間表的基礎。",
+        ],
+      },
+    ],
+    conclusion: "鉅瀧集團的建築建設工程服務由前期規劃、專業協調、成本與進度管理到施工執行，協助業主把商業需要轉化為更清晰、可落地及可監控的項目方案。",
+  },
+  {
+    slug: "seo-content-strategy-for-hong-kong-businesses",
+    title: "香港企業 SEO 內容策略：由搜尋意圖到可持續自然流量",
+    category: "數碼與科技",
+    service: "數碼市場推廣",
+    serviceSlug: "digital-marketing",
+    published: "2026-10-14",
+    readingTime: "約 8 分鐘",
+    summary: "SEO 不是在文章重複關鍵字。本文說明香港企業如何由搜尋意圖、主題架構、內容製作、技術基礎及成效指標建立長期自然流量。",
+    seoDescription: "香港企業如何制定 SEO 內容策略？由搜尋意圖、關鍵字分群、網站架構、內容質素到自然流量分析，建立可持續增長框架。",
+    keywords: ["香港 SEO", "SEO 內容策略", "搜尋引擎優化", "內容營銷", "自然流量", "關鍵字研究"],
+    tags: ["SEO", "內容營銷", "數碼推廣", "自然搜尋"],
+    image: "/insights/hong-kong-seo-content-strategy.jpg",
+    imageAlt: "Asian marketing team planning an SEO content strategy in Hong Kong",
+    imagePrompt: "Asian digital marketing team planning a detailed SEO content strategy in a modern Hong Kong office, wide premium editorial photography.",
+    gallery: [
+      { image: "/insights/gallery/seo-search-intent-map.jpg", alt: "Asian SEO strategist mapping search intent and keyword clusters" },
+      { image: "/insights/gallery/seo-site-architecture.jpg", alt: "Asian UX and SEO specialists reviewing a website information architecture" },
+      { image: "/insights/gallery/seo-editorial-production.jpg", alt: "Asian editorial team producing and reviewing a business SEO article" },
+      { image: "/insights/gallery/seo-performance-review.jpg", alt: "Asian marketing team reviewing organic search and content performance" },
+    ],
+    intro: "搜尋引擎優化的價值，在於企業能否在客戶主動尋找答案的時刻出現。單純大量發布文章、把同一個關鍵字重複多次，未必能建立排名，反而可能造成內容重疊。有效策略需要把客戶問題、網站結構、內容品質、技術體驗及轉化路徑放在一起設計。",
+    sections: [
+      {
+        heading: "由客戶問題而非工具數字開始",
+        paragraphs: [
+          "關鍵字工具提供搜尋量，但不能完全解釋使用者為何搜尋。企業應把查詢分為了解、比較、評估及行動等意圖，再分析每個階段需要指南、案例、服務頁、常見問題或工具。",
+          "香港市場常同時使用繁體中文、簡體中文及英文。不同語言不應只作逐字翻譯，而要檢查實際用詞、地區需要及搜尋結果，確保每個版本真正回答相應受眾。",
+        ],
+      },
+      {
+        heading: "以主題群組建立網站架構",
+        paragraphs: [
+          "一個重要服務可由核心頁解釋價值、流程與行動方式，再以多篇專題文章回答費用、選擇、風險、案例及常見問題。文章之間透過清楚的內部連結形成主題群組，幫助使用者及搜尋引擎理解關係。",
+          "每個頁面應有主要目的，避免數篇內容競爭同一個搜尋意圖。發現重疊時，可合併、重新定位或以正確連結整理權重，而不是持續增加相似文章。",
+        ],
+        bullets: ["一個清晰的主要搜尋意圖", "可理解的英文網址與頁面標題", "由文章連接至相關服務及下一步", "麵包屑、分類及網站地圖保持一致"],
+      },
+      {
+        heading: "用專業內容建立可信度",
+        paragraphs: [
+          "深度內容應展示實際經驗：界定適用情境、解釋步驟、指出限制、提供檢查清單，並由熟悉業務的人員審核。若涉及法律、醫療、財務或安全等高影響議題，更要清楚標示資料範圍及專業意見需要。",
+          "圖片要有實際作用，並加入描述內容的替代文字。標題層級、短段落、清單及目錄可提升閱讀效率；結尾則應提供與文章意圖一致的下一步，而不是突兀推銷。",
+        ],
+      },
+      {
+        heading: "技術體驗決定內容能否被使用",
+        paragraphs: [
+          "即使內容優秀，如果頁面載入慢、手機排版困難、連結失效或搜尋引擎無法索引，成效仍會受限。企業應檢查網站速度、行動裝置體驗、HTTPS、標準網址、結構化資料及 XML 網站地圖。",
+          "大型圖片可先壓縮並提供合適尺寸，第三方程式則要衡量必要性。技術 SEO 不是一次設定，而應在改版、新增語言、轉換網址或加入新功能時重新驗證。",
+        ],
+      },
+      {
+        heading: "以商業結果而非排名單點衡量",
+        paragraphs: [
+          "排名會因位置、裝置及搜尋結果版面而變化。更完整的指標包括有效曝光、非品牌點擊、文章參與、服務頁到訪、合資格查詢及轉化。亦要按主題群組及客戶階段分析，而不是只看全站總流量。",
+          "內容需要持續維護。企業可每季檢查資料是否過時、搜尋意圖是否改變、哪些頁面需要擴充或合併。SEO 的複利來自清晰架構、穩定品質與長期更新，而不是短期技巧。",
+        ],
+      },
+    ],
+    conclusion: "鉅瀧集團的數碼市場推廣服務整合 SEO、內容策劃、網站體驗、社交媒體與成效分析，協助香港企業把專業知識轉化為更容易被發現、理解及採取行動的數碼資產。",
+  },
 ];
 
-export const insightCategories = ["資本與企業發展", "數碼與科技", "建築創新", "財富與傳承"];
+export const insightCategories = ["資本與企業發展", "品牌與內容", "數碼與科技", "建築創新", "財富與傳承"];
 
 export function findInsight(slug: string) {
   return insights.find((article) => article.slug === slug);
