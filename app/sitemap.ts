@@ -5,7 +5,7 @@ import { services } from "./services/service-data";
 const origin = "https://winchancegroup.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const updated = new Date("2026-10-12");
+  const updated = new Date("2026-10-14");
   const corePages = ["", "/about", "/services", "/direction", "/partners", "/insights"].map((path) => ({
     url: `${origin}${path}`,
     lastModified: updated,
