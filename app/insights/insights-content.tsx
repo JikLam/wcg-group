@@ -75,7 +75,7 @@ const serviceCopy: Record<string, Record<Lang, string>> = {
 type LocalArticle = { title: string; summary: string };
 
 const simplifiedArticles: Record<string, LocalArticle> = {
-  "whatsapp-business-customer-service-hong-kong": { title: "香港中小企 WhatsApp Business 客户服务指南：由查询到成交的实务流程", summary: "整理网站入口、欢迎信息、快捷回复、团队交接与成效检视，附可改写的客户服务信息范例。" },
+  "whatsapp-business-customer-service-hong-kong": { title: "WhatsApp 查询多，成交少？香港中小企必做的 5 个改善", summary: "客人问完价就消失？用 5 个简单改善，整理网站入口、回复及跟进，附可直接改写的 WhatsApp 信息。" },
   "hong-kong-ipo-readiness-guide": { title: "香港企业上市前准备：由财务基础到管治架构的实务路线图", summary: "上市不是提交申请前数月才开始的工作。本文整理香港企业由资金需求、财务纪录、内部监控到专业团队协调的上市前准备框架。" },
   "privacy-first-digital-marketing-hong-kong": { title: "香港数码推广合规入门：收集客户资料前必须想清楚的五件事", summary: "由表格、会员计划到电邮与即时通讯推广，香港企业应如何建立以私隐为先的客户资料流程？本文以五个实务环节说明。" },
   "modular-integrated-construction-hong-kong": { title: "MiC 组装合成建筑法是什么？香港工程项目的效益、限制与准备", summary: "MiC 把部分现场工序转移至工厂，但并非简单把房间像积木般叠起。本文说明香港项目采用 MiC 的效益、限制及前期准备。" },
@@ -89,7 +89,7 @@ const simplifiedArticles: Record<string, LocalArticle> = {
 };
 
 const englishArticles: Record<string, LocalArticle> = {
-  "whatsapp-business-customer-service-hong-kong": { title: "WhatsApp Business Customer Service for Hong Kong SMEs: From Enquiry to Follow-Up", summary: "A practical Traditional Chinese guide to website enquiry links, welcome messages, quick replies, team handovers and conversion measurement." },
+  "whatsapp-business-customer-service-hong-kong": { title: "More WhatsApp Enquiries, Fewer Sales? Five Fixes for Hong Kong SMEs", summary: "A concise Traditional Chinese guide with five practical improvements and ready-to-adapt messages for handling enquiries and follow-ups." },
   "hong-kong-ipo-readiness-guide": { title: "Preparing a Hong Kong Company for an IPO: From Financial Foundations to Governance", summary: "A practical framework for preparing funding needs, financial records, internal controls and advisers well before an IPO application." },
   "privacy-first-digital-marketing-hong-kong": { title: "Privacy-First Digital Marketing in Hong Kong: Five Questions Before Collecting Customer Data", summary: "Five practical steps for building responsible customer-data workflows across forms, memberships, email and instant messaging." },
   "modular-integrated-construction-hong-kong": { title: "What Is MiC? Benefits, Limitations and Preparation for Hong Kong Projects", summary: "How Modular Integrated Construction changes project delivery, and what teams should prepare before design, manufacturing and installation." },

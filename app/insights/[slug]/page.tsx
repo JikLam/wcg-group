@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import InsightsHeader from "../insights-header";
 import { findInsight, insights } from "../insight-data";
 import WhatsAppLink from "../../components/whatsapp-link";
+import MessageTemplate from "../message-template";
 
 type InsightPageProps = { params: Promise<{ slug: string }> };
 
@@ -47,7 +48,7 @@ export default async function InsightArticlePage({ params }: InsightPageProps) {
   };
 
   return (
-    <main className="insight-article-page">
+    <main className={`insight-article-page${article.slug === "whatsapp-business-customer-service-hong-kong" ? " insight-article-concise" : ""}`}>
       <InsightsHeader />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       <article>
@@ -66,12 +67,17 @@ export default async function InsightArticlePage({ params }: InsightPageProps) {
           <aside className="insight-toc"><p>文章目錄</p>{article.sections.map((section, index) => <a key={section.heading} href={`#section-${index + 1}`}><span>0{index + 1}</span>{section.heading}</a>)}</aside>
           <div className="insight-article-body">
             <p className="insight-intro">{article.intro}</p>
+            {article.takeaways && <section className="insight-takeaways" aria-labelledby="takeaway-title"><p className="section-kicker">30 秒看重點</p><h2 id="takeaway-title">這篇幫你做好三件事</h2><ul>{article.takeaways.map((item) => <li key={item}>{item}</li>)}</ul></section>}
             {article.sections.map((section, index) => (
               <section id={`section-${index + 1}`} key={section.heading}>
                 <span className="insight-section-number">0{index + 1}</span>
                 <h2>{section.heading}</h2>
                 {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-                {section.bullets && <ul>{section.bullets.map((item) => <li key={item}>{item}</li>)}</ul>}
+                {section.bullets && <ul>{section.bullets.map((item) => {
+                  const split = article.takeaways ? item.indexOf("：") : -1;
+                  return <li key={item}>{split > 0 ? <><strong>{item.slice(0, split)}</strong>：{item.slice(split + 1)}</> : item}</li>;
+                })}</ul>}
+                {section.templates && <div className="insight-message-list">{section.templates.map((template) => <MessageTemplate key={template.label} {...template} />)}</div>}
                 {article.gallery[index] && (
                   <figure className="insight-section-image">
                     <img src={article.gallery[index].image} alt={article.gallery[index].alt} loading="lazy" decoding="async" />
@@ -79,6 +85,7 @@ export default async function InsightArticlePage({ params }: InsightPageProps) {
                 )}
               </section>
             ))}
+            {article.checklist && <section className="insight-final-checklist" aria-labelledby="checklist-title"><p className="section-kicker">今天就能開始</p><h2 id="checklist-title">你的 WhatsApp 接待準備好了嗎？</h2><div>{article.checklist.map((item) => <label key={item}><input type="checkbox" /><span>{item}</span></label>)}</div><p className="insight-checklist-note">勾選檢查即可，毋須提交。</p></section>}
             <section className="insight-brand-note"><p className="section-kicker">WCG PERSPECTIVE</p><h2>由知識走向實際執行</h2><p>{article.conclusion}</p><WhatsAppLink label="WhatsApp 聯絡我們" /></section>
             <div className="insight-taxonomy"><div><small>關鍵字</small>{article.keywords.map((item) => <span key={item}>{item}</span>)}</div><div><small>標籤</small>{article.tags.map((item) => <span key={item}>{item}</span>)}</div></div>
           </div>
