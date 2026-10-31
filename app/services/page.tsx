@@ -3,6 +3,7 @@
 import SubpageHeader from "../components/subpage-header";
 import { usePersistedLanguage } from "../components/use-persisted-language";
 import { services } from "./service-data";
+import WhatsAppLink from "../components/whatsapp-link";
 
 const copy = {
   tc: {
@@ -56,7 +57,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="direction-cta"><div><h2>{t.ctaTitle}</h2><p>{t.ctaText}</p></div><a className="button button-gold" href="mailto:info@winchancegroup.com">{t.cta}<span>↗</span></a></section>
+      <section className="direction-cta"><div><h2>{t.ctaTitle}</h2><p>{t.ctaText}</p></div><WhatsAppLink label={t.cta} /></section>
       <footer className="service-detail-footer"><span>© 2026 Win Chance Group Holdings Limited. {t.rights}.</span><a href="/">{t.home}</a></footer>
     </main>
   );

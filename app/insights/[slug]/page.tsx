@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import InsightsHeader from "../insights-header";
 import { findInsight, insights } from "../insight-data";
+import WhatsAppLink from "../../components/whatsapp-link";
 
 type InsightPageProps = { params: Promise<{ slug: string }> };
 
@@ -78,7 +79,7 @@ export default async function InsightArticlePage({ params }: InsightPageProps) {
                 )}
               </section>
             ))}
-            <section className="insight-brand-note"><p className="section-kicker">WCG PERSPECTIVE</p><h2>由知識走向實際執行</h2><p>{article.conclusion}</p><a className="button button-gold" href={`/services/${article.serviceSlug}`}>了解相關服務<span>↗</span></a></section>
+            <section className="insight-brand-note"><p className="section-kicker">WCG PERSPECTIVE</p><h2>由知識走向實際執行</h2><p>{article.conclusion}</p><WhatsAppLink label="WhatsApp 聯絡我們" /></section>
             <div className="insight-taxonomy"><div><small>關鍵字</small>{article.keywords.map((item) => <span key={item}>{item}</span>)}</div><div><small>標籤</small>{article.tags.map((item) => <span key={item}>{item}</span>)}</div></div>
           </div>
         </div>

@@ -3,6 +3,7 @@
 import SubpageHeader from "../components/subpage-header";
 import { usePersistedLanguage } from "../components/use-persisted-language";
 import { featuredPartners, strategicPartners } from "./partner-data";
+import WhatsAppLink from "../components/whatsapp-link";
 
 const copy = {
   tc: {
@@ -34,7 +35,7 @@ export default function PartnersPage() {
   return (
     <main className="partners-page">
       <SubpageHeader lang={lang} setLang={setLang} labels={t} active="partners" />
-      <section className="subpage-hero partners-hero"><div><p className="section-kicker">{t.kicker}</p><h1>{t.title}</h1><p>{t.intro}</p></div><div className="partner-orbit" aria-hidden="true"><span>WCG</span><strong>合作</strong></div></section>
+      <section className="subpage-hero partners-hero"><div><p className="section-kicker">{t.kicker}</p><h1>{t.title}</h1><p>{t.intro}</p></div><div className="partner-orbit" aria-hidden="true"><span>WCG</span><strong>{lang === "en" ? "PARTNERS" : "合作"}</strong></div></section>
       <section className="partners-network">
         <div><p className="section-kicker">{t.network}</p><h2>{t.networkTitle}</h2><p>{t.networkText}</p></div>
         <div className="partner-logo-groups">
@@ -43,7 +44,7 @@ export default function PartnersPage() {
         </div>
       </section>
       <section className="partners-modes"><div><p className="section-kicker">{t.modes}</p><h2>{t.modesTitle}</h2></div><div className="partner-mode-grid">{t.cards.map(([title, text], index) => <article key={title}><span>0{index + 1}</span><h3>{title}</h3><p>{text}</p></article>)}</div></section>
-      <section className="direction-cta"><div><h2>{t.ctaTitle}</h2><p>{t.ctaText}</p></div><a className="button button-gold" href="mailto:info@winchancegroup.com">{t.cta}<span>↗</span></a></section>
+      <section className="direction-cta"><div><h2>{t.ctaTitle}</h2><p>{t.ctaText}</p></div><WhatsAppLink label={t.cta} /></section>
       <footer className="service-detail-footer"><span>© 2026 Win Chance Group Holdings Limited. {t.rights}.</span><a href="/">{t.home}</a></footer>
     </main>
   );

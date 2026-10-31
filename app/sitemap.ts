@@ -2,11 +2,13 @@ import type { MetadataRoute } from "next";
 import { insights } from "./insights/insight-data";
 import { services } from "./services/service-data";
 
+export const dynamic = "force-static";
+
 const origin = "https://winchancegroup.com";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const updated = new Date("2026-10-14");
-  const corePages = ["", "/about", "/services", "/direction", "/partners", "/insights"].map((path) => ({
+  const corePages = ["", "/about", "/services", "/direction", "/partners", "/insights", "/contact"].map((path) => ({
     url: `${origin}${path}`,
     lastModified: updated,
     changeFrequency: path === "/insights" ? ("weekly" as const) : ("monthly" as const),

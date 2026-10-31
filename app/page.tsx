@@ -4,6 +4,7 @@ import { FormEvent, useRef, useState } from "react";
 import { usePersistedLanguage } from "./components/use-persisted-language";
 import { services as serviceRecords } from "./services/service-data";
 import { featuredPartners, strategicPartners } from "./partners/partner-data";
+import WhatsAppLink, { whatsappHref, whatsappNumber } from "./components/whatsapp-link";
 
 type Lang = "tc" | "sc" | "en";
 
@@ -82,7 +83,7 @@ const content = {
     phoneLabel: "電話",
     phone: "+852 2668 2600",
     whatsappLabel: "WhatsApp",
-    whatsapp: "+852 4413 1113",
+    whatsapp: whatsappNumber,
     wechatLabel: "微信",
     wechat: "WCG91949413",
     emailLabel: "電郵",
@@ -130,7 +131,7 @@ const content = {
     overviewLabel: "集团概览", swipeHint: "左右滑动，探索七大业务范畴", previous: "上一项", next: "下一项",
     directionKicker: "发展方向", directionTitle: "让专业各展所长\n让资源彼此连接", directionText: "集团网站集中展示各项专业服务，并以 WCG 的共同价值、专业网络及企业管治连接不同团队，为客户提供更完整的跨领域方案。", stages: ["建立清晰的集团品牌", "连接各项专业服务", "拓展跨地域合作机会"],
     milestone: "发展里程碑", milestoneYear: "2022", milestoneText: "Win Chance Group Holdings Limited 正式成立，开展多元业务整合与品牌建设。更多里程碑将于资料核实后更新。",
-    contactKicker: "联系我们", contactTitle: "携手探索下一个机遇", contactText: "如欲了解集团业务或商讨合作，欢迎与我们联系。", addressLabel: "地址", address: "香港鲗鱼涌海泽街28号东港中心14楼1411室", phoneLabel: "电话", phone: "+852 2668 2600", whatsappLabel: "WhatsApp", whatsapp: "+852 4413 1113", wechatLabel: "微信", wechat: "WCG91949413", emailLabel: "电邮", email: "info@winchancegroup.com",
+    contactKicker: "联系我们", contactTitle: "携手探索下一个机遇", contactText: "如欲了解集团业务或商讨合作，欢迎与我们联系。", addressLabel: "地址", address: "香港鲗鱼涌海泽街28号东港中心14楼1411室", phoneLabel: "电话", phone: "+852 2668 2600", whatsappLabel: "WhatsApp", whatsapp: whatsappNumber, wechatLabel: "微信", wechat: "WCG91949413", emailLabel: "电邮", email: "info@winchancegroup.com",
     form: { name: "姓名", company: "公司名称", email: "电邮地址", message: "查询内容", send: "发送查询", sending: "正在发送…", success: "查询已成功发送，我们会尽快回复。", error: "暂时未能发送，请稍后再试。" },
     legal: "公司注册、牌照及法律资料将在核实后更新，一切网站资料内容均为钜泷集团版权所有。", privacy: "隐私政策", terms: "使用条款", rights: "版权所有",
   },
@@ -161,7 +162,7 @@ const content = {
     overviewLabel: "Group overview", swipeHint: "Swipe to explore our seven business sectors", previous: "Previous", next: "Next",
     directionKicker: "OUR DIRECTION", directionTitle: "Specialist strengths\nConnected resources", directionText: "The Group website presents every specialist service in one place, connecting teams through WCG’s shared values, professional network and corporate governance to deliver more complete cross-sector solutions.", stages: ["Build a clear group identity", "Connect specialist services", "Expand cross-market partnerships"],
     milestone: "Milestone", milestoneYear: "2022", milestoneText: "Win Chance Group Holdings Limited was established to integrate a diversified portfolio and build a unified corporate brand. Further milestones will be added after verification.",
-    contactKicker: "CONTACT", contactTitle: "Let’s explore the next opportunity", contactText: "Contact us to learn about the Group or discuss a potential partnership.", addressLabel: "Address", address: "Unit 1411, 14/F, Eastern Harbour Centre, 28 Hoi Chak Street, Quarry Bay, Hong Kong", phoneLabel: "Telephone", phone: "+852 2668 2600", whatsappLabel: "WhatsApp", whatsapp: "+852 4413 1113", wechatLabel: "WeChat", wechat: "WCG91949413", emailLabel: "Email", email: "info@winchancegroup.com",
+    contactKicker: "CONTACT", contactTitle: "Let’s explore the next opportunity", contactText: "Contact us to learn about the Group or discuss a potential partnership.", addressLabel: "Address", address: "Unit 1411, 14/F, Eastern Harbour Centre, 28 Hoi Chak Street, Quarry Bay, Hong Kong", phoneLabel: "Telephone", phone: "+852 2668 2600", whatsappLabel: "WhatsApp", whatsapp: whatsappNumber, wechatLabel: "WeChat", wechat: "WCG91949413", emailLabel: "Email", email: "info@winchancegroup.com",
     form: { name: "Name", company: "Company", email: "Email address", message: "How can we help?", send: "Send enquiry", sending: "Sending…", success: "Your enquiry has been sent. We will reply shortly.", error: "We could not send your enquiry. Please try again later." },
     legal: "Company registration, licensing and legal information will be updated after verification. All website information and content are copyright of Win Chance Group.", privacy: "Privacy", terms: "Terms", rights: "All rights reserved",
   },
@@ -194,7 +195,7 @@ export default function Home() {
     setFormStatus("sending");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api/contact.php", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -232,7 +233,7 @@ export default function Home() {
             <a href="/direction">{t.nav[2][1]}</a>
             <a href="/partners">{t.nav[3][1]}</a>
             <a href="/insights">{lang === "tc" ? "商業洞察" : lang === "sc" ? "商业洞察" : "Insights"}</a>
-            <a href="#contact">{t.nav[4][1]}</a>
+            <a href="/contact">{t.nav[4][1]}</a>
           </nav>
 
           <button className="menu-toggle" type="button" aria-label={t.menuLabel} aria-expanded={menuOpen} onClick={() => setMenuOpen(!menuOpen)}>
@@ -263,7 +264,7 @@ export default function Home() {
             <a href="/direction" onClick={() => setMenuOpen(false)}>{t.nav[2][1]}</a>
             <a href="/partners" onClick={() => setMenuOpen(false)}>{t.nav[3][1]}</a>
             <a href="/insights" onClick={() => setMenuOpen(false)}>{lang === "tc" ? "商業洞察" : lang === "sc" ? "商业洞察" : "Insights"}</a>
-            <a href="#contact" onClick={() => setMenuOpen(false)}>{t.nav[4][1]}</a>
+            <a href="/contact" onClick={() => setMenuOpen(false)}>{t.nav[4][1]}</a>
           </nav>
         </div>
       </header>
@@ -275,7 +276,7 @@ export default function Home() {
           <p className="hero-intro">{t.heroText}</p>
           <div className="hero-actions">
             <a className="button button-gold" href="/services">{t.explore}<span>↗</span></a>
-            <a className="text-link" href="#contact">{t.contactUs}<span>→</span></a>
+            <WhatsAppLink className="text-link" label={t.contactUs} />
           </div>
         </div>
         <div className="hero-visual" aria-hidden="true">
@@ -305,7 +306,7 @@ export default function Home() {
           </a>
           <div className="collaboration-actions">
             <a className="text-link" href="/partners">{t.learnMore}<span>→</span></a>
-            <a className="button button-gold" href="#contact">{t.collaborationCta}<span>↗</span></a>
+            <WhatsAppLink label={t.collaborationCta} />
           </div>
         </div>
       </section>
@@ -364,7 +365,7 @@ export default function Home() {
           <dl>
             <div><dt>{t.addressLabel}</dt><dd>{t.address}</dd></div>
             <div><dt>{t.phoneLabel}</dt><dd><a href="tel:+85226682600">{t.phone}</a></dd></div>
-            <div><dt>{t.whatsappLabel}</dt><dd><a href="https://wa.me/85244131113">{t.whatsapp}</a></dd></div>
+            <div><dt>{t.whatsappLabel}</dt><dd><a href={whatsappHref} target="_blank" rel="noreferrer">{t.whatsapp}</a></dd></div>
             <div><dt>{t.wechatLabel}</dt><dd>{t.wechat}</dd></div>
             <div><dt>{t.emailLabel}</dt><dd><a href={`mailto:${t.email}`}>{t.email}</a></dd></div>
           </dl>

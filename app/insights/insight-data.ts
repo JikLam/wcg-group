@@ -15,6 +15,8 @@ export type InsightArticle = {
   summary: string;
   seoDescription: string;
   keywords: string[];
+  primaryKeywords?: string[];
+  longTailKeywords?: string[];
   tags: string[];
   image: string;
   imageAlt: string;
@@ -26,6 +28,78 @@ export type InsightArticle = {
 };
 
 export const insights: InsightArticle[] = [
+  {
+    slug: "whatsapp-business-customer-service-hong-kong",
+    title: "香港中小企 WhatsApp Business 客戶服務指南：由查詢到成交的實務流程",
+    category: "數碼與科技",
+    service: "數碼市場推廣",
+    serviceSlug: "digital-marketing",
+    published: "2026-10-29",
+    readingTime: "約 9 分鐘",
+    summary: "網站有流量，WhatsApp 亦收到查詢，為何仍然難以跟進？本文整理香港中小企由商業檔案、歡迎訊息、快捷回覆到團隊交接及成效檢視的客服流程，附可直接改寫的繁體中文訊息範例。",
+    seoDescription: "香港中小企如何運用 WhatsApp Business 管理客戶查詢？了解歡迎訊息、快捷回覆、查詢分類、團隊交接與成交跟進，建立清晰的 WhatsApp 客戶服務流程。",
+    primaryKeywords: ["WhatsApp Business", "WhatsApp 客戶服務", "香港數碼營銷"],
+    longTailKeywords: ["香港中小企 WhatsApp 客服流程", "WhatsApp Business 歡迎訊息範例", "WhatsApp Business 快捷回覆設定", "網站 WhatsApp 查詢按鈕", "WhatsApp 客戶查詢分類", "WhatsApp 報價後跟進訊息", "WhatsApp 團隊交接流程", "WhatsApp 查詢轉化率"],
+    keywords: ["WhatsApp Business", "WhatsApp 客戶服務", "香港數碼營銷", "香港中小企 WhatsApp 客服流程", "WhatsApp Business 歡迎訊息範例", "WhatsApp Business 快捷回覆設定", "網站 WhatsApp 查詢按鈕", "WhatsApp 客戶查詢分類", "WhatsApp 報價後跟進訊息", "WhatsApp 團隊交接流程", "WhatsApp 查詢轉化率"],
+    tags: ["中小企營銷", "客戶服務", "WhatsApp 商務", "查詢轉化", "營運流程"],
+    image: "/insights/whatsapp-customer-service-hero.jpg",
+    imageAlt: "Asian small business owner and colleague planning customer service in a Hong Kong office with a harbour view",
+    imagePrompt: "Asian female small business owner and Asian male colleague planning customer service in a Hong Kong office, smartphone and notebook on desk, harbour view, natural editorial photography, landscape, no logos or readable text.",
+    gallery: [
+      { image: "/insights/gallery/whatsapp-enquiry.jpg", alt: "Asian business owner using a smartphone beside a laptop and an enquiry checklist on a desk" },
+      { image: "/insights/gallery/whatsapp-replies.jpg", alt: "Asian customer service specialist composing a personalised reply at a bright office desk" },
+      { image: "/insights/gallery/whatsapp-handover.jpg", alt: "Three Asian colleagues discussing a customer enquiry handover around a shared office desk" },
+      { image: "/insights/gallery/whatsapp-review.jpg", alt: "Asian business owner and marketing consultant reviewing enquiry charts on a laptop and printed reports" },
+    ],
+    intro: "對香港服務業、專業顧問及零售商而言，WhatsApp 往往是潛在客戶由「有興趣」走向「願意傾談」的第一站。然而，收到訊息不等於取得生意：回覆時間不清楚、同事重複問資料、報價後無人跟進，都可能令查詢停在對話框。這份指南以 WhatsApp Business 為起點，提供一套可逐步落實的香港中小企 WhatsApp 客服流程，把網站入口、訊息內容與內部責任連接起來。重點是讓客戶知道下一步，讓團隊知道由誰處理。",
+    sections: [
+      {
+        heading: "先整理網站入口與商業資料，減少客戶第一個疑問",
+        paragraphs: [
+          "香港數碼營銷不應只著眼於廣告點擊量。客戶讀完服務頁面後，應容易找到相關的聯絡入口。網站 WhatsApp 查詢按鈕可放在服務介紹之後及頁尾，文字寫成「WhatsApp 了解服務」或「查詢項目安排」，比沒有上下文的圖示更容易理解。手機及桌面都應測試，確認連結開啟正確的公司號碼。",
+          "預填訊息可以帶出查詢背景，例如「您好，我在網站看到數碼市場推廣服務，想了解適合中小企的方案」。但它只是替客戶填好文字，仍需客戶按下傳送，亦不是公司已自動回覆。團隊不要把按鈕點擊直接當成有效查詢；衡量時要分開記錄點擊、實際對話及合資格查詢。",
+          "商業檔案與網站資料應一致，包括公司名稱、服務內容及營業時間。若暫時只有一位同事負責回覆，就按真實能力設定時間預期；不用為了顯得即時，寫出團隊做不到的服務承諾。",
+        ],
+        bullets: ["檢查每個服務頁的按鈕是否指向同一個有效公司號碼。", "在訊息加入服務名稱，減少同事重新詢問背景的時間。", "先索取服務類型、預計時間及簡單需求；毋須首次接觸便收集大量資料。"],
+      },
+      {
+        heading: "寫好歡迎訊息與快捷回覆，同時保留真人溝通",
+        paragraphs: [
+          "WhatsApp Business 提供歡迎訊息、離線訊息及快捷回覆等工具。三者用途不同：歡迎訊息介紹接待方式，離線訊息交代非辦公時間的安排，而快捷回覆讓同事選用常見答案，再按客戶情況修改。具體介面與功能可用性會因版本及帳戶而異，設定時應以實際 App 顯示為準。",
+          "以下是 WhatsApp Business 歡迎訊息範例：「您好，歡迎聯絡鉅瀧集團！請告訴我們您感興趣的服務、預計開始時間及簡單需求。我們會於辦公時間由相關同事跟進；如方便，亦可留下稱呼，謝謝。」這段文字交代了身份、需要的資料與處理安排，避免只說「您好，請問有甚麼幫到您」卻沒有方向。",
+          "進行 WhatsApp Business 快捷回覆設定時，可先整理四類常見問題：服務範圍、需要提交的資料、預約方法及報價流程。例如輸入預設簡稱後帶出「為方便準備建議，請提供項目目標、時間及預算範圍；如尚未確定，我們可先安排初步了解」。每次發送前仍應看清客戶問題，刪去不適用的內容，不能以一大段模板代替聆聽。",
+        ],
+        bullets: ["歡迎訊息：說明公司身份、所需資料及回覆安排。", "離線訊息：交代下一個處理時段，不要暗示有人即時候命。", "快捷回覆：先回答對方的問題，再補充下一步需要的資料。"],
+      },
+      {
+        heading: "建立客戶查詢分類與團隊交接流程",
+        paragraphs: [
+          "當查詢增加，最大的問題往往不是打字速度，而是不知道哪一宗仍未處理。WhatsApp 客戶查詢分類可以先用五個狀態開始：新查詢、待客戶資料、評估中、已報價、已完成。狀態應描述工作進度，而不是替客戶貼上含糊的價值標籤。App 的標籤功能可協助整理對話；如需要跨部門分工，再評估具權限及負責人管理的工具。",
+          "一套實用的 WhatsApp 團隊交接流程，至少記錄負責同事、客戶目標、已承諾事項、尚欠資料及下一次跟進日期。即使最初使用內部工作表，也應限制存取權限，避免把完整對話隨意轉寄到個人帳戶。交更時先確認有誰接手，再向客戶交代負責人，減少「我以為另一位同事已覆」的空窗。",
+          "例如一間室內工程公司收到辦公室改裝查詢，客服同事可先整理地點、範圍與目標日期，再交由項目同事判斷是否需要現場了解。這是流程示例，並非真實客戶個案或成效承諾。重點在於下一位同事不用重新問同一組基本問題，客戶亦知道為何需要再提供資料。",
+        ],
+        bullets: ["每宗未結案查詢都有一位明確負責人。", "交接時寫下下一步，而不只是轉發對話。", "每個工作日檢查過期跟進及未回覆查詢，按團隊容量安排優先次序。"],
+      },
+      {
+        heading: "報價後如何跟進？用數據找出真正流失的環節",
+        paragraphs: [
+          "WhatsApp 報價後跟進訊息應以協助決策為目的。例如：「您好，想確認您是否已收到我們的建議。若您對服務範圍、時間或安排仍有疑問，歡迎告訴我們；如項目時間有變，我們亦可配合再討論。」這比連續追問「考慮成點」更具體，也給客戶合理的回覆選項。跟進頻率宜根據雙方已確認的時間安排，不應把沉默當成接受持續促銷。",
+          "檢視 WhatsApp 查詢轉化率時，先定義每個指標。例如「合資格查詢」可指已確認服務需求、基本時間及可聯絡方式的對話；「預約」則指已確認日期的會面。假設某月有 40 宗合資格查詢、其中 10 宗預約，查詢到預約的比例便是 25%。這只是計算示例，不代表市場平均或保證成果。",
+          "團隊可每週比較首次人工回覆時間、補資料所需輪次、查詢到預約比例及報價後的主要疑問。若很多客戶反覆問服務包括甚麼，應改善網站與報價內容；若有意向客戶常在交接後沒有回覆，便要檢查責任分配。不要只增加廣告預算，卻讓同一個流程問題繼續消耗新查詢。",
+        ],
+        bullets: ["分開統計按鈕點擊、實際對話、合資格查詢、預約及成交。", "為每個指標訂立一致定義，避免不同同事各自計算。", "每週選一個流失環節改善，再觀察後續變化。"],
+      },
+      {
+        heading: "甚麼時候需要升級工具？先用一個小型試行判斷",
+        paragraphs: [
+          "如果日常查詢仍可由少量同事清楚處理，先完善 App、網站按鈕及交接方法通常較容易執行。若經常出現多人撞覆、跨部門跟進遺漏，或需要把對話與客戶管理系統連接，才進一步評估 WhatsApp Business Platform 及適合的服務供應商。App 與 Platform 的功能、收費及操作方式不同，選型前需核對最新官方資料及供應商條款，不能假設所有自動化都包含在基本 App。",
+          "一個可行的兩週試行，是選擇單一服務頁，改善聯絡按鈕與預填訊息，準備四段常用回覆，指定一位主要接待及一位後備同事。第一週記錄現況，第二週集中改善最常見的疑問；期間保持查詢定義一致，避免以樣本太少的短期升跌作重大結論。",
+          "好的 WhatsApp 客戶服務不是讓客戶收到更多訊息，而是讓每次對話更容易前進。當入口、內容與責任清楚，企業才有基礎評估增加流量、擴充團隊或引入系統是否值得。香港數碼營銷的長期價值，來自每個環節都能回答：客戶下一步要做甚麼，而我們由誰負責。",
+        ],
+      },
+    ],
+    conclusion: "想把網站流量變成更清晰的客戶查詢流程？鉅瀧集團 Win Chance Group Holdings Limited 可按企業需求協助梳理數碼市場推廣方向、網站聯絡入口、內容安排與項目跟進流程。歡迎 WhatsApp +852 6670 2707，告訴我們您的行業、服務目標及目前遇到的問題，一起討論適合業務現況的下一步。",
+  },
   {
     slug: "hong-kong-ipo-readiness-guide",
     title: "香港企業上市前準備：由財務基礎到管治架構的實務路線圖",

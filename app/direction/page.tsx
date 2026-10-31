@@ -2,6 +2,7 @@
 
 import SubpageHeader from "../components/subpage-header";
 import { usePersistedLanguage } from "../components/use-persisted-language";
+import WhatsAppLink from "../components/whatsapp-link";
 
 const copy = {
   tc: {
@@ -102,7 +103,7 @@ export default function DirectionPage() {
 
       <section className="direction-cta">
         <div><h2>{t.ctaTitle}</h2><p>{t.ctaText}</p></div>
-        <a className="button button-gold" href="mailto:info@winchancegroup.com">{t.cta}<span>↗</span></a>
+        <WhatsAppLink label={t.cta} />
       </section>
 
       <footer className="service-detail-footer">

@@ -1,0 +1,79 @@
+name: Build and deploy Scicube website
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Deployment target (production is an explicit manual release)
+        type: choice
+        options: [staging, production]
+        default: staging
+
+permissions:
+  contents: read
+
+concurrency:
+  group: scicube-${{ inputs.target || 'staging' }}
+  cancel-in-progress: false
+
+jobs:
+  website:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Validate static website
+        run: node scripts/verify-export.mjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: scicube-website-${{ github.sha }}
+          path: out/
+          include-hidden-files: true
+          retention-days: 14
+      - name: Check deployment configuration
+        id: config
+        env:
+          TARGET: ${{ inputs.target || 'staging' }}
+          STAGING_HOST: ${{ secrets.STAGING_FTP_HOST }}
+          STAGING_USER: ${{ secrets.STAGING_FTP_USER }}
+          STAGING_PASSWORD: ${{ secrets.STAGING_FTP_PASSWORD }}
+          PRODUCTION_HOST: ${{ secrets.PRODUCTION_FTP_HOST }}
+          PRODUCTION_USER: ${{ secrets.PRODUCTION_FTP_USER }}
+          PRODUCTION_PASSWORD: ${{ secrets.PRODUCTION_FTP_PASSWORD }}
+        shell: bash
+        run: |
+          if [[ "$TARGET" == 'production' ]]; then
+            FTP_HOST="$PRODUCTION_HOST"; FTP_USER="$PRODUCTION_USER"; FTP_PASSWORD="$PRODUCTION_PASSWORD"
+          else
+            FTP_HOST="$STAGING_HOST"; FTP_USER="$STAGING_USER"; FTP_PASSWORD="$STAGING_PASSWORD"
+          fi
+          if [[ -n "$FTP_HOST" && -n "$FTP_USER" && -n "$FTP_PASSWORD" ]]; then
+            echo 'ready=true' >> "$GITHUB_OUTPUT"
+          else
+            echo 'ready=false' >> "$GITHUB_OUTPUT"
+            echo 'Build ready. Hosting upload has not run: configure the target FTP secrets first.' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Upload staging website using verified TLS
+        if: steps.config.outputs.ready == 'true' && inputs.target != 'production'
+        env:
+          FTP_HOST: ${{ secrets.STAGING_FTP_HOST }}
+          FTP_USER: ${{ secrets.STAGING_FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.STAGING_FTP_PASSWORD }}
+          FTP_REMOTE_DIR: ${{ vars.STAGING_FTP_REMOTE_DIR }}
+        run: python3 scripts/deploy-ftps.py
+      - name: Upload production website using verified TLS
+        if: steps.config.outputs.ready == 'true' && inputs.target == 'production'
+        env:
+          FTP_HOST: ${{ secrets.PRODUCTION_FTP_HOST }}
+          FTP_USER: ${{ secrets.PRODUCTION_FTP_USER }}
+          FTP_PASSWORD: ${{ secrets.PRODUCTION_FTP_PASSWORD }}
+          FTP_REMOTE_DIR: ${{ vars.PRODUCTION_FTP_REMOTE_DIR }}
+        run: python3 scripts/deploy-ftps.py

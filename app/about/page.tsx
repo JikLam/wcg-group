@@ -3,6 +3,7 @@
 import SubpageHeader from "../components/subpage-header";
 import { usePersistedLanguage } from "../components/use-persisted-language";
 import { services } from "../services/service-data";
+import WhatsAppLink, { whatsappNumber } from "../components/whatsapp-link";
 
 const copy = {
   tc: {
@@ -56,7 +57,7 @@ export default function AboutPage() {
         <p className="section-kicker">{t.scope}</p><h2>{t.scopeTitle}</h2>
         <div className="about-service-list">{services.map((service) => <a key={service.slug} href={`/services/${service.slug}`}><span>0{service.index}</span><strong>{service.content[lang].title}</strong><em>{t.learn} →</em></a>)}</div>
       </section>
-      <section className="direction-cta"><div><h2>{t.cta}</h2><p>info@winchancegroup.com · +852 2668 2600</p></div><a className="button button-gold" href="mailto:info@winchancegroup.com">{t.contact}<span>↗</span></a></section>
+      <section className="direction-cta"><div><h2>{t.cta}</h2><p>WhatsApp {whatsappNumber} · info@winchancegroup.com</p></div><WhatsAppLink label={t.contact} /></section>
       <footer className="service-detail-footer"><span>© 2026 Win Chance Group Holdings Limited. {t.rights}.</span><a href="/">{t.home}</a></footer>
     </main>
   );

@@ -1,13 +1,15 @@
 "use client";
 
 import { usePersistedLanguage } from "../../components/use-persisted-language";
-import { Lang, ServiceRecord, servicePageLabels, services } from "../service-data";
+import SubpageHeader from "../../components/subpage-header";
+import WhatsAppLink from "../../components/whatsapp-link";
+import { ServiceRecord, servicePageLabels, services } from "../service-data";
 
-const languageLabels: { key: Lang; label: string }[] = [
-  { key: "tc", label: "繁" },
-  { key: "sc", label: "简" },
-  { key: "en", label: "EN" },
-];
+const headerLabels = {
+  tc: { brand: "鉅瀧集團", home: "集團首頁", about: "關於集團", services: "集團服務", direction: "發展方向", partners: "合作夥伴", insights: "商業洞察", contact: "聯絡我們" },
+  sc: { brand: "钜泷集团", home: "集团首页", about: "关于集团", services: "集团服务", direction: "发展方向", partners: "合作伙伴", insights: "商业洞察", contact: "联系我们" },
+  en: { brand: "Win Chance Group Holdings Limited", home: "Group Home", about: "About", services: "Group Services", direction: "Our Direction", partners: "Partners", insights: "Insights", contact: "Contact" },
+} as const;
 
 function formatHeading(text: string) {
   return text.replace(/[。.]$/, "").replace(/[，,]\s*/g, "\n");
@@ -21,27 +23,7 @@ export default function ServiceDetail({ service }: { service: ServiceRecord }) {
 
   return (
     <main className="service-page">
-      <header className="service-detail-header">
-        <div className="service-detail-primary">
-          <a className={`brand-lockup ${lang === "en" ? "is-english" : "is-bilingual"}`} href="/" aria-label="Win Chance Group Holdings Limited">
-            <img src="/wcg-logo-transparent.png" alt="WCG" />
-            <span><strong>{labels.brand}</strong>{lang !== "en" && <small>Win Chance Group Holdings Limited</small>}</span>
-          </a>
-          <a className="service-back" href="/services"><span>←</span>{labels.allServices}</a>
-          <div className="language-switcher" aria-label={labels.language}>
-            {languageLabels.map((item) => (
-              <button key={item.key} type="button" className={lang === item.key ? "active" : ""} onClick={() => setLang(item.key)} aria-pressed={lang === item.key}>{item.label}</button>
-            ))}
-          </div>
-        </div>
-        <nav className="detail-service-nav" aria-label={labels.allServices}>
-          {services.map((item) => (
-            <a key={item.slug} className={item.slug === service.slug ? "active" : ""} href={`/services/${item.slug}`}>
-              <span>0{item.index}</span>{item.content[lang].title}
-            </a>
-          ))}
-        </nav>
-      </header>
+      <SubpageHeader lang={lang} setLang={setLang} labels={headerLabels[lang]} active="services" />
 
       <section className="service-detail-hero">
         <div className="service-detail-hero-copy">
@@ -115,7 +97,7 @@ export default function ServiceDetail({ service }: { service: ServiceRecord }) {
 
       <section className="service-cta">
         <div><p className="section-kicker">{lang === "tc" ? "聯絡我們" : lang === "sc" ? "联系我们" : "CONTACT"}</p><h2>{labels.contactTitle}</h2><p>{labels.contactText}</p></div>
-        <a className="button button-gold" href="mailto:info@winchancegroup.com">{labels.contact}<span>↗</span></a>
+        <WhatsAppLink label={labels.contact} />
       </section>
 
       <footer className="service-detail-footer">
